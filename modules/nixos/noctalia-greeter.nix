@@ -9,6 +9,14 @@
     inputs.noctalia-greeter.nixosModules.default
   ];
 
+  services.greetd = {
+    enable = true;
+    settings.default_session = {
+      command = "/run/current-system/sw/bin/noctalia-greeter-session -- --session Hyprland";
+      user = "nix";
+    };
+  };
+
   programs.noctalia-greeter = {
     enable = true;
     package = inputs.noctalia-greeter.packages.${pkgs.stdenv.hostPlatform.system}.default;

@@ -88,9 +88,9 @@
     "ko_KR.UTF-8/UTF-8"
   ];
 
-  #services.xserver.enable = true;
-  #services.xserver.displayManager.gdm.enable = true;
-  #services.xserver.desktopManager.gnome.enable = true;
+  services.xserver.enable = true;
+  services.xserver.displayManager.gdm.enable = true;
+  services.xserver.desktopManager.gnome.enable = true;
 
   services.xserver.xkb = {
     layout = "us";
@@ -125,14 +125,6 @@
     foot
     fuzzel
   ];
-
-  services.greetd = {
-    enable = true;
-    settings.default_session = {
-      command = "/run/current-system/sw/bin/noctalia-greeter-session -- --session Hyprland";
-      user = "nix";
-    };
-  };
 
   system.stateVersion = "26.05";
 }
