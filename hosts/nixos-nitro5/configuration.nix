@@ -7,6 +7,7 @@
   imports = [
     ./hardware-configuration.nix
   ];
+  boot.kernelPackages = pkgs.cachyosKernels.linuxPackages-cachyos-latest;
 
   services.locate.enable = false;
 
@@ -17,6 +18,9 @@
     "nix-command"
     "flakes"
   ];
+  # cachy stuff
+  nix.settings.substituters = ["https://attic.xuyh0120.win/lantian"];
+  nix.settings.trusted-public-keys = ["lantian:EeAUQ+W+6r7EtwnmYjeVwx5kOGEBpjlBfPlzGlTNvHc="];
 
   nix.settings = {
     extra-substituters = [
@@ -41,7 +45,13 @@
   networking.hostName = "nitro5";
   networking.networkmanager.enable = true;
 
-  hardware.graphics.enable = true;
+  hardware.graphics = {
+    enable = true;
+    extraPackages = with pkgs; [
+      nvidia-vaapi-driver # for gpu-screen-recorder
+      intel-media-driver
+    ];
+  };
   hardware.graphics.enable32Bit = true;
   # NVIDIA PRIME offload (Acer Nitro 5, RTX 4060)
   hardware.nvidia = {
@@ -135,7 +145,12 @@
     foot
     fuzzel
     google-chrome
+    mpv
   ];
 
+  programs.gpu-screen-recorder = {
+    enable = true;
+  };
+  # ooooo you want to change this value ooooooo
   system.stateVersion = "26.05";
 }

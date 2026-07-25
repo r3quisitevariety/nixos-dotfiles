@@ -37,12 +37,14 @@
         home-manager.follows = "home-manager";
       };
     };
+    nix-cachyos-kernel.url = "github:xddxdd/nix-cachyos-kernel/release";
   };
 
   outputs = {
     self,
     nixpkgs,
     home-manager,
+    nix-cachyos-kernel,
     ...
   } @ inputs: {
     # will add future hosts here.
@@ -70,6 +72,22 @@
       system = "x86_64-linux";
       specialArgs = {inherit inputs;};
       modules = [
+        (
+          {pkgs, ...}: {
+            nixpkgs.overlays = [
+              # Use the exact nixpkgs revision as defined in this repo to ensure binary cache hits.
+              nix-cachyos-kernel.overlays.pinned
+
+              # Alternatively, use nixpkgs from your environment, nixpkgs.config will apply.
+              # Note: may not hit binary cache; kernel will need to be built locally.
+              # nix-cachyos-kernel.overlays.default
+
+              # Only use one of the two overlays!
+            ];
+
+            # ... your other configs
+          }
+        )
         ./hosts/nixos-nitro5
         home-manager.nixosModules.home-manager
         {
