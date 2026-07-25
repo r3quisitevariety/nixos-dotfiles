@@ -7,6 +7,8 @@
     enable = true;
   };
 
+  nix.package = pkgs.lixPackageSets.stable.lix;
+
   nixpkgs.config.allowUnfree = true;
 
   home.username = "bean";
@@ -32,7 +34,7 @@
     foot
     nautilus
     # install imperatively like the normie that you are
-    #paru
+    # paru
     # lix/nix
     # noctalia
     # noctalia-greeter
