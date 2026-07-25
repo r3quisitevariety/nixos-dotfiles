@@ -146,6 +146,7 @@
     fuzzel
     google-chrome
     mpv
+    vesktop
   ];
 
   programs.gpu-screen-recorder = {
