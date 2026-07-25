@@ -33,6 +33,7 @@
     fuzzel
     foot
     nautilus
+    proton-vpn
     # install imperatively like the normie that you are
     # paru
     # lix/nix
