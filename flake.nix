@@ -38,11 +38,6 @@
       };
     };
     nix-cachyos-kernel.url = "github:xddxdd/nix-cachyos-kernel/release";
-
-    mangowm = {
-      url = "github:mangowm/mango";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
   };
 
   outputs = {

@@ -5,19 +5,15 @@
   ...
 }: {
   imports = [
-    inputs.mangowm.nixosModules.mango
     ./hardware-configuration.nix
   ];
-  boot.kernelPackages = pkgs.cachyosKernels.linuxPackages-cachyos-latest;
+  #boot.kernelPackages = pkgs.cachyosKernels.linuxPackages-cachyos-latest;
 
   services.locate.enable = false;
 
   programs.steam.enable = true;
-  programs.niri.enable = true;
-
   programs.hyprland.enable = true;
 
-  programs.mango.enable = true;
   nix.settings.experimental-features = [
     "nix-command"
     "flakes"
@@ -100,15 +96,15 @@
     "ko_KR.UTF-8/UTF-8"
   ];
 
-  services.xserver.enable = true;
+  #  services.xserver.enable = true;
   #services.xserver.displayManager.gdm.enable = true;
   #services.xserver.desktopManager.gnome.enable = true;
 
-  services = {
-    desktopManager.plasma6.enable = true;
-    # Optionally enable xserver
-    # xserver.enable = true;
-  };
+  #  services = {
+  #    desktopManager.plasma6.enable = true;
+  #    # Optionally enable xserver
+  #    # xserver.enable = true;
+  #  };
 
   services.xserver.xkb = {
     layout = "us";
