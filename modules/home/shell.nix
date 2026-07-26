@@ -34,6 +34,7 @@
   };
 
   home.packages = with pkgs; [
+    tokei
     git
     fastfetch
     yazi
