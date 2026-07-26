@@ -1,4 +1,4 @@
-config_version = 2
+config_version = 7
 
 [bar.default]
 center = [ "workspaces", "recorder_2", "notes", "launcher", "todo" ]

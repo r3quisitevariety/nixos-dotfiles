@@ -30,10 +30,12 @@
     "${config.home.homeDirectory}/nixos-dotfiles-2.0/normie-dots/settings.toml";
 
   home.packages = with pkgs; [
+    # nix-friendly packages go here; otherwise done imperatively
     fuzzel
     foot
     nautilus
     proton-vpn
+    kdePackages.qt6ct
     # install imperatively like the normie that you are
     # paru
     # lix/nix
@@ -62,5 +64,6 @@
     ../../modules/home/neovim.nix
     ../../modules/system/xdg-portal.nix
     ../../modules/home/shell.nix
+    ../../modules/home/zen.nix
   ];
 }
