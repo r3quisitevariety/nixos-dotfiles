@@ -25,6 +25,11 @@
     force = true;
   };
 
+  home.file.".config/niri/config.kdl" = {
+    source = ../../normie-dots/config.kdl;
+    force = true;
+  };
+
   home.file.".local/state/noctalia/settings.toml".source =
     config.lib.file.mkOutOfStoreSymlink
     "${config.home.homeDirectory}/nixos-dotfiles-2.0/normie-dots/settings.toml";
@@ -35,7 +40,7 @@
     foot
     nautilus
     proton-vpn
-    kdePackages.qt6ct
+    obsidian
     # install imperatively like the normie that you are
     # paru
     # lix/nix
@@ -64,6 +69,6 @@
     ../../modules/home/neovim.nix
     ../../modules/system/xdg-portal.nix
     ../../modules/home/shell.nix
-    ../../modules/home/zen.nix
+    #../../modules/home/zen.nix
   ];
 }

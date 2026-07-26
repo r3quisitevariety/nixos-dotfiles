@@ -6,7 +6,7 @@ DOTFILES_DIR="$(cd "$(dirname "$0")/.." && pwd)"
 echo "==> Installing Nix..."
 curl -sSf -L https://install.lix.systems/lix | sh -s -- install
 
-# shellcheck disable=SC1091
+ shellcheck disable=SC1091
 . /nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh
 
 echo "==> Backing up existing configs..."
@@ -57,6 +57,11 @@ paru -S --needed --noconfirm \
     wivrn-dashboard \
     wivrn-server \
     xrizer \
-    qt6ct-kde
+    qt6ct-kde \
+    proton-rtsp-bin
+
+
+echo "==> Enabling port 9757 for WiVrn..."
+sudo ufw allow 9757
 
 echo "==> Done!"
