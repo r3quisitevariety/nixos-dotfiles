@@ -5,6 +5,7 @@
   ...
 }: {
   imports = [
+    inputs.mangowm.nixosModules.mango
     ./hardware-configuration.nix
   ];
   boot.kernelPackages = pkgs.cachyosKernels.linuxPackages-cachyos-latest;
@@ -14,6 +15,9 @@
   programs.steam.enable = true;
   programs.niri.enable = true;
 
+  programs.hyprland.enable = true;
+
+  programs.mango.enable = true;
   nix.settings.experimental-features = [
     "nix-command"
     "flakes"
@@ -32,8 +36,6 @@
       "noctalia.cachix.org-1:pCOR47nnMEo5thcxNDtzWpOxNFQsBRglJzxWPp3dkU4="
     ];
   };
-
-  programs.hyprland.enable = true;
 
   services.power-profiles-daemon.enable = true; # switch between performance, balance, or battery saving
   services.upower.enable = true;
@@ -104,10 +106,6 @@
 
   services = {
     desktopManager.plasma6.enable = true;
-
-    # Default display manager for Plasma
-    #displayManager.plasma-login-manager.enable = true;
-
     # Optionally enable xserver
     # xserver.enable = true;
   };
@@ -155,6 +153,21 @@
   programs.gpu-screen-recorder = {
     enable = true;
   };
+
+  xdg.portal = {
+    # fixes file picker issues
+    enable = true;
+    extraPortals = [
+      pkgs.xdg-desktop-portal-hyprland
+      pkgs.xdg-desktop-portal-gtk
+      pkgs.kdePackages.xdg-desktop-portal-kde
+    ];
+    config.common = {
+      default = "hyprland;kde";
+      "org.freedesktop.impl.portal.FileChooser" = "kde";
+    };
+  };
+
   # ooooo you want to change this value ooooooo
   system.stateVersion = "26.05";
 }
