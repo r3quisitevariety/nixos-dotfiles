@@ -36,7 +36,8 @@
   services.power-profiles-daemon.enable = true; # switch between performance, balance, or battery saving
   services.upower.enable = true;
 
-  boot.loader.systemd-boot.enable = true;
+  #boot.loader.systemd-boot.enable = true;
+  boot.loader.limine.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
   boot.kernelParams = ["acpi_backlight=native"]; # fix backlight
 
