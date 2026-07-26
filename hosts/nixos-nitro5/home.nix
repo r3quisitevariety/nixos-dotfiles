@@ -19,11 +19,6 @@
     enable = true;
   };
 
-  home.packages = with pkgs; [
-    obsidian
-    anki
-  ];
-
   imports = [
     # TODO i commented these out because i have yet to resolve hostname hardcoding for modules
     ../../modules/home/neovim.nix
