@@ -1,42 +1,62 @@
-# TODO
+#!/usr/bin/env bash
+set -euo pipefail
 
-after installing nix...
+DOTFILES_DIR="$(cd "$(dirname "$0")/.." && pwd)"
 
+echo "==> Installing Nix..."
 curl -sSf -L https://install.lix.systems/lix | sh -s -- install
 
-mv ~/.bashrc ~/.bashrc.backup
-mv ~/.bash_profile ~/.bash_profile.backup
-mv ~/.config/hypr/hyprland.lua ~/.config/hypr/hyprland.lua.backup
-mv ~/.config/foot/foot.ini ~/.config/foot/foot.ini.backup
-mv ~/.local/state/noctalia/settings.toml ~/.local/state/noctalia/settings.toml.backup
+# shellcheck disable=SC1091
+. /nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh
 
-cd ~/nixos-dotfiles-2.0 
-nix-shell -p nh && nh home switch . 
+echo "==> Backing up existing configs..."
+for f in \
+    ~/.bashrc \
+    ~/.bash_profile \
+    ~/.config/hypr/hyprland.lua \
+    ~/.config/foot/foot.ini \
+    ~/.local/state/noctalia/settings.toml; do
+    if [[ -e "$f" ]]; then mv "$f" "$f.backup"; fi
+done
 
+echo "==> Switching home-manager config..."
+cd "$DOTFILES_DIR"
+nix-shell -p nh --run "nh home switch ."
 
-sudo pacman -S noctalia
-sudo pacman -S noctalia-greeter
-sudo pacman -S nwg-look
-sudo pacman -S qt6ct
-sudo pacman -S mpv
-sudo pacman -S nautilus
-sudo pacman -S vesktop
-sudo pacman -S gwenview
-sudo pacman -S obs-studio
-sudo pacman -S reaper
-sudo pacman -S kdenlive
-sudo pacman -S krita
-sudo pacman -S prismlauncher
-sudo pacman -S tailscale
+echo "==> Installing pacman packages..."
+sudo pacman -S --needed --noconfirm \
+    noctalia \
+    noctalia-greeter \
+    nwg-look \
+    adw-gtk-theme \
+    mpv \
+    nautilus \
+    vesktop \
+    gwenview \
+    obs-studio \
+    reaper \
+    kdenlive \
+    krita \
+    prismlauncher \
+    tailscale
 
+echo "==> Setting up Rust..."
 rustup default stable
 
-sudo pacman -S --needed base-devel git
-git clone https://aur.archlinux.org/paru.git
-cd paru
-makepkg -si
+echo "==> Building paru (AUR helper)..."
+sudo pacman -S --needed --noconfirm base-devel git
+PARU_DIR="$(mktemp -d)"
+git clone https://aur.archlinux.org/paru.git "$PARU_DIR/paru"
+pushd "$PARU_DIR/paru"
+makepkg -si --needed --noconfirm
+popd
+rm -rf "$PARU_DIR"
 
-paru -S wivrn-dashboard
-paru -S wivrn-server
-paru -S xrizer
+echo "==> Installing AUR packages..."
+paru -S --needed --noconfirm \
+    wivrn-dashboard \
+    wivrn-server \
+    xrizer \
+    qt6ct-kde
 
+echo "==> Done!"
