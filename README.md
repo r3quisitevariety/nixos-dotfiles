@@ -1,3 +1,5 @@
+**second update** im back on nixos again, this time with the cachyos kernel and much better design principles in mind that will work around the headaches i had initially with nixos; maybe nix really fixes everything...  
+
 **update:** I switched to cachyos/arch and im currently in the process of migration; expect major rewrites to the config. this will be a great learning opportunity for me to deepen my nix knowledge.
 
 ---
