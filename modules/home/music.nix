@@ -30,4 +30,9 @@
 
   services.mpd-mpris.enable = true;
   home.packages = [pkgs.playerctl];
+
+  home.file.".config/rmpc/config.ron" = {
+    source = ../../normie-dots/config.ron;
+    force = true;
+  };
 }
