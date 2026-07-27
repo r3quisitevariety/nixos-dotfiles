@@ -1,4 +1,8 @@
-{inputs, ...}: {
+{
+  inputs,
+  pkgs,
+  ...
+}: {
   imports = [
     inputs.zen-browser.homeModules.beta
   ];
@@ -8,7 +12,18 @@
     setAsDefaultBrowser = true;
 
     profiles.default = {
-      settings."ui.systemUsesDarkTheme" = 1;
+      settings = {
+        "ui.systemUsesDarkTheme" = 1;
+        # Auto-enable extensions installed via HM
+        "extensions.autoDisableScopes" = 0;
+        "extensions.showRecommendations" = false;
+      };
+
+      extensions.packages = with pkgs.nur.repos.rycee.firefox-addons; [
+        ublock-origin
+        bitwarden
+      ];
+
       pinsForce = true;
       pinsForceAction = "remove";
 

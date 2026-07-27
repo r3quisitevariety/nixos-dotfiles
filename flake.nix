@@ -38,6 +38,11 @@
       };
     };
     nix-cachyos-kernel.url = "github:xddxdd/nix-cachyos-kernel/release";
+
+    nur = {
+      url = "github:nix-community/NUR";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs = {
@@ -45,13 +50,17 @@
     nixpkgs,
     home-manager,
     nix-cachyos-kernel,
+    nur,
     ...
   } @ inputs: {
     # will add future hosts here.
 
     # cachyos/arch config
     homeConfigurations.bean = home-manager.lib.homeManagerConfiguration {
-      pkgs = nixpkgs.legacyPackages.x86_64-linux;
+      pkgs = import nixpkgs {
+        system = "x86_64-linux";
+        overlays = [nur.overlays.default];
+      };
       extraSpecialArgs = {inherit inputs;};
       modules = [
         ./hosts/arch-nitro5/home.nix
@@ -60,7 +69,10 @@
 
     # ubuntu server config
     homeConfigurations.black = home-manager.lib.homeManagerConfiguration {
-      pkgs = nixpkgs.legacyPackages.x86_64-linux;
+      pkgs = import nixpkgs {
+        system = "x86_64-linux";
+        overlays = [nur.overlays.default];
+      };
       extraSpecialArgs = {inherit inputs;};
       modules = [
         ./hosts/ubuntu-inspiron/home.nix
@@ -77,6 +89,9 @@
             nixpkgs.overlays = [
               # Use the exact nixpkgs revision as defined in this repo to ensure binary cache hits.
               nix-cachyos-kernel.overlays.pinned
+
+              # NUR overlay for browser extensions (firefox-addons)
+              nur.overlays.default
 
               # Alternatively, use nixpkgs from your environment, nixpkgs.config will apply.
               # Note: may not hit binary cache; kernel will need to be built locally.
