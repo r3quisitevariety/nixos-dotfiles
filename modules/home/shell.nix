@@ -5,6 +5,7 @@
   programs.bash = {
     enable = true;
     shellAliases = {
+      lg = "lazygit";
       neofetch = "fastfetch";
       v = "nvim";
       g = "git";
@@ -34,6 +35,7 @@
   };
 
   home.packages = with pkgs; [
+    diskonaut-ng
     tokei
     git
     fastfetch
