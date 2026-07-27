@@ -1,4 +1,4 @@
-config_version = 7
+config_version = 2
 
 [bar.default]
 center = [ "workspaces", "recorder_2", "notes", "launcher", "todo" ]
@@ -223,12 +223,12 @@ time_format = "{:%-I:%M %p}"
     save_to_file = false
 
 [theme]
-builtin = "Rosé Pine"
-community_palette = "Lilac AMOLED"
+builtin = "Catppuccin"
+community_palette = "Rosey AMOLED"
 custom_palette = "m3-content"
 mode = "dark"
-source = "wallpaper"
-wallpaper_scheme = "m3-content"
+source = "builtin"
+wallpaper_scheme = "m3-tonal-spot"
 
     [theme.templates]
     builtin_ids = [ "foot", "gtk3", "gtk4", "ghostty", "hyprland", "kcolorscheme", "mango", "niri", "qt" ]
@@ -254,17 +254,17 @@ transition = [ "disc" ]
 transition_on_startup = true
 
     [wallpaper.default]
-    path = "/home/bean/Pictures/wallpapers/local/7.jpg"
+    path = "/home/bean/Pictures/wallpapers/local/isnt_she_lovely.png"
 
     [wallpaper.last]
-    path = "/home/bean/Pictures/wallpapers/local/7.jpg"
+    path = "/home/bean/Pictures/wallpapers/local/isnt_she_lovely.png"
 
     [wallpaper.monitors.eDP-1]
-    path = "/home/bean/Pictures/wallpapers/local/7.jpg"
+    path = "/home/bean/Pictures/wallpapers/local/isnt_she_lovely.png"
 
     [[wallpaper.favorite]]
-    community_palette = "Rosey AMOLED"
-    palette_source = "community"
+    builtin_palette = "Ayu"
+    palette_source = "builtin"
     path = "/home/bean/Pictures/wallpapers/local/isnt_she_lovely.png"
     theme_mode = "dark"
 

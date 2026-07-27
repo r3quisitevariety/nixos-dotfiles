@@ -1,4 +1,8 @@
-{pkgs, ...}: {
+{
+  pkgs,
+  config,
+  ...
+}: {
   home.username = "nix";
   home.homeDirectory = "/home/nix";
   home.stateVersion = "25.11";
@@ -12,6 +16,10 @@
     source = ../../normie-dots/foot.ini;
     force = true;
   };
+
+  home.file.".local/state/noctalia/settings.toml".source =
+    config.lib.file.mkOutOfStoreSymlink
+    "${config.home.homeDirectory}/nixos-dotfiles-2.0/normie-dots/settings.toml";
 
   nixpkgs.config.allowUnfree = true;
 
