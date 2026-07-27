@@ -21,13 +21,15 @@
     config.lib.file.mkOutOfStoreSymlink
     "${config.home.homeDirectory}/nixos-dotfiles-2.0/normie-dots/settings.toml";
 
-  nixpkgs.config.allowUnfree = true;
+  # redundant,already declared in configuration.nix
+  #nixpkgs.config.allowUnfree = true;
 
   services.syncthing = {
     enable = true;
   };
 
   home.pointerCursor = {
+    enable = true;
     gtk.enable = true;
     x11.enable = true;
     name = ":3";

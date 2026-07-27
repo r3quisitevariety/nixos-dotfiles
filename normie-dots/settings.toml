@@ -193,11 +193,10 @@ blacklist = [ "tauon", "hyprshot" ]
 
 [plugin_settings."avivbintangaringga/nix-monitor"]
 branch = "nixos-unstable"
-clean_command = "nix-collect-garbage"
 panel_open_near_click = false
 panel_placement = "attached"
 show_update_available_notification = false
-update_command = "cd ~/nixos-dotfiles-2.0 && nix flake update && nh home switch ."
+update_command = "cd ~/nixos-dotfiles-2.0 && nix flake update && nh o switch .nix"
 
 [plugin_settings."noctalia/notes"]
 notes_dir = "~/Documents/talianotes"
@@ -209,7 +208,13 @@ directory = "~/Videos"
 video_source = "focused"
 
 [plugins]
-enabled = [ "noctalia/screen_recorder", "noctalia/kaomoji", "noctalia/notes", "nightwatch75/todo" ]
+enabled = [
+    "noctalia/screen_recorder",
+    "noctalia/kaomoji",
+    "noctalia/notes",
+    "nightwatch75/todo",
+    "avivbintangaringga/nix-monitor"
+]
 
 [shell]
 app_icon_color = "on_surface"
@@ -223,7 +228,7 @@ time_format = "{:%-I:%M %p}"
     save_to_file = false
 
 [theme]
-builtin = "Catppuccin"
+builtin = "Ayu"
 community_palette = "Rosey AMOLED"
 custom_palette = "m3-content"
 mode = "dark"
