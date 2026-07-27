@@ -27,6 +27,14 @@
     enable = true;
   };
 
+  home.pointerCursor = {
+    gtk.enable = true;
+    x11.enable = true;
+    name = ":3";
+    package = pkgs.nordzy-cursor-theme;
+    size = 24;
+  };
+
   imports = [
     # TODO i commented these out because i have yet to resolve hostname hardcoding for modules
     ../../modules/home/neovim.nix
