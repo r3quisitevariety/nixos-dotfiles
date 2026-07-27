@@ -22,6 +22,11 @@
       extensions.packages = with pkgs.nur.repos.rycee.firefox-addons; [
         ublock-origin
         bitwarden
+        darkreader
+        i-dont-care-about-cookies
+        #unhook
+        #libredirect
+        #obsidian-web-clippper
       ];
 
       pinsForce = true;
