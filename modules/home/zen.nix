@@ -7,20 +7,43 @@
     enable = true;
     setAsDefaultBrowser = true;
 
-    # Catppuccin theme (catppuccin/zen-browser), symlinked into the profile's
-    # chrome/catppuccin and loaded via userChrome/userContent imports.
-    #profiles.default.presets.catppuccin = {
-    #  enable = true;
-    #  flavor = "Mocha"; # Frappe | Latte | Macchiato | Mocha
-    #  accent = "Mauve"; # Blue, Flamingo, Green, Lavender, Maroon, Mauve, ...
-    #};
+    profiles.default = {
+      settings."ui.systemUsesDarkTheme" = 1;
+      pinsForce = true;
+      pinsForceAction = "remove";
 
-    # Betterfox for Zen (yokoffing/Betterfox zen/user.js, aka BetterZen):
-    # privacy/telemetry/performance prefs applied as mkDefault settings —
-    # any profile `settings` entry wins.
-    profiles.default.presets.betterfox.enable = true;
+      keyboardShortcuts = [
+        {
+          id = "zen-compact-mode-toggle";
+          key = "e";
+          modifiers.control = true;
+        }
+      ];
 
-    # arkenfox for Zen (arkenfox/user.js)
-    profiles.default.presets.arkenfox.enable = true;
+      pins.google-calendar = {
+        id = "google-calendar";
+        url = "https://calendar.google.com";
+        isEssential = true;
+        position = 1;
+      };
+      pins.claude = {
+        id = "claude";
+        url = "https://claude.ai/new";
+        isEssential = true;
+        position = 2;
+      };
+      pins.gemini = {
+        id = "gemini";
+        url = "https://gemini.google.com/app";
+        isEssential = true;
+        position = 3;
+      };
+      pins.nixos-dotfiles = {
+        id = "nixos-dotfiles";
+        url = "https://github.com/r3quisitevariety/nixos-dotfiles-2.0";
+        isEssential = true;
+        position = 4;
+      };
+    };
   };
 }
