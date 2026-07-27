@@ -109,7 +109,7 @@
   #services.xserver.desktopManager.gnome.enable = true;
 
   services = {
-    desktopManager.plasma6.enable = true;
+    desktopManager.plasma6.enable = false;
     #    # Optionally enable xserver
     #    # xserver.enable = true;
   };
@@ -144,6 +144,7 @@
 
   environment.systemPackages = with pkgs; [
     inputs.noctalia.packages.${pkgs.stdenv.hostPlatform.system}.default
+
     obsidian
     anki
     nautilus
@@ -152,6 +153,10 @@
     google-chrome
     mpv
     vesktop
+
+    nwg-look
+    adw-gtk3
+    kdePackages.qt6ct
   ];
 
   programs.gpu-screen-recorder = {
@@ -159,16 +164,13 @@
   };
 
   xdg.portal = {
-    # fixes file picker issues
     enable = true;
     extraPortals = [
       pkgs.xdg-desktop-portal-hyprland
       pkgs.xdg-desktop-portal-gtk
-      pkgs.kdePackages.xdg-desktop-portal-kde
     ];
     config.common = {
-      default = "hyprland;kde";
-      "org.freedesktop.impl.portal.FileChooser" = "kde";
+      default = "hyprland;gtk";
     };
   };
 
