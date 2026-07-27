@@ -7,7 +7,7 @@
   imports = [
     ./hardware-configuration.nix
   ];
-  #boot.kernelPackages = pkgs.cachyosKernels.linuxPackages-cachyos-latest;
+  boot.kernelPackages = pkgs.cachyosKernels.linuxPackages-cachyos-latest;
 
   services.locate.enable = false;
 
