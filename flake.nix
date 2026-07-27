@@ -55,6 +55,7 @@
       extraSpecialArgs = {inherit inputs;};
       modules = [
         ./hosts/arch-nitro5/home.nix
+        {home-manager.backupFileExtension = "hm-backup";}
       ];
     };
 
@@ -64,6 +65,7 @@
       extraSpecialArgs = {inherit inputs;};
       modules = [
         ./hosts/ubuntu-inspiron/home.nix
+        {home-manager.backupFileExtension = "hm-backup";}
       ];
     };
 
@@ -95,6 +97,7 @@
           home-manager.useUserPackages = true;
           home-manager.extraSpecialArgs = {inherit inputs;};
           home-manager.users.nix = import ./hosts/nixos-nitro5/home.nix;
+          home-manager.backupFileExtension = "backup";
         }
       ];
     };
