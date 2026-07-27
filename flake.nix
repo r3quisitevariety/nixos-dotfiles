@@ -89,15 +89,13 @@
             nixpkgs.overlays = [
               # Use the exact nixpkgs revision as defined in this repo to ensure binary cache hits.
               nix-cachyos-kernel.overlays.pinned
-
-              # NUR overlay for browser extensions (firefox-addons)
-              nur.overlays.default
-
               # Alternatively, use nixpkgs from your environment, nixpkgs.config will apply.
               # Note: may not hit binary cache; kernel will need to be built locally.
               # nix-cachyos-kernel.overlays.default
-
               # Only use one of the two overlays!
+
+              # NUR overlay for browser extensions (firefox-addons)
+              nur.overlays.default
             ];
 
             # ... your other configs
