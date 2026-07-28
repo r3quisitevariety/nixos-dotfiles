@@ -23,8 +23,9 @@
     greeter-args = "";
     settings = {
       cursor = {
-        theme = "Breeze";
+        theme = "Bibata-Modern-Classic";
         size = 20;
+        path = "${pkgs.bibata-cursors}/share/icons";
       };
       keyboard = {
         layout = "us";
