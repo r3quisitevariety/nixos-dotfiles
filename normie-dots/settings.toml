@@ -228,11 +228,11 @@ time_format = "{:%-I:%M %p}"
     save_to_file = false
 
 [theme]
-builtin = "Ayu"
-community_palette = "Rosey AMOLED"
+builtin = "Noctalia"
+community_palette = "Everforest Material"
 custom_palette = "m3-content"
 mode = "dark"
-source = "builtin"
+source = "community"
 wallpaper_scheme = "m3-tonal-spot"
 
     [theme.templates]
