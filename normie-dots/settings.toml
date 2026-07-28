@@ -8,7 +8,7 @@ margin_ends = 0
 radius = 0
 radius_bottom_left = 80
 radius_bottom_right = 80
-start = [ "wallpaper", "nix-monitor", "clock", "group:g2", "sysmon", "weather", "recorder_2", "group:g6" ]
+start = [ "wallpaper", "nix-monitor", "recorder_2", "clock", "group:g2", "sysmon", "weather", "group:g6" ]
 
     [[bar.default.capsule_group]]
     enabled = true
@@ -252,18 +252,18 @@ wallpaper_scheme = "m3-tonal-spot"
     [theme.templates]
     builtin_ids = [ "foot", "gtk3", "gtk4", "ghostty", "hyprland", "kcolorscheme", "mango", "niri", "qt" ]
     community_ids = [
+        "opencode",
         "pywalfox",
         "zen-browser",
+        "discord",
+        "telegram",
         "neovim",
         "vscode",
-        "fuzzel",
-        "discord",
-        "opencode",
         "steam",
-        "telegram",
-        "yazi",
+        "fuzzel",
         "zathura",
-        "hyprtoolkit"
+        "hyprtoolkit",
+        "yazi"
     ]
 
 [wallpaper]
