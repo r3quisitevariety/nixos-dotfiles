@@ -44,25 +44,26 @@
         id = "google-calendar";
         url = "https://calendar.google.com";
         isEssential = true;
-        position = 1;
       };
       pins.claude = {
         id = "claude";
         url = "https://claude.ai/new";
         isEssential = true;
-        position = 2;
-      };
-      pins.gemini = {
-        id = "gemini";
-        url = "https://gemini.google.com/app";
-        isEssential = true;
-        position = 3;
       };
       pins.nixos-dotfiles = {
         id = "nixos-dotfiles";
         url = "https://github.com/r3quisitevariety/nixos-dotfiles-2.0";
         isEssential = true;
-        position = 4;
+      };
+      pins.nix-search = {
+        id = "nix-search";
+        url = "https://nixsearch.thekoppe.com/";
+        isEssential = true;
+      };
+      pins.hm-options = {
+        id = "hm-options";
+        url = "https://nix-community.github.io/home-manager/options/home-manager/index.html";
+        isEssential = true;
       };
     };
   };
