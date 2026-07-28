@@ -161,6 +161,10 @@
     nwg-look
     adw-gtk3
     kdePackages.qt6ct
+
+    kdePackages.kdenlive
+    reaper
+    krita
   ];
 
   programs.gpu-screen-recorder = {
