@@ -1,28 +1,19 @@
 {
   description = "twinky femboy flake";
 
-  #  nixConfig = {
-  #    extra-substituters = ["https://noctalia.cachix.org"];
-  #    extra-trusted-public-keys = ["noctalia.cachix.org-1:pCOR47nnMEo5thcxNDtzWpOxNFQsBRglJzxWPp3dkU4="];
-  #  };
-
   inputs = {
-    # uncomment both to mix both stable and unstable
     #nixpkgs-unstable.url = "github:nixos/nixpkgs?ref=nixos-unstable";
     #nixpkgs.url = "github:nixos/nixpkgs/nixos-25.11";
 
-    # pure unstable
     nixpkgs.url = "github:nixos/nixpkgs?ref=nixos-unstable";
 
     #noctalia = {
     #  url = "github:noctalia-dev/noctalia/cachix";
-    #  #inputs.nixpkgs.follows = "nixpkgs";
     #};
 
-    #noctalia-greeter = {
-    #  url = "github:noctalia-dev/noctalia-greeter";
-    #  #inputs.nixpkgs.follows = "nixpkgs";
-    #};
+    noctalia-greeter = {
+      url = "github:noctalia-dev/noctalia-greeter";
+    };
 
     home-manager = {
       url = "github:nix-community/home-manager";
@@ -37,6 +28,7 @@
         home-manager.follows = "home-manager";
       };
     };
+
     nix-cachyos-kernel.url = "github:xddxdd/nix-cachyos-kernel/release";
 
     nur = {
