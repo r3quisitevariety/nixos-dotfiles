@@ -153,6 +153,7 @@
     google-chrome
     mpv
     vesktop
+    proton-vpn
 
     nwg-look
     adw-gtk3
