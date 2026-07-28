@@ -28,13 +28,16 @@
     enable = true;
   };
 
+  home.packages = [pkgs.hyprcursor];
   home.pointerCursor = {
     enable = true;
+    package = pkgs.bibata-cursors;
+    name = "Bibata-Modern-Classic";
+    size = 16;
     gtk.enable = true;
     x11.enable = true;
-    name = ":3";
-    package = pkgs.nordzy-cursor-theme;
-    size = 24;
+    hyprcursor.enable = true;
+    hyprcursor.size = 16;
   };
 
   imports = [
