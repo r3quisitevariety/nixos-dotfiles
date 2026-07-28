@@ -234,8 +234,9 @@ enabled = [
 
 [shell]
 app_icon_color = "on_surface"
-avatar_path = "/home/bean/Pictures/misc/b2e253dd2eb170b841469e4053bd15f1.jpg"
+avatar_path = "/home/nix/Pictures/misc/maomao.jpg"
 clipboard_confirm_clear_history = false
+font_family = "Noto Sans"
 settings_show_advanced = true
 show_location = false
 time_format = "{:%-I:%M %p}"
@@ -411,3 +412,4 @@ enabled = false
 [widget.workspaces]
 anchor = true
 capsule_fill = "on_primary"
+display = "none"

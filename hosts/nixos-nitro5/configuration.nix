@@ -98,11 +98,19 @@
   ];
 
   fonts.packages = with pkgs; [
+    inter
+    noto-fonts
     nerd-fonts.fira-code
     nerd-fonts.jetbrains-mono
     noto-fonts-cjk-sans
     noto-fonts-cjk-serif # optional, for serif contexts
   ];
+
+  fonts.fontconfig.defaultFonts = {
+    serif = ["Noto Serif"];
+    sansSerif = ["Inter" "Noto Sans"];
+    monospace = ["JetBrains Mono"];
+  };
 
   #  services.xserver.enable = true;
   #services.xserver.displayManager.gdm.enable = true;
