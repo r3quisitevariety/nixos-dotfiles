@@ -1,16 +1,17 @@
-config_version = 2
+config_version = 7
 
 [bar.default]
-center = [ "workspaces", "recorder_2", "notes", "launcher", "todo" ]
-end = [ "group:g3", "clipboard", "group:g4", "group:g5" ]
+center = [ "workspaces" ]
+end = [ "group:g3", "clipboard", "group:g4", "notifications", "volume", "brightness", "group:g5" ]
 margin_edge = 0
 margin_ends = 0
 radius = 0
 radius_bottom_left = 80
 radius_bottom_right = 80
-start = [ "shelly", "nix-monitor", "wallpaper", "clock", "group:g2", "sysmon", "weather" ]
+start = [ "wallpaper", "nix-monitor", "clock", "group:g2", "sysmon", "weather", "group:g6" ]
 
     [[bar.default.capsule_group]]
+    enabled = true
     fill = "surface_variant"
     id = "g1"
     members = [ "launcher", "clock" ]
@@ -19,6 +20,7 @@ start = [ "shelly", "nix-monitor", "wallpaper", "clock", "group:g2", "sysmon", "
 
     [[bar.default.capsule_group]]
     border = ""
+    enabled = true
     fill = "surface_variant"
     foreground = "primary"
     id = "g2"
@@ -27,6 +29,7 @@ start = [ "shelly", "nix-monitor", "wallpaper", "clock", "group:g2", "sysmon", "
     padding = 10.0
 
     [[bar.default.capsule_group]]
+    enabled = true
     fill = "surface_variant"
     id = "g3"
     members = [ "audio_visualizer", "media" ]
@@ -34,6 +37,7 @@ start = [ "shelly", "nix-monitor", "wallpaper", "clock", "group:g2", "sysmon", "
     padding = 6.0
 
     [[bar.default.capsule_group]]
+    enabled = true
     fill = "surface_variant"
     id = "g4"
     members = [ "tray" ]
@@ -41,12 +45,22 @@ start = [ "shelly", "nix-monitor", "wallpaper", "clock", "group:g2", "sysmon", "
     padding = 6.0
 
     [[bar.default.capsule_group]]
+    enabled = true
     fill = "surface_variant"
     foreground = "tertiary"
     id = "g5"
-    members = [ "notifications", "network", "bluetooth", "volume", "brightness", "battery", "session" ]
+    members = [ "network", "bluetooth", "battery", "session" ]
     opacity = 1.0
     padding = 10.0
+
+    [[bar.default.capsule_group]]
+    enabled = true
+    fill = "surface_variant"
+    foreground = "tertiary"
+    id = "g6"
+    members = [ "recorder_2", "notes", "todo", "launcher" ]
+    opacity = 1.0
+    padding = 8.0
 
 [calendar]
 enabled = true
@@ -293,6 +307,7 @@ capsule = true
 
 [widget.battery]
 display_mode = "graphic"
+show_label = false
 
 [widget.bluetooth]
 show_label = true
@@ -301,9 +316,12 @@ show_label = true
 script = "scripts/bongocat.lua"
 type = "scripted"
 
+[widget.brightness]
+capsule = true
+show_label = false
+
 [widget.clipboard]
 capsule = true
-capsule_fill = "on_secondary"
 color = "primary"
 
 [widget.clock]
@@ -312,7 +330,20 @@ capsule_fill = "surface_variant"
 capsule_foreground = "secondary"
 format = "{:%A, %B %e, %Y, %I:%M %p}"
 
+[widget.cpu]
+show_label = false
+
+[widget.media]
+album_art_only = true
+hide_when_no_media = true
+max_length = 100
+min_length = 100
+
+[widget.network]
+show_label = false
+
 [widget.nix-monitor]
+capsule = true
 colorize_glyph = false
 show_text = false
 type = "avivbintangaringga/nix-monitor:nix-monitor"
@@ -320,14 +351,17 @@ type = "avivbintangaringga/nix-monitor:nix-monitor"
 [widget.notes]
 type = "noctalia/notes:notes"
 
+[widget.notifications]
+capsule = true
+
+[widget.ram]
+show_label = false
+
 [widget.recorder]
 type = "noctalia/screen_recorder:recorder"
 
 [widget.recorder_2]
 type = "noctalia/screen_recorder:recorder"
-
-[widget.shelly]
-type = "joshuaslate/shelly:shelly"
 
 [widget.spacer_2]
 type = "spacer"
@@ -337,20 +371,33 @@ type = "spacer"
 
 [widget.sysmon]
 capsule = true
+enabled = false
 stat = "gpu_vram"
 
 [widget.taskbar]
 anchor = true
 group_by_workspace = true
 
+[widget.temp]
+show_label = false
+
 [widget.todo]
 type = "nightwatch75/todo:todo"
 
 [widget.tray]
 capsule = true
+drawer = true
+
+[widget.volume]
+capsule = true
+show_label = false
+
+[widget.wallpaper]
+capsule = true
 
 [widget.weather]
 capsule = true
+enabled = false
 
 [widget.workspaces]
 anchor = true
