@@ -39,6 +39,7 @@
     tokei
     git
     fastfetch
+    hyfetch
     yazi
     go-grip
     lazygit
