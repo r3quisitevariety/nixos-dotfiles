@@ -1,7 +1,7 @@
 config_version = 7
 
 [bar.default]
-center = [ "workspaces" ]
+center = [ "workspaces", "bar" ]
 end = [ "group:g3", "clipboard", "group:g4", "notifications", "volume", "brightness", "group:g5" ]
 margin_edge = 0
 margin_ends = 0
@@ -227,7 +227,9 @@ enabled = [
     "noctalia/kaomoji",
     "noctalia/notes",
     "nightwatch75/todo",
-    "avivbintangaringga/nix-monitor"
+    "avivbintangaringga/nix-monitor",
+    "thepunkoff/pomodoro",
+    "noctalia/timer"
 ]
 
 [shell]
@@ -304,6 +306,10 @@ address = "Toronto, Canada"
 
 [widget.active_window]
 capsule = true
+
+[widget.bar]
+show_idle_on_horizontal = false
+type = "noctalia/timer:bar"
 
 [widget.battery]
 display_mode = "graphic"
