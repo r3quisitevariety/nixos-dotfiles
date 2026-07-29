@@ -24,6 +24,7 @@
         bitwarden
         darkreader
         i-dont-care-about-cookies
+        vimium
         #unhook
         #libredirect
         #obsidian-web-clippper
