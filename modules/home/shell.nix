@@ -39,6 +39,7 @@
   };
 
   home.packages = with pkgs; [
+    w3m
     diskonaut-ng
     tokei
     git
