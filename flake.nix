@@ -5,8 +5,9 @@
     #nixpkgs-unstable.url = "github:nixos/nixpkgs?ref=nixos-unstable";
     #nixpkgs.url = "github:nixos/nixpkgs/nixos-25.11";
 
-    nixpkgs.url = "github:nixos/nixpkgs?ref=nixos-unstable";
+    #nixpkgs.url = "github:nixos/nixpkgs?ref=nixos-unstable";
 
+    nixpkgs.url = "https://channels.nixos.org/nixos-unstable/nixexprs.tar.zst";
     #noctalia = {
     #  url = "github:noctalia-dev/noctalia/cachix";
     #};
