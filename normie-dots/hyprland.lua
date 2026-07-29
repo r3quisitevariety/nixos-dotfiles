@@ -31,7 +31,7 @@ end
 
 local terminal = "foot"
 local fileManager = "nautilus"
-local menu = "fuzzel"
+local menu = "noctalia msg panel-open launcher"
 
 -------------------
 ---- AUTOSTART ----
