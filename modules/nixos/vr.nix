@@ -17,14 +17,6 @@
     package = pkgs.wivrn.override {cudaSupport = true;};
   };
 
-  networking.firewall.allowedTCPPorts = [
-    9757
-  ];
-
-  networking.firewall.allowedUDPPorts = [
-    9757
-  ];
-
   programs.steam.extraCompatPackages = with pkgs; [
     proton-ge-bin
   ];
