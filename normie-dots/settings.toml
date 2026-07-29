@@ -1,4 +1,4 @@
-config_version = 7
+config_version = 8
 
 [bar.default]
 center = [ "workspaces", "bar" ]
@@ -210,7 +210,7 @@ branch = "nixos-unstable"
 panel_open_near_click = false
 panel_placement = "attached"
 show_update_available_notification = false
-update_command = "cd ~/nixos-dotfiles-2.0 && nix flake update && nh o switch .nix"
+update_command = "cd ~/nixos-dotfiles-2.0 && v"
 
 [plugin_settings."noctalia/notes"]
 notes_dir = "~/Documents/talianotes"
@@ -229,7 +229,8 @@ enabled = [
     "nightwatch75/todo",
     "avivbintangaringga/nix-monitor",
     "thepunkoff/pomodoro",
-    "noctalia/timer"
+    "noctalia/timer",
+    "noctalia/bitwarden"
 ]
 
 [shell]
@@ -240,6 +241,9 @@ font_family = "Noto Sans"
 settings_show_advanced = true
 show_location = false
 time_format = "{:%-I:%M %p}"
+
+    [shell.greeter_sync]
+    auto_sync = true
 
     [shell.screenshot]
     save_to_file = false
@@ -276,13 +280,13 @@ transition = [ "disc" ]
 transition_on_startup = true
 
     [wallpaper.default]
-    path = "/home/nix/Pictures/Apokalypsenzug.png"
+    path = "/home/nix/Pictures/wallhaven-dgdmj3.jpg"
 
     [wallpaper.last]
-    path = "/home/nix/Pictures/Apokalypsenzug.png"
+    path = "/home/nix/Pictures/wallhaven-dgdmj3.jpg"
 
     [wallpaper.monitors.eDP-1]
-    path = "/home/nix/Pictures/Apokalypsenzug.png"
+    path = "/home/nix/Pictures/wallhaven-dgdmj3.jpg"
 
     [[wallpaper.favorite]]
     builtin_palette = "Ayu"
