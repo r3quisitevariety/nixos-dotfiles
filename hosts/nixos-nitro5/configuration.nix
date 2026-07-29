@@ -155,6 +155,7 @@
     #inputs.noctalia.packages.${pkgs.stdenv.hostPlatform.system}.default
     noctalia
     noctalia-greeter
+    papirus-icon-theme
 
     obsidian
     anki
