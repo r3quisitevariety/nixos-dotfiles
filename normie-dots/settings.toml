@@ -253,7 +253,7 @@ source = "community"
 wallpaper_scheme = "m3-tonal-spot"
 
     [theme.templates]
-    builtin_ids = [ "foot", "gtk3", "gtk4", "ghostty", "hyprland", "kcolorscheme", "mango", "niri", "qt" ]
+    builtin_ids = [ "btop", "foot", "gtk3", "gtk4", "ghostty", "hyprland", "kcolorscheme", "mango", "niri", "qt" ]
     community_ids = [
         "opencode",
         "pywalfox",
@@ -270,19 +270,19 @@ wallpaper_scheme = "m3-tonal-spot"
     ]
 
 [wallpaper]
-directory = "/home/bean/Pictures/wallpapers/local"
+directory = "~/Pictures"
 edge_smoothness = 0.0
 transition = [ "disc" ]
 transition_on_startup = true
 
     [wallpaper.default]
-    path = "/home/bean/Pictures/wallpapers/local/isnt_she_lovely.png"
+    path = "/home/nix/Pictures/Apokalypsenzug.png"
 
     [wallpaper.last]
-    path = "/home/bean/Pictures/wallpapers/local/isnt_she_lovely.png"
+    path = "/home/nix/Pictures/Apokalypsenzug.png"
 
     [wallpaper.monitors.eDP-1]
-    path = "/home/bean/Pictures/wallpapers/local/isnt_she_lovely.png"
+    path = "/home/nix/Pictures/Apokalypsenzug.png"
 
     [[wallpaper.favorite]]
     builtin_palette = "Ayu"
@@ -334,6 +334,7 @@ capsule = true
 capsule = true
 capsule_fill = "surface_variant"
 capsule_foreground = "secondary"
+enabled = false
 format = "{:%A, %B %e, %Y, %I:%M %p}"
 
 [widget.cpu]
@@ -412,4 +413,3 @@ enabled = false
 [widget.workspaces]
 anchor = true
 capsule_fill = "on_primary"
-display = "name"
