@@ -412,4 +412,4 @@ enabled = false
 [widget.workspaces]
 anchor = true
 capsule_fill = "on_primary"
-display = "none"
+display = "name"
