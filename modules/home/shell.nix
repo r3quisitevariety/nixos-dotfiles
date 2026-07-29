@@ -27,6 +27,10 @@
         rm -f -- "$tmp"
       }
 
+      delete-generations() {
+         sudo nix-env --delete-generations "$@" --profile /nix/var/nix/profiles/system
+       }
+
     '';
   };
   home.sessionVariables = {
