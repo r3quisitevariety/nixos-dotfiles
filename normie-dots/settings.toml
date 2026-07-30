@@ -221,6 +221,12 @@ copy_to_clipboard = true
 directory = "~/Videos"
 video_source = "focused"
 
+[plugin_settings."yocraft/web-launcher"]
+links = [
+    "literaturegirl|https://literaturegirl.neocities.org",
+    "dotfiles|https://github.com/r3quisitevariety/nixos-dotfiles-2.0"
+]
+
 [plugins]
 enabled = [
     "noctalia/screen_recorder",
@@ -230,7 +236,7 @@ enabled = [
     "avivbintangaringga/nix-monitor",
     "thepunkoff/pomodoro",
     "noctalia/timer",
-    "noctalia/bitwarden"
+    "yocraft/web-launcher"
 ]
 
 [shell]
