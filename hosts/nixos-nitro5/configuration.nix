@@ -4,6 +4,8 @@
   inputs,
   ...
 }: {
+  system.nixos.label = "now-with-tailscale";
+
   imports = [
     ./hardware-configuration.nix
   ];
@@ -191,6 +193,27 @@
       default = "hyprland;gtk";
     };
   };
+
+  # TODO split into separate tailscale module later
+  # run sudo tailscale login after enabling service
+  services.tailscale = {
+    enable = true;
+    openFirewall = true;
+    # TODO when sops is set up
+    #authKeyFile = "blablabla";
+  };
+  # nftables > iptables - avoids conflicts and kernel module bloat for tailscale
+  networking.nftables.enable = true;
+  networking.firewall = {
+    enable = true;
+    # Always allow traffic from your Tailscale network
+    trustedInterfaces = [config.services.tailscale.interfaceName];
+    # Allow the Tailscale UDP port through the firewall
+    allowedUDPPorts = [config.services.tailscale.port];
+  };
+
+  systemd.network.wait-online.enable = false;
+  boot.initrd.systemd.network.wait-online.enable = false;
 
   # ooooo you want to change this value ooooooo
   system.stateVersion = "26.05";
