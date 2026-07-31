@@ -244,6 +244,7 @@ app_icon_color = "on_surface"
 avatar_path = "/home/nix/Pictures/misc/maomao.jpg"
 clipboard_confirm_clear_history = false
 font_family = "Noto Sans"
+screen_time_enabled = true
 settings_show_advanced = true
 show_location = false
 time_format = "{:%-I:%M %p}"
@@ -280,37 +281,19 @@ wallpaper_scheme = "m3-tonal-spot"
     ]
 
 [wallpaper]
-directory = "~/Pictures"
+directory = "~/Pictures/wallpapers"
 edge_smoothness = 0.0
 transition = [ "disc" ]
 transition_on_startup = true
 
     [wallpaper.default]
-    path = "/home/nix/Pictures/wallhaven-dgdmj3.jpg"
+    path = "/home/nix/Pictures/wallpapers/wallhaven_gjyoq7.jpg"
 
     [wallpaper.last]
-    path = "/home/nix/Pictures/wallhaven-dgdmj3.jpg"
+    path = "/home/nix/Pictures/wallpapers/wallhaven_gjyoq7.jpg"
 
     [wallpaper.monitors.eDP-1]
-    path = "/home/nix/Pictures/wallhaven-dgdmj3.jpg"
-
-    [[wallpaper.favorite]]
-    builtin_palette = "Ayu"
-    palette_source = "builtin"
-    path = "/home/bean/Pictures/wallpapers/local/isnt_she_lovely.png"
-    theme_mode = "dark"
-
-    [[wallpaper.favorite]]
-    palette_source = "wallpaper"
-    path = "/home/bean/Pictures/wallpapers/local/wallhaven_xe73ro.jpg"
-    theme_mode = "dark"
-    wallpaper_scheme = "m3-content"
-
-    [[wallpaper.favorite]]
-    community_palette = "Lilac AMOLED"
-    palette_source = "community"
-    path = "/home/bean/Pictures/wallpapers/local/wallhaven-mlgomm.png"
-    theme_mode = "dark"
+    path = "/home/nix/Pictures/wallpapers/wallhaven_gjyoq7.jpg"
 
 [weather]
 address = "Toronto, Canada"

@@ -26,6 +26,41 @@
 
   services.syncthing = {
     enable = true;
+    overrideDevices = false; # done imperatively like a normie
+    overrideFolders = false;
+    settings = {
+      folders = {
+        # new obsidian vault, will merge into one once done migrating
+        masterplan = {
+          id = "mg7tu-y2qmx";
+          name = "nix on nitro 5";
+          enable = true;
+          path = "~/Documents/masterplan";
+          type = "sendreceive";
+        };
+        obsidian = {
+          id = "lmski-53ald";
+          name = "nix on nitro 5";
+          enable = true;
+          path = "~/Documents/obsidian";
+          type = "sendreceive";
+        };
+        music = {
+          id = "gds2p-nvu34"; # same on all devices
+          name = "nix on nitro 5";
+          enable = true;
+          path = "~/Music";
+          type = "sendreceive";
+        };
+        wallpapers = {
+          id = "a27nj-kwhuv";
+          name = "nix on nitro 5"; # why is this redundant?
+          enable = true;
+          path = "~/Pictures/wallpapers";
+          type = "sendreceive";
+        };
+      };
+    };
   };
 
   home.packages = [pkgs.hyprcursor];

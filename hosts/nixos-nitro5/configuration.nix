@@ -4,7 +4,8 @@
   inputs,
   ...
 }: {
-  system.nixos.label = "now-with-tailscale";
+  # used as label for last major system edit; useful when picking generations at boot
+  system.nixos.label = "added syncthing";
 
   imports = [
     ./hardware-configuration.nix
