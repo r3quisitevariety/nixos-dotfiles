@@ -17,6 +17,59 @@
         # Auto-enable extensions installed via HM
         "extensions.autoDisableScopes" = 0;
         "extensions.showRecommendations" = false;
+        "zen.welcome-screen.seen" = true;
+      };
+
+      search = {
+        force = true; # Enforce declared search engines on each rebuild
+        default = "ddg";
+
+        engines = {
+          youtube = {
+            name = "Youtube";
+            urls = [
+              {
+                templates = "https://www.youtube.com/results?search_query=%s";
+              }
+            ];
+            definedAliases = ["@yt"];
+          };
+          github = {
+            name = "GitHub Search";
+            urls = [
+              {
+                template = "https://github.com/search?q={searchTerms}";
+              }
+            ];
+            definedAliases = ["@gh"];
+          };
+          google = {
+            name = "Google Search";
+            urls = [
+              {
+                template = "https;?/google.com/search?q={searchTerms}";
+              }
+            ];
+            definedAliases = ["@g"];
+          };
+          perplexity = {
+            name = "Perplexity";
+            urls = [
+              {
+                template = "https://www.perplexity.ai/search?q=%s";
+              }
+            ];
+            definedAliases = ["@p"];
+          };
+          brave = {
+            urls = [
+              {
+                template = "https://search.brave.com/search?q=%s";
+              }
+            ];
+            definedAliases = ["@b"];
+          };
+        };
       };
 
       extensions.packages = with pkgs.nur.repos.rycee.firefox-addons; [
@@ -30,8 +83,8 @@
         #obsidian-web-clippper
       ];
 
-      pinsForce = true;
-      pinsForceAction = "remove";
+      pinsForce = false;
+      #pinsForceAction = "remove";
 
       keyboardShortcuts = [
         {
@@ -59,11 +112,6 @@
       pins.nix-search = {
         id = "nix-search";
         url = "https://nixsearch.thekoppe.com/";
-        isEssential = true;
-      };
-      pins.hm-options = {
-        id = "hm-options";
-        url = "https://nix-community.github.io/home-manager/options/home-manager/index.html";
         isEssential = true;
       };
     };
