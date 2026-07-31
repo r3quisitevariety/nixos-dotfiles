@@ -114,6 +114,11 @@
         url = "https://nixsearch.thekoppe.com/";
         isEssential = true;
       };
+      pins.gmail = {
+        id = "gmail";
+        url = "https://gmail.com";
+        isEssential = true;
+      };
     };
   };
 }
