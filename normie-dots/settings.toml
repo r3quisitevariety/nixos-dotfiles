@@ -210,7 +210,7 @@ branch = "nixos-unstable"
 panel_open_near_click = false
 panel_placement = "attached"
 show_update_available_notification = false
-update_command = "cd ~/nixos-dotfiles-2.0 && v"
+update_command = "cd ~/nixos-dotfiles && nvim"
 
 [plugin_settings."noctalia/notes"]
 notes_dir = "~/Documents/talianotes"

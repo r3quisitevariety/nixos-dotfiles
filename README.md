@@ -4,13 +4,13 @@
 
 ---
 
-### explanation/justification for operating system choice
-Instead of opting for pure nixos, I've chosen to run with arch/cachyos + nix. This has several advantages; namely the ability to do things swiftly which would otherwise be unergonomic and painful in nixos; building cuda accelerated packages, python, javascript, etc. cachy also seems to provide optimizations to my system which is just nice to have; wake from suspend worked without having to do anything, and I've seen a huge fps increase in virtual reality. Ultimately this is an opinionated choice of mine; you are free to use your computer how you want, and some people might be better off with pure nixos or something else. This is just what currently works for me and is what I find convenient, practical, and genuinely useful. 
+~~### explanation/justification for operating system choice~~
+~~Instead of opting for pure nixos, I've chosen to run with arch/cachyos + nix. This has several advantages; namely the ability to do things swiftly which would otherwise be unergonomic and painful in nixos; building cuda accelerated packages, python, javascript, etc. cachy also seems to provide optimizations to my system which is just nice to have; wake from suspend worked without having to do anything, and I've seen a huge fps increase in virtual reality. Ultimately this is an opinionated choice of mine; you are free to use your computer how you want, and some people might be better off with pure nixos or something else. This is just what currently works for me and is what I find convenient, practical, and genuinely useful.~~
 
-I also appreciate the ability to first do things messily with arch when I want things done quick, and to later refactor into nix when I want something clean. In essence, you can avoid the pain points of nix if you just need something to work *now*. 
+~~I also appreciate the ability to first do things messily with arch when I want things done quick, and to later refactor into nix when I want something clean. In essence, you can avoid the pain points of nix if you just need something to work *now*.~~
 
 
-I think nix on arch is brilliant as it also allows you to utilize the vast repository of nixpkgs in substitution of the aur which is often insecure and unsafe, but still have the freedom to use the aur ephemerally when desired/needed.
+~~I think nix on arch is brilliant as it also allows you to utilize the vast repository of nixpkgs in substitution of the aur which is often insecure and unsafe, but still have the freedom to use the aur ephemerally when desired/needed.~~
 
 
 

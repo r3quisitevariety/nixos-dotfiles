@@ -19,7 +19,7 @@
 
   home.file.".local/state/noctalia/settings.toml".source =
     config.lib.file.mkOutOfStoreSymlink
-    "${config.home.homeDirectory}/nixos-dotfiles-2.0/normie-dots/settings.toml";
+    "${config.home.homeDirectory}/nixos-dotfiles/normie-dots/settings.toml";
 
   # redundant,already declared in configuration.nix
   #nixpkgs.config.allowUnfree = true;

@@ -5,7 +5,7 @@
   ...
 }: {
   # used as label for last major system edit; useful when picking generations at boot
-  system.nixos.label = "test-network-fix-remove-tailscale-nftables";
+  system.nixos.label = "change-repo-name";
 
   imports = [
     ./hardware-configuration.nix

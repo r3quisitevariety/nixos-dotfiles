@@ -106,7 +106,7 @@
       };
       pins.nixos-dotfiles = {
         id = "nixos-dotfiles";
-        url = "https://github.com/r3quisitevariety/nixos-dotfiles-2.0";
+        url = "https://github.com/r3quisitevariety/nixos-dotfiles";
         isEssential = true;
       };
       pins.nix-search = {
