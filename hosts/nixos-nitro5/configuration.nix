@@ -5,7 +5,7 @@
   ...
 }: {
   # used as label for last major system edit; useful when picking generations at boot
-  #system.nixos.label = "added-syncthing";
+  system.nixos.label = "test-network-fix-remove-tailscale-nftables";
 
   imports = [
     ./hardware-configuration.nix
@@ -202,15 +202,6 @@
     openFirewall = true;
     # TODO when sops is set up
     #authKeyFile = "blablabla";
-  };
-  # nftables > iptables - avoids conflicts and kernel module bloat for tailscale
-  networking.nftables.enable = true;
-  networking.firewall = {
-    enable = true;
-    # Always allow traffic from your Tailscale network
-    trustedInterfaces = [config.services.tailscale.interfaceName];
-    # Allow the Tailscale UDP port through the firewall
-    allowedUDPPorts = [config.services.tailscale.port];
   };
 
   systemd.network.wait-online.enable = false;
