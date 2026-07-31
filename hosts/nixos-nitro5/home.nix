@@ -81,6 +81,7 @@
     ../../modules/home/shell.nix
     ../../modules/home/music.nix
     ../../modules/home/zen.nix
+    ../../modules/home/yt-music-dlp.nix
     #../../modules/vr.nix
     #../../modules/obs.nix
     #../../modules/substituters.nix
