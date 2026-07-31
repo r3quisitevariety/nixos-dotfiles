@@ -26,41 +26,58 @@
 
   services.syncthing = {
     enable = true;
-    overrideDevices = false; # done imperatively like a normie
-    overrideFolders = false;
-    settings = {
-      folders = {
-        # new obsidian vault, will merge into one once done migrating
-        masterplan = {
-          id = "mg7tu-y2qmx";
-          name = "nix on nitro 5";
-          enable = true;
-          path = "~/Documents/masterplan";
-          type = "sendreceive";
-        };
-        obsidian = {
-          id = "lmski-53ald";
-          name = "nix on nitro 5";
-          enable = true;
-          path = "~/Documents/obsidian";
-          type = "sendreceive";
-        };
-        music = {
-          id = "gds2p-nvu34"; # same on all devices
-          name = "nix on nitro 5";
-          enable = true;
-          path = "~/Music";
-          type = "sendreceive";
-        };
-        wallpapers = {
-          id = "a27nj-kwhuv";
-          name = "nix on nitro 5"; # why is this redundant?
-          enable = true;
-          path = "~/Pictures/wallpapers";
-          type = "sendreceive";
-        };
-      };
-    };
+    #    overrideDevices = false; # done imperatively like a normie
+    #    overrideFolders = false;
+    #    settings = {
+    #      # declared folders require *everything* is declared, including shared devices, otherwise it will reset on each rebuild, even with overrides disabled.
+    #      folders = {
+    #        # new obsidian vault, will merge into one once done migrating
+    #        masterplan = {
+    #          id = "mg7tu-y2qmx";
+    #          name = "nix on nitro 5";
+    #          enable = true;
+    #          path = "~/Documents/masterplan";
+    #          type = "sendreceive";
+    #        };
+    #        obsidian = {
+    #          id = "lmski-53ald";
+    #          name = "nix on nitro 5";
+    #          enable = true;
+    #          path = "~/Documents/obsidian";
+    #          type = "sendreceive";
+    #        };
+    #        music = {
+    #          id = "gds2p-nvu34"; # same on all devices
+    #          name = "nix on nitro 5";
+    #          enable = true;
+    #          path = "~/Music";
+    #          type = "sendreceive";
+    #        };
+    #        wallpapers = {
+    #          id = "a27nj-kwhuv";
+    #          name = "nix on nitro 5"; # why is this redundant?
+    #          enable = true;
+    #          path = "~/Pictures/wallpapers";
+    #          type = "sendreceive";
+    #        };
+    #      };
+    #      # requires tailscale to be up
+    #      devices = {
+    #        inspiron = {
+    #          addresses = [
+    #            "tcp://inspiron:51820"
+    #          ];
+    #          id = "2YX5YSA-223OINV-H3R34DR-3BVTSTZ-AHXUAZX-W4LQARI-Z5V5WGE-R3WBMAS";
+    #        };
+    #
+    #        pixel-8-pro = {
+    #          addresses = [
+    #            "tcp://pixel-8-pro:51820"
+    #          ];
+    #          id = "QVJASTB-JBK7QRK-W2ZRNKP-6G66XQM-7JVRJ5B-OHN57XC-IEM3VWM-QNHR6AV";
+    #        };
+    #      };
+    #    };
   };
 
   home.packages = [pkgs.hyprcursor];
