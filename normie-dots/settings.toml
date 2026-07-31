@@ -287,13 +287,13 @@ transition = [ "disc" ]
 transition_on_startup = true
 
     [wallpaper.default]
-    path = "/home/nix/Pictures/wallpapers/wallhaven_gjyoq7.jpg"
+    path = "/home/nix/Pictures/wallpapers/nature/wallhaven-dgdmj3.jpg"
 
     [wallpaper.last]
-    path = "/home/nix/Pictures/wallpapers/wallhaven_gjyoq7.jpg"
+    path = "/home/nix/Pictures/wallpapers/nature/wallhaven-dgdmj3.jpg"
 
     [wallpaper.monitors.eDP-1]
-    path = "/home/nix/Pictures/wallpapers/wallhaven_gjyoq7.jpg"
+    path = "/home/nix/Pictures/wallpapers/nature/wallhaven-dgdmj3.jpg"
 
 [weather]
 address = "Toronto, Canada"
