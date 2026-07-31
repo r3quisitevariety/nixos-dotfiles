@@ -6,7 +6,7 @@
   imports = [
     inputs.zen-browser.homeModules.beta
   ];
-
+  # preservation might solve issues with flake config not applying onto zen.
   programs.zen-browser = {
     enable = true;
     setAsDefaultBrowser = true;
@@ -21,7 +21,7 @@
       };
 
       search = {
-        force = true; # Enforce declared search engines on each rebuild
+        force = false; # Enforce declared search engines on each rebuild
         default = "ddg";
 
         engines = {
