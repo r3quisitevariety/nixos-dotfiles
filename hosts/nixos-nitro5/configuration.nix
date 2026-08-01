@@ -5,7 +5,7 @@
   ...
 }: {
   # used as label for last major system edit; useful when picking generations at boot
-  system.nixos.label = "equibop";
+  system.nixos.label = "discord-equicord";
 
   imports = [
     ./hardware-configuration.nix
@@ -168,8 +168,7 @@
     fuzzel
     google-chrome
     mpv
-    vesktop
-    equibop
+    # vesktop/equibop are now managed declaratively by nixcord (modules/home/discord.nix)
     proton-vpn
 
     nwg-look
