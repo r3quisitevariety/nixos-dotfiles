@@ -5,7 +5,7 @@
   ...
 }: {
   # used as label for last major system edit; useful when picking generations at boot
-  system.nixos.label = "change-repo-name";
+  system.nixos.label = "equibop";
 
   imports = [
     ./hardware-configuration.nix
@@ -169,6 +169,7 @@
     google-chrome
     mpv
     vesktop
+    equibop
     proton-vpn
 
     nwg-look
