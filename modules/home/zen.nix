@@ -119,6 +119,11 @@
         url = "https://gmail.com";
         isEssential = true;
       };
+      pins.immich = {
+        id = "immich";
+        url = "http://inspiron:2283";
+        isEssential = true;
+      };
     };
   };
 }
