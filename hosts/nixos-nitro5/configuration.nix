@@ -5,7 +5,9 @@
   ...
 }: {
   # used as label for last major system edit; useful when picking generations at boot
-  system.nixos.label = "discord-equicord";
+  #system.nixos.label = "discord-equicord";
+
+  systemd.coredump.enable = false;
 
   imports = [
     ./hardware-configuration.nix
