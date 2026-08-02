@@ -241,7 +241,7 @@ enabled = [
 
 [shell]
 app_icon_color = "on_surface"
-avatar_path = "/home/nix/Pictures/misc/maomao.jpg"
+avatar_path = "/home/nix/Pictures/misc/b2e253dd2eb170b841469e4053bd15f1.jpg"
 clipboard_confirm_clear_history = false
 font_family = "Noto Sans"
 screen_time_enabled = true
