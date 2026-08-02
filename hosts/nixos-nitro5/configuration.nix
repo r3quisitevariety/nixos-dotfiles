@@ -8,6 +8,7 @@
   #system.nixos.label = "discord-equicord";
 
   systemd.coredump.enable = false;
+  boot.kernel.sysctl."kernel.core_pattern" = "/dev/null";
 
   imports = [
     ./hardware-configuration.nix
