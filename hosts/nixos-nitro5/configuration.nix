@@ -171,7 +171,6 @@
     fuzzel
     google-chrome
     mpv
-    vesktop
     equibop
     proton-vpn
 
