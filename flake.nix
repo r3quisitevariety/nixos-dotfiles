@@ -32,6 +32,11 @@
       };
     };
 
+    swash = {
+      url = "github:ItsLemmy/swash";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     nix-cachyos-kernel.url = "github:xddxdd/nix-cachyos-kernel/release";
 
     nur = {
