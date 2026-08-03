@@ -20,6 +20,7 @@
       yay = "paru";
       notes = "cd ~/Documents/masterplan && nvim";
       ncr = "nix run github:greyxp1/ncr";
+      upgrade = "nh os switch ~/nixos-dotfiles --update";
     };
     bashrcExtra = ''
       PS1='\[\e[1;32m\]\u@\h\[\e[0m\]:\[\e[1;34m\]\w\[\e[0m\]\$ '

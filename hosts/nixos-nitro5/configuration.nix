@@ -5,7 +5,7 @@
   ...
 }: {
   # used as label for last major system edit; useful when picking generations at boot
-  system.nixos.label = "add-firewall";
+  #system.nixos.label = "add-firewall";
 
   systemd.coredump.enable = false;
   boot.kernel.sysctl."kernel.core_pattern" = "/dev/null";
@@ -169,7 +169,7 @@
     papirus-icon-theme
 
     obsidian
-    anki
+    #anki - experiencing build problems, use nix run instead
     nautilus
     foot
     fuzzel
