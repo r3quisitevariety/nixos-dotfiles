@@ -21,7 +21,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    nixcord.url = "github:4evy/nixcord";
+    #nixcord.url = "github:4evy/nixcord";
 
     zen-browser = {
       url = "github:0xc000022070/zen-browser-flake";

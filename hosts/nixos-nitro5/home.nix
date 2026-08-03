@@ -98,7 +98,7 @@
     ../../modules/home/shell.nix
     ../../modules/home/music.nix
     ../../modules/home/zen.nix
-    ../../modules/home/discord.nix
+    #../../modules/home/discord.nix
     ../../modules/home/yt-music-dlp.nix
     #../../modules/vr.nix
     #../../modules/obs.nix

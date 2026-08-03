@@ -5,7 +5,7 @@
   ...
 }: {
   # used as label for last major system edit; useful when picking generations at boot
-  #system.nixos.label = "discord-equicord";
+  system.nixos.label = "remove-equicord-use-equibop-instead";
 
   systemd.coredump.enable = false;
   boot.kernel.sysctl."kernel.core_pattern" = "/dev/null";
@@ -171,7 +171,8 @@
     fuzzel
     google-chrome
     mpv
-    # vesktop/equibop are now managed declaratively by nixcord (modules/home/discord.nix)
+    vesktop
+    equibop
     proton-vpn
 
     nwg-look
