@@ -124,6 +124,11 @@
         url = "http://inspiron:2283";
         isEssential = true;
       };
+      pins.protonmail = {
+        id = "protonmail";
+        url = "https://mail.proton.me";
+        isEssential = true;
+      };
     };
   };
 }
