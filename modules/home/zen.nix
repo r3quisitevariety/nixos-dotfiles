@@ -129,6 +129,11 @@
         url = "https://mail.proton.me";
         isEssential = true;
       };
+      pins.notion = {
+        id = "notion";
+        url = "https://app.notion.com";
+        isEssential = true;
+      };
     };
   };
 }
