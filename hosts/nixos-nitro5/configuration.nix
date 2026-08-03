@@ -5,7 +5,7 @@
   ...
 }: {
   # used as label for last major system edit; useful when picking generations at boot
-  system.nixos.label = "remove-equicord-use-equibop-instead";
+  system.nixos.label = "add-firewall";
 
   systemd.coredump.enable = false;
   boot.kernel.sysctl."kernel.core_pattern" = "/dev/null";
@@ -47,8 +47,11 @@
   boot.loader.efi.canTouchEfiVariables = true;
   boot.kernelParams = ["acpi_backlight=native"]; # fix backlight
 
-  networking.hostName = "nitro5";
-  networking.networkmanager.enable = true;
+  networking = {
+    hostName = "nitro5";
+    networkmanager.enable = true;
+    firewall.enable = true;
+  };
 
   hardware.graphics = {
     enable = true;
