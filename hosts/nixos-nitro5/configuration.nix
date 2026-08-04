@@ -5,7 +5,7 @@
   ...
 }: {
   # used as label for last major system edit; useful when picking generations at boot
-  #system.nixos.label = "add-firewall";
+  #system.nixos.label = "test-lix-secrets";
 
   systemd.coredump.enable = false;
   boot.kernel.sysctl."kernel.core_pattern" = "/dev/null";
@@ -22,14 +22,13 @@
       "/home/nix/.config/age/keys.txt"
     ];
     recipientAliases = {
-      first = "age13ndha26pyk8jnhml5p7skurcxzwpf2zh3jj5lj2ru3n36dadhvhseat6cg";
+      master = "age13ndha26pyk8jnhml5p7skurcxzwpf2zh3jj5lj2ru3n36dadhvhseat6cg";
     };
     secrets = {
-      # random ass password for testing
-      password.recipients = ["first"];
+      # recipients receive the age key to unlock their respective secrets
       # ssh key
-      signingKey = {
-        recipients = ["first"];
+      ssh-key = {
+        recipients = ["master"];
         owner = "nix";
         group = "users";
         mode = "0600";
@@ -44,8 +43,7 @@
   programs.steam.enable = true;
   programs.hyprland.enable = true;
 
-  # lix breaks nix-secrets
-  #nix.package = pkgs.lixPackageSets.stable.lix;
+  nix.package = pkgs.lixPackageSets.stable.lix;
   nix.settings.experimental-features = [
     "nix-command"
     "flakes"
