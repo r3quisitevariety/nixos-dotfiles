@@ -12,7 +12,31 @@
 
   imports = [
     ./hardware-configuration.nix
+    inputs.nix-secrets.nixosModules.default
   ];
+
+  security.nix-secrets = {
+    enable = true;
+    storage = ../../secrets;
+    identityPaths = [
+      "/home/nix/.config/age/keys.txt"
+    ];
+    recipientAliases = {
+      first = "age13ndha26pyk8jnhml5p7skurcxzwpf2zh3jj5lj2ru3n36dadhvhseat6cg";
+    };
+    secrets = {
+      # random ass password for testing
+      password.recipients = ["first"];
+      # ssh key
+      signingKey = {
+        recipients = ["first"];
+        owner = "nix";
+        group = "users";
+        mode = "0600";
+      };
+    };
+  };
+
   boot.kernelPackages = pkgs.cachyosKernels.linuxPackages-cachyos-latest;
 
   services.locate.enable = false;

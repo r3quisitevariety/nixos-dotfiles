@@ -43,6 +43,8 @@
       url = "github:nix-community/NUR";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    nix-secrets.url = "github:unnamed-systems/nix-secrets";
   };
 
   outputs = {

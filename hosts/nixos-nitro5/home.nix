@@ -3,6 +3,23 @@
   config,
   ...
 }: {
+  programs.ssh = {
+    enable = true;
+    # replaces ~/.ssh/config
+    settings."github.com" = {
+      HostName = "github.com";
+      User = "git";
+      IdentityFile = "/run/nix-secrets/secrets/signingKey";
+      IdentitiesOnly = true;
+    };
+  };
+
+  programs.git = {
+    enable = true;
+    userName = "r3quisitevariety";
+    userEmail = "x3roo@proton.me";
+  };
+
   home.username = "nix";
   home.homeDirectory = "/home/nix";
   home.stateVersion = "25.11";
