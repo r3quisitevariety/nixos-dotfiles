@@ -9,7 +9,7 @@
     settings."github.com" = {
       HostName = "github.com";
       User = "git";
-      IdentityFile = "/run/nix-secrets/secrets/signingKey";
+      IdentityFile = "/run/nix-secrets/secrets/ssh-key";
       IdentitiesOnly = true;
     };
   };
