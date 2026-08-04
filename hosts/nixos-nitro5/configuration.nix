@@ -44,7 +44,8 @@
   programs.steam.enable = true;
   programs.hyprland.enable = true;
 
-  nix.package = pkgs.lixPackageSets.stable.lix;
+  # lix breaks nix-secrets
+  #nix.package = pkgs.lixPackageSets.stable.lix;
   nix.settings.experimental-features = [
     "nix-command"
     "flakes"
