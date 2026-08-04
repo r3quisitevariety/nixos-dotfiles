@@ -46,6 +46,7 @@
   };
 
   home.packages = with pkgs; [
+    dix
     w3m
     diskonaut-ng
     tokei
