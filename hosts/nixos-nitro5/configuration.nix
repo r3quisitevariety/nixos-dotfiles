@@ -208,6 +208,9 @@
     kdePackages.kdenlive
     reaper
     krita
+
+    # screen-toolkit stuff
+    swappy
   ];
 
   programs.gpu-screen-recorder = {
