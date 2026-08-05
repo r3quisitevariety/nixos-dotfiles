@@ -134,6 +134,11 @@
         url = "https://app.notion.com";
         isEssential = true;
       };
+      pins.opencode-go = {
+        id = "opencode-go";
+        url = "https://opencode.ai/go";
+        isEssential = true;
+      };
     };
   };
 }
