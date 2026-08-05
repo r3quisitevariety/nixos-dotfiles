@@ -5,11 +5,21 @@
 }: {
   programs.ssh = {
     enable = true;
-    # replaces ~/.ssh/config
+
+    # "settings.<name>" replaces ~/.ssh/config
     settings."github.com" = {
       HostName = "github.com";
       User = "git";
       IdentityFile = "/run/nix-secrets/secrets/ssh-key";
+      IdentitiesOnly = true;
+    };
+    settings."inspiron" = {
+      HostName = "inspiron";
+      User = "black";
+      # tells ssh WHICH private key to use
+      # server MUST have matching public key in its authorized_keys for passwordless to work
+      IdentityFile = "/run/nix-secrets/secrets/ssh-key";
+      # allows ONLY explicitly configured keys instead of mutable state like ~/.ssh/id_ed25519
       IdentitiesOnly = true;
     };
   };
