@@ -4,10 +4,6 @@
   inputs = {
     nixpkgs.url = "https://channels.nixos.org/nixos-unstable/nixexprs.tar.zst";
 
-    #noctalia = {
-    #  url = "github:noctalia-dev/noctalia/cachix";
-    #};
-
     noctalia-greeter = {
       url = "github:noctalia-dev/noctalia-greeter";
     };
@@ -26,11 +22,6 @@
         nixpkgs.follows = "nixpkgs";
         home-manager.follows = "home-manager";
       };
-    };
-
-    swash = {
-      url = "github:ItsLemmy/swash";
-      inputs.nixpkgs.follows = "nixpkgs";
     };
 
     nix-cachyos-kernel.url = "github:xddxdd/nix-cachyos-kernel/release";
