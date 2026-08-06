@@ -249,9 +249,6 @@ settings_show_advanced = true
 show_location = false
 time_format = "{:%-I:%M %p}"
 
-    [shell.greeter_sync]
-    auto_sync = true
-
     [shell.screenshot]
     save_to_file = false
 
@@ -261,7 +258,7 @@ community_palette = "Everforest Material"
 custom_palette = "m3-content"
 mode = "dark"
 source = "community"
-wallpaper_scheme = "m3-tonal-spot"
+wallpaper_scheme = "m3-content"
 
     [theme.templates]
     builtin_ids = [ "btop", "foot", "gtk3", "gtk4", "ghostty", "hyprland", "kcolorscheme", "mango", "niri", "qt" ]
@@ -292,8 +289,11 @@ transition_on_startup = true
     [wallpaper.last]
     path = "/home/nix/Pictures/wallpapers/nature/wallhaven-dgdmj3.jpg"
 
-    [wallpaper.monitors.eDP-1]
+    [wallpaper.monitors.HDMI-A-1]
     path = "/home/nix/Pictures/wallpapers/nature/wallhaven-dgdmj3.jpg"
+
+    [wallpaper.monitors.eDP-1]
+    path = "/home/nix/Pictures/wallpapers/nature/wallhaven-4xyzkz.jpg"
 
 [weather]
 address = "Toronto, Canada"
