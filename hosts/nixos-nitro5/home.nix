@@ -4,6 +4,7 @@
   ...
 }: {
   programs.ssh = {
+    enableDefaultConfig = false;
     enable = true;
 
     # "settings.<name>" replaces ~/.ssh/config
@@ -26,8 +27,12 @@
 
   programs.git = {
     enable = true;
-    userName = "r3quisitevariety";
-    userEmail = "x3roo@proton.me";
+    settings = {
+      user = {
+        name = "r3quisitevariety";
+        email = "x3roo@proton.me";
+      };
+    };
   };
 
   home.username = "nix";
