@@ -16,19 +16,28 @@
 // so their logical sizes match their physical resolutions.
 // ============================================================
 
+debug {
+    // wait-for-frame-completion-before-queueing 
+    // explicitly renders the dGPU 
+    render-drm-device "/dev/dri/renderD129"
+    // emulate-zero-presentation-time
+}
+
 output "eDP-1" {
+    // comment out when using screen
+    off
     mode "1920x1080@144.000"
     scale 1
     position x=0 y=0
-    variable-refresh-rate
+    variable-refresh-rate on-demand=true
 }
 
 output "HDMI-A-1" {
     mode "1920x1080@144.000"
     scale 1
     // Placed to the right of eDP-1 (1920 logical pixels wide at scale 1)
-    position x=1920 y=0
-    // variable-refresh-rate
+    position x=0 y=0
+    variable-refresh-rate on-demand=true
 }
 
 // ============================================================
@@ -93,7 +102,7 @@ environment {
 // spawn-at-startup is the direct equivalent of Hyprland's exec-once.
 // ============================================================
 
-spawn-at-startup "noctalia-shell"
+spawn-at-startup "noctalia"
 
 // ============================================================
 // LAYOUT
@@ -106,11 +115,11 @@ spawn-at-startup "noctalia-shell"
 
 layout {
     // gaps 5 ≈ your gaps_in=5. niri has one gap value for all sides.
-    gaps 0
+    gaps 10
 
     // Transparent borders (matches col.active_border/inactive_border = 0x00000000)
     focus-ring {
-        off
+        on
     }
 
     border {
@@ -200,8 +209,7 @@ binds {
     Mod+Q { spawn "foot"; }
     Mod+Return { spawn "foot"; }
 
-    // App launcher (fuzzel)
-    Mod+D { spawn "fuzzel"; }
+    Mod+D { spawn-sh "noctalia msg panel-open launcher"; }
 
     // File manager (dolphin)
     Mod+E { spawn "dolphin"; }
