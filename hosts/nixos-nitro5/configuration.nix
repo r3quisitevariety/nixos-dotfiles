@@ -5,7 +5,7 @@
   ...
 }: {
   # used as label for last major system edit; useful when picking generations at boot
-  #system.nixos.label = "test-lix-secrets";
+  # system.nixos.label = "niri-cursor-smaller";
 
   systemd.coredump.enable = false;
   boot.kernel.sysctl."kernel.core_pattern" = "/dev/null";
@@ -191,6 +191,7 @@
     noctalia-greeter
     papirus-icon-theme
     xwayland-satellite
+    wl-clipboard
 
     obsidian
     #anki - experiencing build problems, use nix run instead

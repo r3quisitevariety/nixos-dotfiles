@@ -2,6 +2,10 @@
   #  The option `home-manager.users.nix.nix.package' is defined multiple times while it's expected to be unique.
   #nix.package = pkgs.lixPackageSets.stable.lix;
   # make sure .bashrc and bash_profile are removed locally, otherwise home manager will give you an error as it does not want to delete the files.
+
+  programs.opencode = {
+    enable = true;
+  };
   programs.zoxide = {
     enable = true;
     enableBashIntegration = true;
@@ -59,7 +63,6 @@
     go-grip
     lazygit
     ranger
-    opencode
     htop
     btop
     nh
