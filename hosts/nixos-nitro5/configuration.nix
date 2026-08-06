@@ -42,6 +42,7 @@
 
   programs.steam.enable = true;
   programs.hyprland.enable = true;
+  programs.niri.enable = true;
 
   #nix.package = pkgs.lixPackageSets.stable.lix;
   nix.settings.experimental-features = [
@@ -189,6 +190,7 @@
     noctalia
     noctalia-greeter
     papirus-icon-theme
+    xwayland-satellite
 
     obsidian
     #anki - experiencing build problems, use nix run instead
