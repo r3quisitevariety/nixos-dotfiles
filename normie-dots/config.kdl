@@ -152,6 +152,7 @@ layout {
         proportion 0.33333
         proportion 0.5
         proportion 0.66667
+        proportion 1.0
     }
 
     default-column-width { proportion 0.5; }
@@ -177,6 +178,33 @@ prefer-no-csd
 window-rule {
     geometry-corner-radius 5
     clip-to-geometry true
+}
+
+// Wide defaults for applications commonly used as primary workspaces.
+window-rule {
+    match app-id="zen"
+    default-column-width { proportion 1.0; }
+}
+
+window-rule {
+    match app-id="equibop"
+    default-column-width { proportion 1.0; }
+}
+
+window-rule {
+    match app-id="discord"
+    default-column-width { proportion 1.0; }
+}
+
+window-rule {
+    match app-id="vesktop"
+    default-column-width { proportion 1.0; }
+}
+
+window-rule {
+    match app-id="electron"
+    match title="Obsidian"
+    default-column-width { proportion 1.0; }
 }
 
 // ============================================================
