@@ -26,6 +26,7 @@
       upgrade = "nh os switch ~/nixos-dotfiles --update";
       less = "moor";
       ns = "nix-search-tv print | fzf --preview 'nix-search-tv preview {}' --scheme history";
+      t = "tmux";
     };
     bashrcExtra = ''
       PS1='\[\e[1;32m\]\u@\h\[\e[0m\]:\[\e[1;34m\]\w\[\e[0m\]\$ '
