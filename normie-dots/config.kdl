@@ -24,7 +24,7 @@ debug {
 }
 
 output "eDP-1" {
-    // comment out when using screen
+    // comment out "off" when using screen
     off
     mode "1920x1080@144.000"
     scale 1
@@ -104,6 +104,17 @@ environment {
 
 spawn-at-startup "noctalia"
 
+// Keep workspaces 1-9 present instead of pruning empty workspaces.
+workspace "1" {}
+workspace "2" {}
+workspace "3" {}
+workspace "4" {}
+workspace "5" {}
+workspace "6" {}
+workspace "7" {}
+workspace "8" {}
+workspace "9" {}
+
 // ============================================================
 // LAYOUT
 // https://niri-wm.github.io/niri/Configuration:-Layout
@@ -120,6 +131,7 @@ layout {
     // Transparent borders (matches col.active_border/inactive_border = 0x00000000)
     focus-ring {
         on
+        width 1
     }
 
     border {
@@ -204,6 +216,7 @@ hotkey-overlay {
 binds {
     // Show hotkey overlay (niri built-in help)
     Mod+Shift+Slash { show-hotkey-overlay; }
+    Mod+Tab { toggle-overview; }
 
     // Terminal (foot)
     Mod+Q { spawn "foot"; }
@@ -231,8 +244,8 @@ binds {
     // niri is horizontally scrolling: h/l move between columns, j/k within column
     Mod+H { focus-column-left; }
     Mod+L { focus-column-right; }
-    Mod+K { focus-window-up; }
-    Mod+J { focus-window-down; }
+    Mod+K { focus-workspace-up; }
+    Mod+J { focus-workspace-down; }
 
     // ── Window resizing ────────────────────────────────────────────────────────
     // NOTE: Mod+Shift+H/J/K/L is taken by monitor focus below (same conflict
@@ -308,4 +321,3 @@ binds {
 }
 
 include "./noctalia.kdl"
-
