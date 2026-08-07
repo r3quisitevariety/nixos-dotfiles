@@ -32,6 +32,9 @@
     };
 
     nix-secrets.url = "github:unnamed-systems/nix-secrets";
+
+    ncr.url = "github:greyxp1/ncr";
+    nixcu.url = "github:TotalyEnglizLitrate/nixcu";
   };
 
   outputs = {

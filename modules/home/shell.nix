@@ -23,7 +23,6 @@
       grep = "grep --color=auto";
       yay = "paru";
       notes = "cd ~/Documents/masterplan && nvim";
-      ncr = "nix run github:greyxp1/ncr";
       upgrade = "nh os switch ~/nixos-dotfiles --update";
       less = "moor";
     };

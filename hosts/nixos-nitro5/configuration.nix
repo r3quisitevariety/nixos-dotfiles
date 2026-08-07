@@ -187,6 +187,9 @@
   environment.systemPackages = with pkgs; [
     # no more flake
     #inputs.noctalia.packages.${pkgs.stdenv.hostPlatform.system}.default
+    inputs.nixcu.packages.${pkgs.stdenv.hostPlatform.system}.default
+    inputs.ncr.packages.${pkgs.stdenv.hostPlatform.system}.default
+
     noctalia
     noctalia-greeter
     papirus-icon-theme
