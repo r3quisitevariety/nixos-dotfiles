@@ -1,5 +1,8 @@
 config_version = 8
 
+[backdrop]
+blur_intensity = 0.0
+
 [bar.default]
 center = [ "workspaces", "bar" ]
 end = [ "group:g3", "clipboard", "group:g4", "notifications", "volume", "brightness", "group:g5" ]
@@ -9,14 +12,6 @@ radius = 0
 radius_bottom_left = 80
 radius_bottom_right = 80
 start = [ "wallpaper", "nix-monitor", "recorder_2", "clock", "group:g2", "sysmon", "weather", "group:g6" ]
-
-    [[bar.default.capsule_group]]
-    enabled = true
-    fill = "surface_variant"
-    id = "g1"
-    members = [ "launcher", "clock" ]
-    opacity = 1.0
-    padding = 6.0
 
     [[bar.default.capsule_group]]
     border = ""
@@ -244,6 +239,7 @@ app_icon_color = "on_surface"
 avatar_path = "/home/nix/Pictures/misc/b2e253dd2eb170b841469e4053bd15f1.jpg"
 clipboard_confirm_clear_history = false
 font_family = "Noto Sans"
+niri_overview_type_to_launch_enabled = true
 screen_time_enabled = true
 settings_show_advanced = true
 show_location = false
@@ -293,7 +289,7 @@ transition_on_startup = true
     path = "/home/nix/Pictures/wallpapers/nature/wallhaven-dgdmj3.jpg"
 
     [wallpaper.monitors.eDP-1]
-    path = "/home/nix/Pictures/wallpapers/nature/wallhaven-4xyzkz.jpg"
+    path = "/home/nix/Pictures/wallpapers/nature/wallhaven-dgdmj3.jpg"
 
 [weather]
 address = "Toronto, Canada"
@@ -406,3 +402,4 @@ enabled = false
 [widget.workspaces]
 anchor = true
 capsule_fill = "on_primary"
+hide_when_empty = true
