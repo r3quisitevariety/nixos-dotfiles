@@ -10,7 +10,8 @@
   services.greetd = {
     enable = true;
     settings.default_session = {
-      command = "/run/current-system/sw/bin/noctalia-greeter-session -- --session Hyprland";
+      # will test this on reboot; push to remote if good and delete this comment
+      command = "/run/current-system/sw/bin/noctalia-greeter-session -- --session niri-session";
       user = "nix";
     };
   };
