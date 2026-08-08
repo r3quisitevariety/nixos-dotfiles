@@ -16,13 +16,7 @@
 // so their logical sizes match their physical resolutions.
 // ============================================================
 
-debug {
-    // wait-for-frame-completion-before-queueing 
-    // explicitly renders the dGPU 
-    render-drm-device "/dev/dri/renderD129"
-    // emulate-zero-presentation-time
-}
-
+// main laptop screen
 output "eDP-1" {
     // comment out "off" when using screen
     off
@@ -31,15 +25,21 @@ output "eDP-1" {
     position x=0 y=0
     variable-refresh-rate on-demand=true
 }
-
+// external monitor
 output "HDMI-A-1" {
     mode "1920x1080@144.000"
     scale 1
-    // Placed to the right of eDP-1 (1920 logical pixels wide at scale 1)
     position x=0 y=0
     variable-refresh-rate on-demand=true
 }
 
+// gpu stuff
+debug {
+    // wait-for-frame-completion-before-queueing 
+    // explicitly renders the dGPU 
+    render-drm-device "/dev/dri/renderD129"
+    // emulate-zero-presentation-time
+}
 // ============================================================
 // INPUT
 // https://niri-wm.github.io/niri/Configuration:-Input
@@ -104,7 +104,7 @@ environment {
 
 spawn-at-startup "noctalia"
 
-// Keep workspaces 1-9 present instead of pruning empty workspaces.
+// persistent workspaces > pruning
 workspace "1" {}
 workspace "2" {}
 workspace "3" {}
@@ -180,7 +180,7 @@ window-rule {
     clip-to-geometry true
 }
 
-// Wide defaults for applications commonly used as primary workspaces.
+// window rules for specific applications
 window-rule {
     match app-id="zen"
     default-column-width { proportion 1.0; }
@@ -248,12 +248,11 @@ binds {
 
     // Terminal (foot)
     Mod+Q { spawn "foot"; }
-    Mod+Return { spawn "foot"; }
 
     Mod+D { spawn-sh "noctalia msg panel-open launcher"; }
 
-    // File manager (dolphin)
-    Mod+E { spawn "dolphin"; }
+    // File manager (nautilus)
+    Mod+E { spawn "nautilus"; }
 
     // Close window (replaces killactive)
     Mod+C { close-window; }
@@ -268,12 +267,17 @@ binds {
     // Quit niri (replaces Mod+M exit)
     Mod+M { quit; }
 
-    // ── Focus movement (vim keys) ──────────────────────────────────────────────
-    // niri is horizontally scrolling: h/l move between columns, j/k within column
+    // ── Focus and column movement (vim keys) ───────────────────────────────────
     Mod+H { focus-column-left; }
-    Mod+L { focus-column-right; }
+    Mod+WheelScrollUp { focus-column-left; }
+    Mod+WheelScrollDown { focus-column-right; }
     Mod+K { focus-workspace-up; }
     Mod+J { focus-workspace-down; }
+    Mod+L { focus-column-right; }
+    Mod+Ctrl+H { move-column-left; }
+    Mod+CTRL+J { move-column-to-workspace-down; }
+    Mod+CTRL+K { move-column-to-workspace-up; }
+    Mod+Ctrl+L { move-column-right; }
 
     // ── Window resizing ────────────────────────────────────────────────────────
     // NOTE: Mod+Shift+H/J/K/L is taken by monitor focus below (same conflict
