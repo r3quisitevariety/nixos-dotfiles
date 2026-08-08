@@ -78,6 +78,7 @@
         darkreader
         i-dont-care-about-cookies
         vimium
+        web-clipper-obsidian
         #unhook
         #libredirect
         #obsidian-web-clippper
