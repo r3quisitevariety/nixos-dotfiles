@@ -37,12 +37,6 @@ url = "github:nix-community/home-manager"
 [inputs.home-manager.follows]
 nixpkgs = "nixpkgs"
 
-[inputs.nixcord]
-url = "github:4evy/nixcord"
-
-[inputs.nixcord.follows]
-nixpkgs = "nixpkgs"
-
 [inputs.zen-browser]
 url = "github:0xc000022070/zen-browser-flake"
 
