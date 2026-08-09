@@ -21,5 +21,6 @@
     ../../modules/home/neovim.nix
     # rebuild will fail if you dont remove .bashrc + bash_profile on host
     ../../modules/home/shell.nix
+    ../../modules/home/yt-music-dlp.nix
   ];
 }
