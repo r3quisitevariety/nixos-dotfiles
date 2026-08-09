@@ -38,6 +38,9 @@
 
       # Plugins with typed nixcord options (checked against shared.json/vencord.json/equicord.json).
       plugins = {
+        fakeNitro = {
+          enable = true;
+        };
         accountPanelServerProfile = {
           enable = true;
           prioritizeServerProfile = false;
