@@ -6,6 +6,7 @@
 }: {
   # used as label for last major system edit; useful when picking generations at boot
   # system.nixos.label = "niri-cursor-smaller";
+  programs.tack.enable = true;
 
   systemd.coredump.enable = false;
   boot.kernel.sysctl."kernel.core_pattern" = "/dev/null";
