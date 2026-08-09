@@ -46,8 +46,13 @@
       }
 
       delete-generations() {
-         sudo nix-env --delete-generations "$@" --profile /nix/var/nix/profiles/system
+        sudo nix-env --delete-generations "$@" --profile /nix/var/nix/profiles/system
        }
+
+      # wraps tack around gh auth token to bypass rate limits
+      tack() {
+        GH_TOKEN="$(gh auth token)" command tack "$@"
+      }
 
     '';
   };
@@ -57,6 +62,7 @@
   };
 
   home.packages = with pkgs; [
+    github-cli
     nix-search-tv
     moor
     dix
