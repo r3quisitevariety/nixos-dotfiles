@@ -253,8 +253,8 @@ builtin = "Noctalia"
 community_palette = "Everforest Material"
 custom_palette = "m3-content"
 mode = "dark"
-source = "community"
-wallpaper_scheme = "m3-content"
+source = "wallpaper"
+wallpaper_scheme = "m3-tonal-spot"
 
     [theme.templates]
     builtin_ids = [ "btop", "foot", "gtk3", "gtk4", "ghostty", "hyprland", "kcolorscheme", "mango", "niri", "qt" ]
@@ -280,13 +280,13 @@ transition = [ "disc" ]
 transition_on_startup = true
 
     [wallpaper.default]
-    path = "/home/nix/Pictures/wallpapers/nature/wallhaven-dgdmj3.jpg"
+    path = "/home/nix/Pictures/wallpapers/misc/wallhaven_lywwpr.jpg"
 
     [wallpaper.last]
-    path = "/home/nix/Pictures/wallpapers/nature/wallhaven-dgdmj3.jpg"
+    path = "/home/nix/Pictures/wallpapers/misc/wallhaven_lywwpr.jpg"
 
     [wallpaper.monitors.HDMI-A-1]
-    path = "/home/nix/Pictures/wallpapers/nature/wallhaven-dgdmj3.jpg"
+    path = "/home/nix/Pictures/wallpapers/misc/wallhaven_lywwpr.jpg"
 
     [wallpaper.monitors.eDP-1]
     path = "/home/nix/Pictures/wallpapers/nature/wallhaven-dgdmj3.jpg"
