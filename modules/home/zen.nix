@@ -16,6 +16,12 @@
 
     profiles.default = {
       settings = {
+        presets.catppuccin = {
+          enable = true;
+          flavor = "Frappe"; # Frappe | Latte | Macchiato | Mocha
+          accent = "Blue"; # Blue, Flamingo, Green, Lavender, Maroon, Mauve, ...
+        };
+
         "ui.systemUsesDarkTheme" = 1;
         # Auto-enable extensions installed via HM
         "extensions.autoDisableScopes" = 0;

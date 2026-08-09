@@ -245,15 +245,18 @@ settings_show_advanced = true
 show_location = false
 time_format = "{:%-I:%M %p}"
 
+    [shell.panel]
+    transparency_mode = "soft"
+
     [shell.screenshot]
     save_to_file = false
 
 [theme]
-builtin = "Noctalia"
-community_palette = "Everforest Material"
+builtin = "Catppuccin"
+community_palette = "Catppuccin Frappe Blue"
 custom_palette = "m3-content"
 mode = "dark"
-source = "wallpaper"
+source = "community"
 wallpaper_scheme = "m3-tonal-spot"
 
     [theme.templates]
@@ -280,13 +283,13 @@ transition = [ "disc" ]
 transition_on_startup = true
 
     [wallpaper.default]
-    path = "/home/nix/Pictures/wallpapers/moody/wallhaven_gjyoq7.jpg"
+    path = "/home/nix/Pictures/wallpapers/moody/wallhaven-je95gq_1920x1080.png"
 
     [wallpaper.last]
-    path = "/home/nix/Pictures/wallpapers/moody/wallhaven_gjyoq7.jpg"
+    path = "/home/nix/Pictures/wallpapers/moody/wallhaven-je95gq_1920x1080.png"
 
     [wallpaper.monitors.HDMI-A-1]
-    path = "/home/nix/Pictures/wallpapers/moody/wallhaven_gjyoq7.jpg"
+    path = "/home/nix/Pictures/wallpapers/moody/wallhaven-je95gq_1920x1080.png"
 
     [wallpaper.monitors.eDP-1]
     path = "/home/nix/Pictures/wallpapers/nature/wallhaven-dgdmj3.jpg"
