@@ -62,6 +62,7 @@
   };
 
   home.packages = with pkgs; [
+    imv
     github-cli
     nix-search-tv
     moor
