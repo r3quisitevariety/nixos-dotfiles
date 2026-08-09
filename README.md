@@ -1,3 +1,6 @@
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/1c6e0c20-bb63-44d2-9961-c2726d31bed8" />
+
+
 ### overview 
 
 multi-host nixos config with flakes, tack, home-manager, & nix-secrets
