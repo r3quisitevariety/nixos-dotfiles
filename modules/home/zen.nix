@@ -11,6 +11,9 @@
     enable = true;
     setAsDefaultBrowser = true;
 
+    # stop giving annoying ass release notes
+    policies.OverridePostUpdatePage = "";
+
     profiles.default = {
       settings = {
         "ui.systemUsesDarkTheme" = 1;
