@@ -24,7 +24,7 @@
     greeter-args = "";
     settings = {
       cursor = {
-        theme = "Bibata-Modern-Classic";
+        theme = "Bibata-Modern-Ice";
         size = 20;
         path = "${pkgs.bibata-cursors}/share/icons";
       };

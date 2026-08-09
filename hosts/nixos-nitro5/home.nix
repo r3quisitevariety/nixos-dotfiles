@@ -116,8 +116,12 @@
   home.pointerCursor = {
     enable = true;
     package = pkgs.bibata-cursors;
-    name = "Bibata-Modern-Classic";
-    size = 20;
+    #name = "Bibata-Modern-Classic";
+
+    name = "Bibata-Modern-Ice";
+    #package = pkgs.catppuccin-cursors;
+    #name = "catppuccin-frappe-blue-cursors";
+    size = 16;
     gtk.enable = true;
     x11.enable = true;
     hyprcursor.enable = true;
