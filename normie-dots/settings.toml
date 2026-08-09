@@ -280,13 +280,13 @@ transition = [ "disc" ]
 transition_on_startup = true
 
     [wallpaper.default]
-    path = "/home/nix/Pictures/wallpapers/misc/wallhaven_lywwpr.jpg"
+    path = "/home/nix/Pictures/wallpapers/moody/wallhaven_gjyoq7.jpg"
 
     [wallpaper.last]
-    path = "/home/nix/Pictures/wallpapers/misc/wallhaven_lywwpr.jpg"
+    path = "/home/nix/Pictures/wallpapers/moody/wallhaven_gjyoq7.jpg"
 
     [wallpaper.monitors.HDMI-A-1]
-    path = "/home/nix/Pictures/wallpapers/misc/wallhaven_lywwpr.jpg"
+    path = "/home/nix/Pictures/wallpapers/moody/wallhaven_gjyoq7.jpg"
 
     [wallpaper.monitors.eDP-1]
     path = "/home/nix/Pictures/wallpapers/nature/wallhaven-dgdmj3.jpg"
