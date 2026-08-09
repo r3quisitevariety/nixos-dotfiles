@@ -62,3 +62,9 @@ url = "github:greyxp1/ncr"
 [inputs.nixcu]
 url = "github:TotalyEnglizLitrate/nixcu"
 
+[inputs.nixcord]
+url = "github:4evy/nixcord"
+
+[inputs.nixcord.follows]
+nixpkgs = "nixpkgs"
+

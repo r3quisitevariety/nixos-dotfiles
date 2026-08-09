@@ -31,6 +31,14 @@
     "narHash": "sha256-7a80WzEx8foVYZ4u9gLoAcPbV1ncITEpJshtuznqrIg=",
     "lastModified": 1786013172
   },
+  "nixcord": {
+    "type": "github",
+    "owner": "4evy",
+    "repo": "nixcord",
+    "rev": "a2c231759b0853d7b4adcef94860af472c5ce0fb",
+    "narHash": "sha256-LFU9VIQp9i9woVUyyuHNZbaPiw7sD//lsn4S0awg/Gw=",
+    "lastModified": 1786251505
+  },
   "nixcu": {
     "type": "github",
     "owner": "TotalyEnglizLitrate",
