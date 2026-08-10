@@ -63,6 +63,7 @@
   };
 
   home.packages = with pkgs; [
+    neocities
     imv
     github-cli
     nix-search-tv
