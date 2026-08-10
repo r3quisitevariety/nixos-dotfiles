@@ -245,6 +245,9 @@ settings_show_advanced = true
 show_location = false
 time_format = "{:%-I:%M %p}"
 
+    [shell.greeter_sync]
+    auto_sync = true
+
     [shell.panel]
     transparency_mode = "soft"
 
@@ -253,7 +256,7 @@ time_format = "{:%-I:%M %p}"
 
 [theme]
 builtin = "Catppuccin"
-community_palette = "Catppuccin Frappe Blue"
+community_palette = "Catppuccin Macchiato Blue"
 custom_palette = "m3-content"
 mode = "dark"
 source = "community"
