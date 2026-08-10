@@ -14,33 +14,11 @@
     ./hardware-configuration.nix
   ];
 
-  boot.kernelPackages = pkgs.cachyosKernels.linuxPackages-cachyos-latest;
-
   services.locate.enable = false;
 
   programs.steam.enable = true;
   programs.hyprland.enable = true;
   programs.niri.enable = true;
-
-  nix.package = pkgs.lixPackageSets.stable.lix;
-  nix.settings.experimental-features = [
-    "nix-command"
-    "flakes"
-  ];
-  # cachy stuff
-  nix.settings.substituters = ["https://attic.xuyh0120.win/lantian"];
-  nix.settings.trusted-public-keys = ["lantian:EeAUQ+W+6r7EtwnmYjeVwx5kOGEBpjlBfPlzGlTNvHc="];
-
-  nix.settings = {
-    extra-substituters = [
-      "https://cache.nixos-cuda.org"
-      "https://noctalia.cachix.org"
-    ];
-    extra-trusted-public-keys = [
-      "cache.nixos-cuda.org:74DUi4Ye579gUqzH4ziL9IyiJBlDpMRn9MBN8oNan9M="
-      "noctalia.cachix.org-1:pCOR47nnMEo5thcxNDtzWpOxNFQsBRglJzxWPp3dkU4="
-    ];
-  };
 
   services.power-profiles-daemon.enable = true; # switch between performance, balance, or battery saving
   services.upower.enable = true;
@@ -54,37 +32,6 @@
     networkmanager.enable = true;
     firewall.enable = true;
   };
-
-  hardware.graphics = {
-    enable = true;
-    extraPackages = with pkgs; [
-      nvidia-vaapi-driver # for gpu-screen-recorder
-      intel-media-driver
-    ];
-  };
-  hardware.graphics.enable32Bit = true;
-  # NVIDIA PRIME offload (Acer Nitro 5, RTX 4060)
-  hardware.nvidia = {
-    open = false;
-    modesetting.enable = true;
-    powerManagement.enable = true;
-    nvidiaSettings = true;
-    package = config.boot.kernelPackages.nvidiaPackages.stable;
-    prime = {
-      intelBusId = "PCI:0@0:2:0";
-      nvidiaBusId = "PCI:1@0:0:0";
-      offload = {
-        enable = true;
-        enableOffloadCmd = true; # use `nvidia-offload <cmd>` to explicitly invoke dGPU
-      };
-    };
-  };
-
-  # modesetting driver so xserver doesn't hog the GPU in the background
-  services.xserver.videoDrivers = [
-    "modesetting"
-    "nvidia"
-  ];
 
   hardware.bluetooth = {
     enable = true;
@@ -122,16 +69,6 @@
     serif = ["Noto Serif"];
     sansSerif = ["Inter" "Noto Sans"];
     monospace = ["JetBrains Mono"];
-  };
-
-  #  services.xserver.enable = true;
-  #services.xserver.displayManager.gdm.enable = true;
-  #services.xserver.desktopManager.gnome.enable = true;
-
-  services = {
-    desktopManager.plasma6.enable = false;
-    #    # Optionally enable xserver
-    #    # xserver.enable = true;
   };
 
   services.xserver.xkb = {
