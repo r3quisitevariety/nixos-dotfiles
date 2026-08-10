@@ -136,9 +136,9 @@
       videoViewer = "mpv.desktop";
       audioViewer = "mpv.desktop";
       fileViewer = "org.gnome.Nautilus.desktop";
-      browser = "firefox.desktop";
-      textEditor = "codium.desktop";
-      chromium = "chromium.desktop";
+      browser = "zen-beta.desktop";
+      textEditor = "neovim.desktop";
+      chromium = "google-chrome.desktop";
     in {
       "image/jpeg" = imageViewer;
       "image/png" = imageViewer;
