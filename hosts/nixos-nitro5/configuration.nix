@@ -34,6 +34,13 @@
         group = "users";
         mode = "0600";
       };
+
+      opencode = {
+        recipients = ["master"];
+        owner = "nix";
+        group = "users";
+        mode = "0600";
+      };
     };
   };
 
@@ -45,7 +52,7 @@
   programs.hyprland.enable = true;
   programs.niri.enable = true;
 
-  #nix.package = pkgs.lixPackageSets.stable.lix;
+  nix.package = pkgs.lixPackageSets.stable.lix;
   nix.settings.experimental-features = [
     "nix-command"
     "flakes"

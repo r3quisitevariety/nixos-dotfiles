@@ -53,9 +53,6 @@ url = "github:nix-community/NUR"
 [inputs.nur.follows]
 nixpkgs = "nixpkgs"
 
-[inputs.nix-secrets]
-url = "github:unnamed-systems/nix-secrets"
-
 [inputs.ncr]
 url = "github:greyxp1/ncr"
 
@@ -67,4 +64,7 @@ url = "github:4evy/nixcord"
 
 [inputs.nixcord.follows]
 nixpkgs = "nixpkgs"
+
+[inputs.nix-secrets]
+url = "github:unnamed-systems/nix-secrets"
 
