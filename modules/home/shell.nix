@@ -51,6 +51,9 @@
        }
 
       # wraps tack around gh auth token to bypass rate limits
+      # omits the need for programs.tack.nixConfTokens = true;
+      # also stays platform agnostic rather than being locked to nixOS
+      # use gh auth login to configure the credentials
       tack() {
         GH_TOKEN="$(gh auth token)" command tack "$@"
       }
@@ -63,6 +66,7 @@
   };
 
   home.packages = with pkgs; [
+    tack
     neocities
     imv
     github-cli

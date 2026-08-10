@@ -6,7 +6,6 @@
 }: {
   # used as label for last major system edit; useful when picking generations at boot
   # system.nixos.label = "niri-cursor-smaller";
-  programs.tack.enable = true;
 
   systemd.coredump.enable = false;
   boot.kernel.sysctl."kernel.core_pattern" = "/dev/null";
@@ -193,7 +192,6 @@
   nixpkgs.config.allowUnfree = true;
 
   environment.systemPackages = with pkgs; [
-    # no more flake
     #inputs.noctalia.packages.${pkgs.stdenv.hostPlatform.system}.default
     inputs.nixcu.packages.${pkgs.stdenv.hostPlatform.system}.default
     inputs.ncr.packages.${pkgs.stdenv.hostPlatform.system}.default
@@ -208,10 +206,8 @@
     #anki - experiencing build problems, use nix run instead
     nautilus
     foot
-    fuzzel
     google-chrome
     mpv
-    equibop
     proton-vpn
 
     nwg-look
