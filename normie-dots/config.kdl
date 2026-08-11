@@ -269,8 +269,10 @@ binds {
 
     // ── Focus and column movement (vim keys) ───────────────────────────────────
     Mod+H { focus-column-left; }
-    Mod+WheelScrollUp { focus-column-left; }
-    Mod+WheelScrollDown { focus-column-right; }
+    Mod+Shift+WheelScrollUp { focus-column-left; }
+    Mod+Shift+WheelScrollDown { focus-column-right; }
+    Mod+WheelScrollUp { focus-workspace-up; }
+    Mod+WheelScrollDown { focus-workspace-down; }
     Mod+K { focus-workspace-up; }
     Mod+J { focus-workspace-down; }
     Mod+L { focus-column-right; }
