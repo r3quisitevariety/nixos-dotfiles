@@ -66,6 +66,7 @@
   };
 
   home.packages = with pkgs; [
+    duf # disk usage utility
     tack
     neocities
     imv
