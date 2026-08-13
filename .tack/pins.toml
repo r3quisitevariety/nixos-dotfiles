@@ -68,3 +68,6 @@ nixpkgs = "nixpkgs"
 [inputs.nix-secrets]
 url = "github:unnamed-systems/nix-secrets"
 
+[inputs.vellum]
+url = "github:greyxp1/vellum"
+

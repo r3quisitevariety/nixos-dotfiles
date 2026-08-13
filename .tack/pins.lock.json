@@ -69,6 +69,14 @@
     "narHash": "sha256-8lkJgZusKLuAWgogqqE9ld+XySD3+++WHT4VUZakoNM=",
     "lastModified": 1786459353
   },
+  "vellum": {
+    "type": "github",
+    "owner": "greyxp1",
+    "repo": "vellum",
+    "rev": "3a64b9c9821814419d3f4e1e03458f5820931f9a",
+    "narHash": "sha256-Akb6unJCfb1CDEijxlMX+WfiMifrRkzWuAPVBoREf8A=",
+    "lastModified": 1786603319
+  },
   "zen-browser": {
     "type": "github",
     "owner": "0xc000022070",
