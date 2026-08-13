@@ -15,7 +15,6 @@
 // NOTE: niri positions outputs in logical pixels. Both displays are scale 1,
 // so their logical sizes match their physical resolutions.
 // ============================================================
-
 // main laptop screen
 output "eDP-1" {
     // comment out "off" when using screen
@@ -242,6 +241,8 @@ hotkey-overlay {
 // ============================================================
 
 binds {
+    Mod+A { spawn "vellum" "toggle"; }
+
     // Show hotkey overlay (niri built-in help)
     Mod+Shift+Slash { show-hotkey-overlay; }
     Mod+Tab { toggle-overview; }
