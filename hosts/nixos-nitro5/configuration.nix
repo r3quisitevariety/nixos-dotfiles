@@ -7,6 +7,11 @@
   # used as label for last major system edit; useful when picking generations at boot
   # system.nixos.label = "niri-cursor-smaller";
 
+  services.openssh = {
+    enable = true;
+    openFirewall = true;
+  };
+
   systemd.coredump.enable = false;
   boot.kernel.sysctl."kernel.core_pattern" = "/dev/null";
 
