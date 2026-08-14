@@ -4,6 +4,7 @@
 {
   config,
   pkgs,
+  inputs,
   ...
 }: {
   users.users."onoruu".shell = pkgs.fish;
@@ -93,6 +94,7 @@
   nixpkgs.config.allowUnfree = true;
 
   environment.systemPackages = with pkgs; [
+    inputs.nixcu.packages.${pkgs.stdenv.hostPlatform.system}.default
     neovim
     copyparty
     vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
