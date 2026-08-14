@@ -7,6 +7,23 @@
   # used as label for last major system edit; useful when picking generations at boot
   # system.nixos.label = "niri-cursor-smaller";
 
+  users.users."nix".shell = pkgs.fish;
+  programs.bash = {
+    interactiveShellInit = ''
+      # "check if parent process is not fish" && "make nested shells work properly"
+      if grep -qv fish /proc/$PPID/comm && [[ $SHLVL == [12] ]]; then
+          # set $SHELL for better integration with programs like nix shell, tmux, etc.
+          SHELL=${pkgs.fish}/bin/fish exec fish
+      fi
+    '';
+  };
+  programs.fish = {
+    enable = true;
+    interactiveShellInit = ''
+      set fish_greeting # Disable greeting
+    '';
+  };
+
   services.openssh = {
     enable = true;
     openFirewall = true;
@@ -91,7 +108,6 @@
     alsa.support32Bit = true;
     pulse.enable = true;
   };
-
   users.users."nix" = {
     isNormalUser = true;
     description = "nix";

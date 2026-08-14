@@ -7,11 +7,8 @@
     enable = true;
   };
 
-  programs.bash = {
-    enable = true;
-    shellAliases = {
-      rmpc = "rmpc update && rmpc"; ## updates mpd database every time rmpc is run
-    };
+  home.shellAliases = {
+    rmpc = "rmpc update && rmpc"; ## updates mpd database every time rmpc is run
   };
 
   services.mpd = {

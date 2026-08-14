@@ -9,31 +9,64 @@
   programs.zoxide = {
     enable = true;
     enableBashIntegration = true;
+    enableFishIntegration = true;
   };
   programs.starship = {
     enable = true;
     enableBashIntegration = true;
+    enableFishIntegration = true;
   };
+
+  home.shellAliases = {
+    cd = "z";
+    lg = "lazygit";
+    neofetch = "fastfetch";
+    v = "nvim";
+    g = "git";
+    cp = "cp -r";
+    ls = "eza --color=auto";
+    grep = "grep --color=auto";
+    yay = "paru";
+    notes = "cd ~/Documents/masterplan && nvim";
+    upgrade = "nh os switch ~/nixos-dotfiles --update";
+    less = "moor";
+    ns = "nix-search-tv print | fzf --preview 'nix-search-tv preview {}' --scheme history";
+    t = "tmux";
+    bunnyfetch = "fastfetch";
+    oc = "opencode";
+  };
+
+  programs.fish = {
+    enable = true;
+    interactiveShellInit = ''
+      function ya
+        set tmp (mktemp -t "yazi-cwd.XXXXXX")
+        yazi $argv --cwd-file="$tmp"
+
+        if set -l cwd (cat -- "$tmp"); and test -n "$cwd"; and test "$cwd" != "$PWD"
+          builtin cd -- "$cwd"
+        end
+
+        rm -f -- "$tmp"
+      end
+
+      function delete-generations
+        sudo nix-env --delete-generations $argv --profile /nix/var/nix/profiles/system
+      end
+
+      # wraps tack around gh auth token to bypass rate limits
+      # omits the need for programs.tack.nixConfTokens = true;
+      # also stays platform agnostic rather than being locked to nixOS
+      # use gh auth login to configure the credentials
+      function tack
+        set -lx GH_TOKEN (gh auth token)
+        command tack $argv
+      end
+    '';
+  };
+
   programs.bash = {
     enable = true;
-    shellAliases = {
-      cd = "z";
-      lg = "lazygit";
-      neofetch = "fastfetch";
-      v = "nvim";
-      g = "git";
-      cp = "cp -r";
-      ls = "eza --color=auto";
-      grep = "grep --color=auto";
-      yay = "paru";
-      notes = "cd ~/Documents/masterplan && nvim";
-      upgrade = "nh os switch ~/nixos-dotfiles --update";
-      less = "moor";
-      ns = "nix-search-tv print | fzf --preview 'nix-search-tv preview {}' --scheme history";
-      t = "tmux";
-      bunnyfetch = "fastfetch";
-      oc = "opencode";
-    };
     bashrcExtra = ''
       PS1='\[\e[1;32m\]\u@\h\[\e[0m\]:\[\e[1;34m\]\w\[\e[0m\]\$ '
 
