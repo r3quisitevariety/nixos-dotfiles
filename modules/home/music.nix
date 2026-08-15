@@ -7,9 +7,22 @@
     enable = true;
   };
 
-  home.shellAliases = {
-    rmpc = "rmpc update && rmpc"; ## updates mpd database every time rmpc is run
-  };
+  programs.fish.interactiveShellInit = ''
+    function rmpc
+      command rmpc update
+      and command rmpc $argv
+    end
+  '';
+
+  programs.bash.bashrcExtra = ''
+    rmpc() {
+      command rmpc update && command rmpc "$@"
+    }
+  '';
+
+  programs.zsh.initContent = ''
+    rmpc() { command rmpc update && command rmpc "$@" }
+  '';
 
   services.mpd = {
     enable = true;
