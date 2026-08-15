@@ -34,6 +34,12 @@
         group = "users";
         mode = "0600";
       };
+      freshrss = {
+        recipients = ["master"];
+        owner = "onoruu";
+        group = "users";
+        mode = "0600";
+      };
     };
   };
 }

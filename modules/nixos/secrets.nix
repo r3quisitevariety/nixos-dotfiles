@@ -35,6 +35,12 @@
         group = "users";
         mode = "0600";
       };
+      freshrss = {
+        recipients = ["master"];
+        owner = "nix";
+        group = "users";
+        mode = "0600";
+      };
     };
   };
 }

@@ -107,6 +107,22 @@
     #  wget
   ];
 
+  services.immich = {
+    enable = true;
+    host = "0.0.0.0";
+    openFirewall = true;
+  };
+  services.jellyfin = {
+    enable = true;
+    openFirewall = true;
+  };
+  services.freshrss = {
+    enable = true;
+    baseUrl = "http://inspiron";
+    defaultUser = "admin";
+    passwordFile = "/run/nix-secrets/secrets/freshrss";
+  };
+
   # networking.firewall.allowedTCPPorts = [ ... ];
   # networking.firewall.allowedUDPPorts = [ ... ];
 
