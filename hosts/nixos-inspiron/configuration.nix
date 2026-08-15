@@ -90,7 +90,7 @@
   users.users."onoruu" = {
     isNormalUser = true;
     description = "onoruu";
-    extraGroups = ["networkmanager" "wheel"];
+    extraGroups = ["networkmanager" "wheel" "docker"];
     packages = with pkgs; [
       #  thunderbird
     ];
@@ -116,12 +116,21 @@
     enable = true;
     openFirewall = true;
   };
-  services.freshrss = {
+
+  #freshrss (not fun on nix)
+  #soulseek
+  virtualisation.docker = {
     enable = true;
-    baseUrl = "http://inspiron";
-    defaultUser = "admin";
-    passwordFile = "/run/nix-secrets/secrets/freshrss";
+    daemon.settings = {
+      "log-driver" = "json-file";
+      "log-opts" = {
+        "max-size" = "10m";
+        "max-file" = "3";
+      };
+    };
   };
+
+  # Optional: Add your user to the "docker" group to run docker without sudo
 
   # networking.firewall.allowedTCPPorts = [ ... ];
   # networking.firewall.allowedUDPPorts = [ ... ];
