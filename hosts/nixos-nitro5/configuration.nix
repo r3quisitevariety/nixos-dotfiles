@@ -168,8 +168,7 @@
   services.tailscale = {
     enable = true;
     openFirewall = true;
-    # TODO when sops is set up
-    #authKeyFile = "blablabla";
+    authKeyFile = "/run/nix-secrets/secrets/tailscale";
   };
 
   systemd.network.wait-online.enable = false;

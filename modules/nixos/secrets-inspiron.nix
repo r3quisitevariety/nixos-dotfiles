@@ -28,6 +28,12 @@
         group = "users";
         mode = "0600";
       };
+      tailscale = {
+        recipients = ["master"];
+        owner = "onoruu";
+        group = "users";
+        mode = "0600";
+      };
     };
   };
 }

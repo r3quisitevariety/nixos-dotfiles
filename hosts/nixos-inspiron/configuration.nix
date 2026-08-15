@@ -34,6 +34,12 @@
     openFirewall = true;
   };
 
+  services.tailscale = {
+    enable = true;
+    openFirewall = true;
+    authKeyFile = "/run/nix-secrets/secrets/tailscale";
+  };
+
   imports = [
     # Include the results of the hardware scan.
     ./hardware-configuration.nix
