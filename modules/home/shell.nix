@@ -6,6 +6,13 @@
   programs.opencode = {
     enable = true;
   };
+
+  programs.carapace = {
+    enable = true;
+    enableFishIntegration = true;
+    enableZshIntegration = true;
+  };
+
   programs.zoxide = {
     enable = true;
     enableBashIntegration = true;
