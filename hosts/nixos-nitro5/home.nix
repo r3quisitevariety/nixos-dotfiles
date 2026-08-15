@@ -17,7 +17,7 @@
     };
     settings."inspiron" = {
       HostName = "inspiron";
-      User = "black";
+      User = "onoruu";
       # tells ssh WHICH private key to use
       # server MUST have matching public key in its authorized_keys for passwordless to work
       IdentityFile = "/run/nix-secrets/secrets/ssh-key";
