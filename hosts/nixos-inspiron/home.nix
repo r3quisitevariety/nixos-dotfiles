@@ -15,6 +15,17 @@
       IdentityFile = "/run/nix-secrets/secrets/ssh-key";
       IdentitiesOnly = true;
     };
+
+    settings."nitro5" = {
+      HostName = "nitro5";
+      User = "nix";
+      # tells ssh WHICH private key to use
+      # server MUST have matching public key in its authorized_keys for passwordless to work
+      # authorized_keys will be handled imperatively.
+      IdentityFile = "/run/nix-secrets/secrets/ssh-key";
+      # allows ONLY explicitly configured keys instead of mutable state like ~/.ssh/id_ed25519
+      IdentitiesOnly = true;
+    };
   };
 
   programs.git = {
