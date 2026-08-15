@@ -36,6 +36,7 @@
     oc = "opencode";
   };
 
+  #nixos specific code is required to start up fish (check configuration.nix)
   programs.fish = {
     enable = true;
     interactiveShellInit = ''
