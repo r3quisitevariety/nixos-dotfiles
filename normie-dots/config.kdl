@@ -172,7 +172,27 @@ layout {
 // rounding=5 from hyprland decoration block → geometry-corner-radius
 // ============================================================
 
+/* Apps: blur them all without xray so it looks more realistic. */
 prefer-no-csd
+
+layer-rule {
+    match namespace="^noctalia-(bar-[^\"]+|notification|dock|panel|attached-panel|osd)$"
+    background-effect {
+        blur true
+        xray false
+    }
+}
+blur {
+    passes 4
+    offset 3.0
+    noise 0.02
+    saturation 1.5
+}
+
+window-rule {
+    match app-id="^kitty$"
+    draw-border-with-background false
+}
 
 window-rule {
     geometry-corner-radius 5
@@ -248,7 +268,7 @@ binds {
     Mod+Tab { toggle-overview; }
 
     // Terminal (foot)
-    Mod+Q { spawn "foot"; }
+    Mod+Q { spawn "kitty"; }
 
     Mod+D { spawn-sh "noctalia msg panel-open launcher"; }
 

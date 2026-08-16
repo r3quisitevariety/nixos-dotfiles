@@ -2,8 +2,10 @@ config_version = 8
 
 [backdrop]
 blur_intensity = 0.019999999552965164
+enabled = true
 
 [bar.default]
+background_opacity = 0.63999998569488525
 center = [ "workspaces", "bar" ]
 end = [ "group:g3", "clipboard", "group:g4", "notifications", "volume", "brightness", "group:g5" ]
 margin_edge = 0
@@ -250,6 +252,9 @@ time_format = "{:%-I:%M %p}"
 
     [shell.screenshot]
     save_to_file = false
+
+    [shell.shadow]
+    alpha = 0.99999997764825821
 
 [theme]
 builtin = "Catppuccin"
