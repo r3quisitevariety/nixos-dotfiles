@@ -73,6 +73,7 @@
     };
 
     #homelab config
+    # onoruu is a legacy (user)name, ill change it if i reinstall
     nixosConfigurations.inspiron = let
       user = "onoruu";
     in
