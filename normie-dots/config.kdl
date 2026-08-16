@@ -15,6 +15,10 @@
 // NOTE: niri positions outputs in logical pixels. Both displays are scale 1,
 // so their logical sizes match their physical resolutions.
 // ============================================================
+
+// spawns kitty as a daemon so it can instantaneously open
+spawn-at-startup "kitty" "--single-instance" "--start-as=hidden" "tail" "-f" "/dev/null";
+
 // main laptop screen
 output "eDP-1" {
     // comment out "off" when using screen
@@ -260,8 +264,8 @@ binds {
     Mod+Shift+Slash { show-hotkey-overlay; }
     Mod+Tab { toggle-overview; }
 
-    // Terminal (foot)
-    Mod+Q { spawn "kitty"; }
+    // Terminal (kitty)
+    Mod+Q { spawn "kitty" "--single-instance"; }
 
     Mod+D { spawn-sh "noctalia msg panel-open launcher"; }
 
