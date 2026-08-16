@@ -1,30 +1,6 @@
 {pkgs, ...}: {
-  #  The option `home-manager.users.nix.nix.package' is defined multiple times while it's expected to be unique.
-  #nix.package = pkgs.lixPackageSets.stable.lix;
-  # make sure .bashrc and bash_profile are removed locally, otherwise home manager will give you an error as it does not want to delete the files.
-
-  programs.opencode = {
-    enable = true;
-  };
-
-  programs.carapace = {
-    enable = true;
-    enableFishIntegration = true;
-    enableZshIntegration = true;
-  };
-
-  programs.zoxide = {
-    enable = true;
-    enableBashIntegration = true;
-    enableFishIntegration = true;
-  };
-  programs.starship = {
-    enable = true;
-    enableBashIntegration = true;
-    enableFishIntegration = true;
-  };
-
   home.shellAliases = {
+    tack = "sh -c 'GH_TOKEN=\"$(cat /run/nix-secrets/secrets/gh-token)\" exec tack \"$@\"' sh";
     cd = "z";
     lg = "lazygit";
     neofetch = "fastfetch";
@@ -43,64 +19,34 @@
     oc = "opencode";
   };
 
-  #nixos specific code is required to start up fish (check configuration.nix)
-  programs.fish = {
+  programs.opencode = {
     enable = true;
-    interactiveShellInit = ''
-      function ya
-        set tmp (mktemp -t "yazi-cwd.XXXXXX")
-        yazi $argv --cwd-file="$tmp"
+  };
 
-        if set -l cwd (cat -- "$tmp"); and test -n "$cwd"; and test "$cwd" != "$PWD"
-          builtin cd -- "$cwd"
-        end
+  programs.carapace = {
+    enable = true;
+    enableFishIntegration = true;
+    enableZshIntegration = true;
+    enableBashIntegration = true;
+  };
 
-        rm -f -- "$tmp"
-      end
-
-      function delete-generations
-        sudo nix-env --delete-generations $argv --profile /nix/var/nix/profiles/system
-      end
-
-      # wraps tack around gh auth token to bypass rate limits
-      # omits the need for programs.tack.nixConfTokens = true;
-      # also stays platform agnostic rather than being locked to nixOS
-      # use gh auth login to configure the credentials
-      function tack
-        set -lx GH_TOKEN (gh auth token)
-        command tack $argv
-      end
-    '';
+  programs.zoxide = {
+    enable = true;
+    enableFishIntegration = true;
+    enableZshIntegration = true;
+    enableBashIntegration = true;
+  };
+  programs.starship = {
+    enable = true;
+    enableFishIntegration = true;
+    enableZshIntegration = true;
+    enableBashIntegration = true;
   };
 
   programs.bash = {
     enable = true;
-    bashrcExtra = ''
-      PS1='\[\e[1;32m\]\u@\h\[\e[0m\]:\[\e[1;34m\]\w\[\e[0m\]\$ '
-
-      function ya() { # yazi: cd into cwd on quit
-        local tmp="$(mktemp -t "yazi-cwd.XXXXXX")"
-        yazi "$@" --cwd-file="$tmp"
-        if cwd="$(cat -- "$tmp")" && [ -n "$cwd" ] && [ "$cwd" != "$PWD" ]; then
-          cd -- "$cwd"
-        fi
-        rm -f -- "$tmp"
-      }
-
-      delete-generations() {
-        sudo nix-env --delete-generations "$@" --profile /nix/var/nix/profiles/system
-       }
-
-      # wraps tack around gh auth token to bypass rate limits
-      # omits the need for programs.tack.nixConfTokens = true;
-      # also stays platform agnostic rather than being locked to nixOS
-      # use gh auth login to configure the credentials
-      tack() {
-        GH_TOKEN="$(gh auth token)" command tack "$@"
-      }
-
-    '';
   };
+
   home.sessionVariables = {
     VISUAL = "vim";
     EDITOR = "vim";
