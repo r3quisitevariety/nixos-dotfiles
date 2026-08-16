@@ -1,6 +1,7 @@
 {
   inputs,
   pkgs,
+  user,
   ...
 }: {
   imports = [
@@ -12,6 +13,7 @@
     settings.default_session = {
       # will test this on reboot; push to remote if good and delete this comment
       command = "/run/current-system/sw/bin/noctalia-greeter-session -- --session niri-session";
+      # Keep the existing session active until the home directory migration is complete.
       user = "nix";
     };
   };

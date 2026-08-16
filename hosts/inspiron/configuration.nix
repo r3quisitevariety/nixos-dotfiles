@@ -1,6 +1,7 @@
 {
   pkgs,
   inputs,
+  user,
   ...
 }: {
   # allows nh --target-host to work
@@ -57,9 +58,9 @@
   services.printing.enable = true;
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
-  users.users."onoruu" = {
+  users.users.${user} = {
     isNormalUser = true;
-    description = "onoruu";
+    description = user;
     shell = pkgs.fish;
     extraGroups = ["networkmanager" "wheel" "docker"];
     packages = with pkgs; [

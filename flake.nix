@@ -4,6 +4,7 @@
   # using tack to manage inputs
   # args form is from tack's README
   outputs = {self, ...} @ args: let
+    user = "onoruu";
     inputs = (import ./.tack) {
       overrides = args.tackOverrides or {};
     };
@@ -21,7 +22,7 @@
         system = "x86_64-linux";
         overlays = [nur.overlays.default];
       };
-      extraSpecialArgs = {inherit inputs;};
+      extraSpecialArgs = {inherit inputs user;};
       modules = [
         ./hosts/arch-nitro5/home.nix
       ];
@@ -33,7 +34,7 @@
         system = "x86_64-linux";
         overlays = [nur.overlays.default];
       };
-      extraSpecialArgs = {inherit inputs;};
+      extraSpecialArgs = {inherit inputs user;};
       modules = [
         ./hosts/ubuntu-inspiron/home.nix
       ];
@@ -42,7 +43,7 @@
     #nixos + nvidia config
     nixosConfigurations.nitro5 = nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
-      specialArgs = {inherit inputs;};
+      specialArgs = {inherit inputs user;};
       modules = [
         (
           {pkgs, ...}: {
@@ -61,9 +62,19 @@
         {
           home-manager.useGlobalPkgs = true;
           home-manager.useUserPackages = true;
-          home-manager.extraSpecialArgs = {inherit inputs;};
-          home-manager.users.nix =
-            import ./hosts/nitro5/home.nix;
+          home-manager.extraSpecialArgs = {inherit inputs user;};
+          home-manager.users.nix = {
+            _module.args.hmUser = "nix";
+            imports = [
+              ./hosts/nitro5/home.nix
+            ];
+          };
+          home-manager.users.${user} = {
+            _module.args.hmUser = user;
+            imports = [
+              ./hosts/nitro5/home.nix
+            ];
+          };
           #for standalone, run home-manager switch -b backup
           home-manager.backupFileExtension = "backup";
         }
@@ -73,15 +84,15 @@
     #homelab config
     nixosConfigurations.inspiron = nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
-      specialArgs = {inherit inputs;};
+      specialArgs = {inherit inputs user;};
       modules = [
         ./hosts/inspiron
         home-manager.nixosModules.home-manager
         {
           home-manager.useGlobalPkgs = true;
           home-manager.useUserPackages = true;
-          home-manager.extraSpecialArgs = {inherit inputs;};
-          home-manager.users.onoruu =
+          home-manager.extraSpecialArgs = {inherit inputs user;};
+          home-manager.users.${user} =
             import ./hosts/inspiron/home.nix;
           #for standalone, run home-manager switch -b backup
           home-manager.backupFileExtension = "backup";

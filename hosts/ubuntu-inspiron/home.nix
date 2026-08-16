@@ -1,14 +1,15 @@
 {
   config,
   pkgs,
+  user,
   ...
 }: {
   # TODO slowly wane off ubuntu's imperative management and declare things like syncthing; server will be NixOS managed in the future.
 
   nixpkgs.config.allowUnfree = true;
 
-  home.username = "black";
-  home.homeDirectory = "/home/black";
+  home.username = user;
+  home.homeDirectory = "/home/${user}";
   home.stateVersion = "25.11";
 
   home.packages = with pkgs; [

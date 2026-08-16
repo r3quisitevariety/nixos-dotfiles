@@ -3,7 +3,6 @@
 
   # merge boilerplate into one TODO
   # in respective configuration.nix's:
-  #users.users."nix".shell = pkgs.fish;
   #users.users."onoruu".shell = pkgs.fish;
 
   programs.bash = {

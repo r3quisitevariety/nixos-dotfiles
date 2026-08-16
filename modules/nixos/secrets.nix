@@ -1,4 +1,4 @@
-{inputs, ...}: {
+{inputs, user, ...}: {
   imports = [
     inputs.nix-secrets.nixosModules.default
   ];
@@ -7,7 +7,7 @@
     enable = true;
     storage = ../../secrets;
     identityPaths = [
-      "/home/nix/.config/age/keys.txt"
+      "/home/${user}/.config/age/keys.txt"
     ];
     recipientAliases = {
       master = "age13ndha26pyk8jnhml5p7skurcxzwpf2zh3jj5lj2ru3n36dadhvhseat6cg";
@@ -17,35 +17,35 @@
       # ssh key
       ssh-key = {
         recipients = ["master"];
-        owner = "nix";
+        owner = user;
         group = "users";
         mode = "0600";
       };
 
       opencode = {
         recipients = ["master"];
-        owner = "nix";
+        owner = user;
         group = "users";
         mode = "0600";
       };
 
       tailscale = {
         recipients = ["master"];
-        owner = "nix";
+        owner = user;
         group = "users";
         mode = "0600";
       };
 
       password = {
         recipients = ["master"];
-        owner = "nix";
+        owner = user;
         group = "users";
         mode = "0600";
       };
 
       gh-token = {
         recipients = ["master"];
-        owner = "nix";
+        owner = user;
         group = "users";
         mode = "0600";
       };

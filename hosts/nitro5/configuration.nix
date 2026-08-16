@@ -2,6 +2,7 @@
   config,
   pkgs,
   inputs,
+  user,
   ...
 }: {
   # used as label for last major system edit; useful when picking generations at boot
@@ -91,12 +92,25 @@
     alsa.support32Bit = true;
     pulse.enable = true;
   };
+
+  users.users.${user} = {
+    isNormalUser = true;
+    description = user;
+    shell = pkgs.fish;
+    extraGroups = ["networkmanager" "wheel"];
+    initialPassword = "12345";
+    #hashedPasswordFile = "/run/nix-secrets/secrets/password";
+    packages = with pkgs; [
+    ];
+  };
+
   users.users."nix" = {
     isNormalUser = true;
     description = "nix";
     shell = pkgs.fish;
     extraGroups = ["networkmanager" "wheel"];
     initialPassword = "12345";
+    #hashedPasswordFile = "/run/nix-secrets/secrets/password";
     packages = with pkgs; [
     ];
   };

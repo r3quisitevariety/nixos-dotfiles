@@ -2,6 +2,7 @@
   pkgs,
   config,
   inputs,
+  user,
   ...
 }: {
   programs.ssh = {
@@ -18,7 +19,7 @@
 
     settings."nitro5" = {
       HostName = "nitro5";
-      User = "nix";
+      User = "onoruu";
       # tells ssh WHICH private key to use
       # server MUST have matching public key in its authorized_keys for passwordless to work
       # authorized_keys will be handled imperatively.
@@ -38,8 +39,8 @@
     };
   };
 
-  home.username = "onoruu";
-  home.homeDirectory = "/home/onoruu";
+  home.username = user;
+  home.homeDirectory = "/home/${user}";
   home.stateVersion = "25.11";
 
   services.syncthing = {
