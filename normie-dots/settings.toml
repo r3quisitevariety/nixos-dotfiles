@@ -257,12 +257,12 @@ time_format = "{:%-I:%M %p}"
     alpha = 0.99999997764825821
 
 [theme]
-builtin = "Catppuccin"
-community_palette = "Catppuccin Macchiato Blue"
+builtin = "Gruvbox"
+community_palette = "Catppuccin Mocha Blue"
 custom_palette = "m3-content"
 mode = "dark"
 source = "community"
-wallpaper_scheme = "m3-tonal-spot"
+wallpaper_scheme = "m3-fruit-salad"
 
     [theme.templates]
     builtin_ids = [ "btop", "foot", "gtk3", "gtk4", "ghostty", "hyprland", "kcolorscheme", "kitty", "mango", "niri", "qt" ]
