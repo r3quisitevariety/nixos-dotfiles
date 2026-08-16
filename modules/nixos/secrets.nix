@@ -35,7 +35,8 @@
         group = "users";
         mode = "0600";
       };
-      freshrss = {
+
+      password = {
         recipients = ["master"];
         owner = "nix";
         group = "users";
