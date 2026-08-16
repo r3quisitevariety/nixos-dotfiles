@@ -57,12 +57,12 @@
   # Enable CUPS to print documents.
   services.printing.enable = true;
 
-  # Define a user account. Don't forget to set a password with ‘passwd’.
+  # Define a user account.
   users.users.${user} = {
     isNormalUser = true;
     description = user;
     shell = pkgs.fish;
-    initialPassword = "12345";
+    hashedPasswordFile = "/run/nix-secrets/secrets/password";
     extraGroups = ["networkmanager" "wheel" "docker"];
     packages = with pkgs; [
       #  thunderbird

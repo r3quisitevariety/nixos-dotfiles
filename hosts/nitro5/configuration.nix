@@ -98,8 +98,7 @@
     description = user;
     shell = pkgs.fish;
     extraGroups = ["networkmanager" "wheel"];
-    initialPassword = "12345";
-    #hashedPasswordFile = "/run/nix-secrets/secrets/password";
+    hashedPasswordFile = "/run/nix-secrets/secrets/password";
     packages = with pkgs; [
     ];
   };
