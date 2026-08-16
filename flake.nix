@@ -4,7 +4,7 @@
   # using tack to manage inputs
   # args form is from tack's README
   outputs = {self, ...} @ args: let
-    user = "zx";
+    user = "nix";
 
     inputs = (import ./.tack) {
       overrides = args.tackOverrides or {};
@@ -46,26 +46,23 @@
       system = "x86_64-linux";
       specialArgs = {inherit inputs user;};
       modules = [
-        (
-          {pkgs, ...}: {
-            nixpkgs.overlays = [
-              # Use the exact nixpkgs revision as defined in this repo to ensure binary cache hits.
-              nix-cachyos-kernel.overlays.pinned
-              #NUR overlay for browser extensions (firefox-addons)
-              nur.overlays.default
-            ];
+        ({pkgs, ...}: {
+          nixpkgs.overlays = [
+            # Use the exact nixpkgs revision as defined in this repo to ensure binary cache hits.
+            nix-cachyos-kernel.overlays.pinned
+            #NUR overlay for browser extensions (firefox-addons)
+            nur.overlays.default
+          ];
 
-            # ... your other configs
-          }
-        )
+          # ... your other configs
+        })
         ./hosts/nitro5
         home-manager.nixosModules.home-manager
         {
           home-manager.useGlobalPkgs = true;
           home-manager.useUserPackages = true;
           home-manager.extraSpecialArgs = {inherit inputs user;};
-          home-manager.users.${user} =
-            import ./hosts/nitro5/home.nix;
+          home-manager.users.${user} = import ./hosts/nitro5/home.nix;
           #for standalone, run home-manager switch -b backup
           home-manager.backupFileExtension = "backup";
         }
@@ -87,8 +84,7 @@
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
             home-manager.extraSpecialArgs = {inherit inputs user;};
-            home-manager.users.${user} =
-              import ./hosts/inspiron/home.nix;
+            home-manager.users.${user} = import ./hosts/inspiron/home.nix;
             #for standalone, run home-manager switch -b backup
             home-manager.backupFileExtension = "backup";
           }
