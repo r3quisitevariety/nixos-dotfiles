@@ -26,20 +26,17 @@
   programs.carapace = {
     enable = true;
     enableFishIntegration = true;
-    enableZshIntegration = true;
     enableBashIntegration = true;
   };
 
   programs.zoxide = {
     enable = true;
     enableFishIntegration = true;
-    enableZshIntegration = true;
     enableBashIntegration = true;
   };
   programs.starship = {
     enable = true;
     enableFishIntegration = true;
-    enableZshIntegration = true;
     enableBashIntegration = true;
   };
 

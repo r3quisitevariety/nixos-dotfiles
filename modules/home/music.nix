@@ -20,10 +20,6 @@
     }
   '';
 
-  programs.zsh.initContent = ''
-    rmpc() { command rmpc update && command rmpc "$@" }
-  '';
-
   services.mpd = {
     enable = true;
     musicDirectory = "${config.home.homeDirectory}/Music/keepers";
