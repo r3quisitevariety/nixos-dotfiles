@@ -104,17 +104,6 @@
     ];
   };
 
-  users.users."nix" = {
-    isNormalUser = true;
-    description = "nix";
-    shell = pkgs.fish;
-    extraGroups = ["networkmanager" "wheel"];
-    initialPassword = "12345";
-    #hashedPasswordFile = "/run/nix-secrets/secrets/password";
-    packages = with pkgs; [
-    ];
-  };
-
   programs.firefox.enable = true;
   nixpkgs.config.allowUnfree = true;
 

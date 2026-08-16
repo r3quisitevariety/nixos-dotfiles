@@ -63,18 +63,8 @@
           home-manager.useGlobalPkgs = true;
           home-manager.useUserPackages = true;
           home-manager.extraSpecialArgs = {inherit inputs user;};
-          home-manager.users.nix = {
-            _module.args.hmUser = "nix";
-            imports = [
-              ./hosts/nitro5/home.nix
-            ];
-          };
-          home-manager.users.${user} = {
-            _module.args.hmUser = user;
-            imports = [
-              ./hosts/nitro5/home.nix
-            ];
-          };
+          home-manager.users.${user} =
+            import ./hosts/nitro5/home.nix;
           #for standalone, run home-manager switch -b backup
           home-manager.backupFileExtension = "backup";
         }

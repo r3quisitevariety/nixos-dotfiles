@@ -2,7 +2,6 @@
   pkgs,
   config,
   inputs,
-  hmUser ? user,
   user,
   ...
 }: {
@@ -38,8 +37,8 @@
     };
   };
 
-  home.username = hmUser;
-  home.homeDirectory = "/home/${hmUser}";
+  home.username = user;
+  home.homeDirectory = "/home/${user}";
   home.stateVersion = "25.11";
 
   home.file.".config/hypr/hyprland.lua" = {
