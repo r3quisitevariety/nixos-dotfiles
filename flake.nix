@@ -5,6 +5,7 @@
   # args form is from tack's README
   outputs = {self, ...} @ args: let
     user = "zx";
+
     inputs = (import ./.tack) {
       overrides = args.tackOverrides or {};
     };
@@ -72,22 +73,25 @@
     };
 
     #homelab config
-    nixosConfigurations.inspiron = nixpkgs.lib.nixosSystem {
-      system = "x86_64-linux";
-      specialArgs = {inherit inputs user;};
-      modules = [
-        ./hosts/inspiron
-        home-manager.nixosModules.home-manager
-        {
-          home-manager.useGlobalPkgs = true;
-          home-manager.useUserPackages = true;
-          home-manager.extraSpecialArgs = {inherit inputs user;};
-          home-manager.users.${user} =
-            import ./hosts/inspiron/home.nix;
-          #for standalone, run home-manager switch -b backup
-          home-manager.backupFileExtension = "backup";
-        }
-      ];
-    };
+    nixosConfigurations.inspiron = let
+      user = "onoruu";
+    in
+      nixpkgs.lib.nixosSystem {
+        system = "x86_64-linux";
+        specialArgs = {inherit inputs user;};
+        modules = [
+          ./hosts/inspiron
+          home-manager.nixosModules.home-manager
+          {
+            home-manager.useGlobalPkgs = true;
+            home-manager.useUserPackages = true;
+            home-manager.extraSpecialArgs = {inherit inputs user;};
+            home-manager.users.${user} =
+              import ./hosts/inspiron/home.nix;
+            #for standalone, run home-manager switch -b backup
+            home-manager.backupFileExtension = "backup";
+          }
+        ];
+      };
   };
 }
