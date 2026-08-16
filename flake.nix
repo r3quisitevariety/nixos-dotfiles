@@ -4,7 +4,7 @@
   # using tack to manage inputs
   # args form is from tack's README
   outputs = {self, ...} @ args: let
-    user = "onoruu";
+    user = "zx";
     inputs = (import ./.tack) {
       overrides = args.tackOverrides or {};
     };
