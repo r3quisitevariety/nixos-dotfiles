@@ -3,28 +3,6 @@
   inputs,
   ...
 }: {
-  users.users."onoruu".shell = pkgs.fish;
-  programs.bash = {
-    interactiveShellInit = ''
-      # "check if parent process is not fish" && "make nested shells work properly"
-      if grep -qv fish /proc/$PPID/comm && [[ $SHLVL == [12] ]]; then
-          # set $SHELL for better integration with programs like nix shell, tmux, etc.
-          SHELL=${pkgs.fish}/bin/fish exec fish
-      fi
-    '';
-  };
-  programs.fish = {
-    enable = true;
-    interactiveShellInit = ''
-      set fish_greeting # Disable greeting
-
-      # The remote host may not have Kitty's terminfo entry installed.
-      if set -q SSH_CONNECTION; and test "$TERM" = xterm-kitty
-        set -gx TERM xterm-256color
-      end
-    '';
-  };
-
   # allows nh --target-host to work
   nix.settings = {
     trusted-users = ["root" "@wheel"];
@@ -82,6 +60,7 @@
   users.users."onoruu" = {
     isNormalUser = true;
     description = "onoruu";
+    shell = pkgs.fish;
     extraGroups = ["networkmanager" "wheel" "docker"];
     packages = with pkgs; [
       #  thunderbird
