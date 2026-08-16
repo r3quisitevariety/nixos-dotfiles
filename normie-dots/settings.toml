@@ -1,7 +1,7 @@
 config_version = 8
 
 [backdrop]
-blur_intensity = 0.0
+blur_intensity = 0.019999999552965164
 
 [bar.default]
 center = [ "workspaces", "bar" ]
@@ -253,14 +253,14 @@ time_format = "{:%-I:%M %p}"
 
 [theme]
 builtin = "Catppuccin"
-community_palette = "Catppuccin Macchiato Blue"
+community_palette = "Catppuccin Frappe Blue"
 custom_palette = "m3-content"
 mode = "dark"
-source = "community"
+source = "wallpaper"
 wallpaper_scheme = "m3-tonal-spot"
 
     [theme.templates]
-    builtin_ids = [ "btop", "foot", "gtk3", "gtk4", "ghostty", "hyprland", "kcolorscheme", "mango", "niri", "qt" ]
+    builtin_ids = [ "btop", "foot", "gtk3", "gtk4", "ghostty", "hyprland", "kcolorscheme", "kitty", "mango", "niri", "qt" ]
     community_ids = [
         "opencode",
         "pywalfox",

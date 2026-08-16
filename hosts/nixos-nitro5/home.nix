@@ -4,6 +4,38 @@
   inputs,
   ...
 }: {
+  programs.kitty = {
+    enable = true;
+
+    font = {
+      name = "JetBrainsMono Nerd Font";
+      size = 11;
+    };
+
+    settings = {
+      allow_remote_control = "yes";
+      background_blur = 24;
+      background_opacity = "0.8";
+      confirm_os_window_close = 0;
+      cursor_trail = 5;
+      hide_window_decorations = "yes";
+      placement_strategy = "top-left";
+      resize_debounce_time = "0 0";
+      scrollbar = "never";
+      window_padding_width = 2;
+    };
+
+    keybindings = {
+      "shift+cmd+backspace" = "change_font_size all 10";
+      "shift+cmd+minus" = "change_font_size all -1.0";
+      "shift+cmd+plus" = "change_font_size all +1.0";
+    };
+
+    extraConfig = ''
+      include ${config.xdg.configHome}/kitty/themes/noctalia.conf
+    '';
+  };
+
   programs.ssh = {
     enableDefaultConfig = false;
     enable = true;
