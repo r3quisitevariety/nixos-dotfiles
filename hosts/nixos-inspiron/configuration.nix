@@ -17,6 +17,11 @@
     enable = true;
     interactiveShellInit = ''
       set fish_greeting # Disable greeting
+
+      # The remote host may not have Kitty's terminfo entry installed.
+      if set -q SSH_CONNECTION; and test "$TERM" = xterm-kitty
+        set -gx TERM xterm-256color
+      end
     '';
   };
 
