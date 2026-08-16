@@ -56,14 +56,14 @@
             # ... your other configs
           }
         )
-        ./hosts/nixos-nitro5
+        ./hosts/nitro5
         home-manager.nixosModules.home-manager
         {
           home-manager.useGlobalPkgs = true;
           home-manager.useUserPackages = true;
           home-manager.extraSpecialArgs = {inherit inputs;};
           home-manager.users.nix =
-            import ./hosts/nixos-nitro5/home.nix;
+            import ./hosts/nitro5/home.nix;
           #for standalone, run home-manager switch -b backup
           home-manager.backupFileExtension = "backup";
         }
@@ -75,14 +75,14 @@
       system = "x86_64-linux";
       specialArgs = {inherit inputs;};
       modules = [
-        ./hosts/nixos-inspiron
+        ./hosts/inspiron
         home-manager.nixosModules.home-manager
         {
           home-manager.useGlobalPkgs = true;
           home-manager.useUserPackages = true;
           home-manager.extraSpecialArgs = {inherit inputs;};
           home-manager.users.onoruu =
-            import ./hosts/nixos-inspiron/home.nix;
+            import ./hosts/inspiron/home.nix;
           #for standalone, run home-manager switch -b backup
           home-manager.backupFileExtension = "backup";
         }
