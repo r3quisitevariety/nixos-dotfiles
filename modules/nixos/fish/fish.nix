@@ -1,7 +1,16 @@
-{...}: {
+{pkgs, ...}: {
+  # imported from respective home.nix's
   programs.fish = {
     enable = true;
     interactiveShellInit = ''
+      set fish_greeting # Disable greeting
+      ${pkgs.any-nix-shell}/bin/any-nix-shell fish --info-right | source # allows fish in nix-shell
+
+      # fix tmux not working over ssh with kitty
+      if set -q SSH_CONNECTION; and test "$TERM" = xterm-kitty
+        set -gx TERM xterm-256color
+      end
+
       function ya
         set tmp (mktemp -t "yazi-cwd.XXXXXX")
         yazi $argv --cwd-file="$tmp"
@@ -17,14 +26,6 @@
         sudo nix-env --delete-generations $argv --profile /nix/var/nix/profiles/system
       end
 
-      # wraps tack around gh auth token to bypass rate limits
-      # omits the need for programs.tack.nixConfTokens = true;
-      # also stays platform agnostic rather than being locked to nixOS
-      # use gh auth login to configure the credentials
-      function tack
-        set -lx GH_TOKEN (gh auth token)
-        command tack $argv
-      end
     '';
   };
 }

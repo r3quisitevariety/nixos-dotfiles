@@ -107,6 +107,7 @@
     #../../modules/home/zen.nix
     #../../modules/home/discord.nix
     ../../modules/home/yt-music-dlp.nix
+    ../../modules/nixos/fish/fish.nix
     #../../modules/vr.nix
     #../../modules/obs.nix
     #../../modules/substituters.nix

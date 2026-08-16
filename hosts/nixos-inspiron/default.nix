@@ -9,6 +9,6 @@
     ../../modules/nixos/nix.nix
     #../../modules/nixos/cachy.nix
     ../../modules/nixos/secrets-inspiron.nix
-    ../../modules/nixos/fish
+    ../../modules/nixos/fish/fish-startup.nix
   ];
 }
