@@ -175,13 +175,6 @@ layout {
 /* Apps: blur them all without xray so it looks more realistic. */
 prefer-no-csd
 
-layer-rule {
-    match namespace="^noctalia-(bar-[^\"]+|notification|dock|panel|attached-panel|osd)$"
-    background-effect {
-        blur true
-        xray false
-    }
-}
 blur {
     passes 4
     offset 3.0
