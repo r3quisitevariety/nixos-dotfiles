@@ -152,14 +152,17 @@
       pins.freshrss = {
         id = "freshrss";
         url = "http://inspiron:8085";
+        isEssential = true;
       };
       pins.copyparty = {
         id = "copyparty";
         url = "http://inspiron:3923";
+        isEssential = true;
       };
       pins.cinny = {
         id = "cinny";
         url = "https://app.cinny.in";
+        isEssential = true;
       };
     };
   };
