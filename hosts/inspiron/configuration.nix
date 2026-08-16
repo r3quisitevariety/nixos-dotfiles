@@ -88,6 +88,11 @@
     enable = true;
     openFirewall = true;
   };
+  services.syncthing = {
+    enable = true;
+    openDefaultPorts = true;
+    guiAddress = "0.0.0.0:8384";
+  };
 
   #freshrss (not fun on nix), soulseek
   virtualisation.docker = {
