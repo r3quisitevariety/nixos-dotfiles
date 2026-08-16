@@ -62,6 +62,7 @@
     isNormalUser = true;
     description = user;
     shell = pkgs.fish;
+    initialPassword = "12345";
     extraGroups = ["networkmanager" "wheel" "docker"];
     packages = with pkgs; [
       #  thunderbird
