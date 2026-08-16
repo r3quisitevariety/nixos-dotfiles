@@ -149,6 +149,18 @@
         url = "https://opencode.ai/go";
         isEssential = true;
       };
+      pins.freshrss = {
+        id = "freshrss";
+        url = "http://inspiron:8085";
+      };
+      pins.copyparty = {
+        id = "copyparty";
+        url = "http://inspiron:3923";
+      };
+      pins.cinny = {
+        id = "cinny";
+        url = "https://app.cinny.in";
+      };
     };
   };
 }
