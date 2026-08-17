@@ -5,6 +5,9 @@
   user,
   ...
 }: {
+  # BLAZINGLY FAST ITS MEMORY SAFE GUYS
+  security.sudo-rs.enable = true;
+
   # used as label for last major system edit; useful when picking generations at boot
   # system.nixos.label = "niri-cursor-smaller";
 

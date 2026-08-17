@@ -4,6 +4,10 @@
   user,
   ...
 }: {
+  # my homelab config
+
+  security.sudo-rs.enable = true;
+
   # allows nh --target-host to work
   nix.settings = {
     trusted-users = ["root" "@wheel"];
