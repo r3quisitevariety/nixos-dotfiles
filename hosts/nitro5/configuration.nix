@@ -23,7 +23,6 @@
   services.locate.enable = false;
 
   programs.steam.enable = true;
-  programs.hyprland.enable = true;
   programs.niri.enable = true;
 
   services.power-profiles-daemon.enable = true; # switch between performance, balance, or battery saving
