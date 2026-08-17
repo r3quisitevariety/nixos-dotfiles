@@ -54,10 +54,6 @@
         };
         betterGifPicker.enable = true;
         betterRoleContext.enable = true;
-        betterSessions = {
-          enable = true;
-          backgroundCheck = false;
-        };
         callTimer = {
           enable = true;
           format = "stopwatch";
