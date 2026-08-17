@@ -39,6 +39,7 @@
         "trust_all_worktrees" = true;
       };
       "vim_mode" = true;
+      relative_line_numbers = true;
       "line_height" = "comfortable";
       "project_panel" = {
         "dock" = "left";
