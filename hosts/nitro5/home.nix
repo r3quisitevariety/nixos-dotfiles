@@ -121,7 +121,6 @@
   imports = [
     # TODO i commented these out because i have yet to resolve hostname hardcoding for modules
     ./syncthing.nix
-    ./zed.nix
     ../../modules/home/neovim.nix
     ../../modules/home/shell.nix
     ../../modules/home/music.nix
