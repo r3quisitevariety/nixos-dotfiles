@@ -44,6 +44,7 @@
   home.stateVersion = "25.11";
 
   imports = [
+    ./syncthing.nix
     # TODO i commented these out because i have yet to resolve hostname hardcoding for modules
     ../../modules/home/neovim.nix
     ../../modules/home/shell.nix
