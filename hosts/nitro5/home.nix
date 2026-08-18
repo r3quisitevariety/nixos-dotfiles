@@ -51,6 +51,10 @@
     force = true;
   };
 
+  home.file.".config/niri/config.kdl".source =
+    config.lib.file.mkOutOfStoreSymlink
+    "${config.home.homeDirectory}/nixos-dotfiles/normie-dots/config.kdl";
+
   home.file.".local/state/noctalia/settings.toml".source =
     config.lib.file.mkOutOfStoreSymlink
     "${config.home.homeDirectory}/nixos-dotfiles/normie-dots/settings.toml";
