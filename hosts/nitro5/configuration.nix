@@ -21,6 +21,7 @@
 
   imports = [
     ./hardware-configuration.nix
+    ../../modules/nixos/refern.nix
   ];
 
   services.locate.enable = false;
@@ -109,6 +110,7 @@
   nixpkgs.config.allowUnfree = true;
 
   environment.systemPackages = with pkgs; [
+    refern
     #inputs.noctalia.packages.${pkgs.stdenv.hostPlatform.system}.default
     inputs.nixcu.packages.${pkgs.stdenv.hostPlatform.system}.default
     inputs.ncr.packages.${pkgs.stdenv.hostPlatform.system}.default
