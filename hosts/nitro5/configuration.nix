@@ -126,6 +126,7 @@
     google-chrome
     mpv
     proton-vpn
+    keepassxc
 
     nwg-look
     adw-gtk3
