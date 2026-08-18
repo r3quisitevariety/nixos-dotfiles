@@ -38,10 +38,10 @@ output "HDMI-A-1" {
 
 // gpu stuff
 debug {
-    // wait-for-frame-completion-before-queueing 
+    wait-for-frame-completion-before-queueing 
     // explicitly renders the dGPU 
     render-drm-device "/dev/dri/renderD129"
-    // emulate-zero-presentation-time
+    emulate-zero-presentation-time
 }
 // ============================================================
 // INPUT
@@ -190,6 +190,12 @@ window-rule {
     match app-id="^kitty$"
     draw-border-with-background false
 }
+
+window-rule {
+    match app-id="zed"
+    draw-border-with-background false
+}
+
 
 window-rule {
     geometry-corner-radius 5
