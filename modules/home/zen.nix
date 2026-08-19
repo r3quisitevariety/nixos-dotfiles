@@ -29,57 +29,57 @@
         "zen.welcome-screen.seen" = true;
       };
 
-      #search = {
-      #  force = false; # Enforce declared search engines on each rebuild
-      #  default = "ddg";
+      search = {
+        force = true; # Enforce declared search engines on each rebuild
+        default = "ddg";
 
-      #  engines = {
-      #    youtube = {
-      #      name = "Youtube";
-      #      urls = [
-      #        {
-      #          templates = "https://www.youtube.com/results?search_query={searchTerms}";
-      #        }
-      #      ];
-      #      definedAliases = ["@yt"];
-      #    };
-      #    github = {
-      #      name = "GitHub Search";
-      #      urls = [
-      #        {
-      #          template = "https://github.com/search?q={searchTerms}";
-      #        }
-      #      ];
-      #      definedAliases = ["@gh"];
-      #    };
-      #    google = {
-      #      name = "Google Search";
-      #      urls = [
-      #        {
-      #          template = "https;?/google.com/search?q={searchTerms}";
-      #        }
-      #      ];
-      #      definedAliases = ["@g"];
-      #    };
-      #    perplexity = {
-      #      name = "Perplexity";
-      #      urls = [
-      #        {
-      #          template = "https://www.perplexity.ai/search?q={searchTerms}";
-      #        }
-      #      ];
-      #      definedAliases = ["@p"];
-      #    };
-      #    brave = {
-      #      urls = [
-      #        {
-      #          template = "https://search.brave.com/search?q={searchTerms}";
-      #        }
-      #      ];
-      #      definedAliases = ["@b"];
-      #    };
-      #  };
-      #};
+        engines = {
+          youtube = {
+            name = "Youtube";
+            urls = [
+              {
+                template = "https://www.youtube.com/results?search_query={searchTerms}";
+              }
+            ];
+            definedAliases = ["@yt"];
+          };
+          github = {
+            name = "GitHub Search";
+            urls = [
+              {
+                template = "https://github.com/search?q={searchTerms}";
+              }
+            ];
+            definedAliases = ["@gh"];
+          };
+          google = {
+            name = "Google Search";
+            urls = [
+              {
+                template = "https://google.com/search?q={searchTerms}";
+              }
+            ];
+            definedAliases = ["@g"];
+          };
+          perplexity = {
+            name = "Perplexity";
+            urls = [
+              {
+                template = "https://www.perplexity.ai/search?q={searchTerms}";
+              }
+            ];
+            definedAliases = ["@p"];
+          };
+          brave = {
+            urls = [
+              {
+                template = "https://search.brave.com/search?q={searchTerms}";
+              }
+            ];
+            definedAliases = ["@b"];
+          };
+        };
+      };
 
       extensions.packages = with pkgs.nur.repos.rycee.firefox-addons; [
         ublock-origin
