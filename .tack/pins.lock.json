@@ -1,4 +1,12 @@
 {
+  "copyparty": {
+    "type": "github",
+    "owner": "9001",
+    "repo": "copyparty",
+    "rev": "6115eb452d2c2bbdeef5d19098fac17db69ddaa8",
+    "narHash": "sha256-/YbaX3cVP54l6Ol8qgS/K8H+Hu8zgyOgUVDLTv70txE=",
+    "lastModified": 1787004344
+  },
   "home-manager": {
     "type": "github",
     "owner": "nix-community",

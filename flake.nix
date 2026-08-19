@@ -15,6 +15,7 @@
       home-manager
       nix-cachyos-kernel
       nur
+      copyparty
       ;
   in {
     #cachyos/arch config
@@ -76,10 +77,11 @@
     in
       nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
-        specialArgs = {inherit inputs user;};
+        specialArgs = {inherit inputs user copyparty;};
         modules = [
           ./hosts/inspiron
           home-manager.nixosModules.home-manager
+          copyparty.nixosModules.default
           {
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;

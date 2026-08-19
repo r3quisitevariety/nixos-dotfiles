@@ -1,4 +1,8 @@
-{inputs, user, ...}: {
+{
+  inputs,
+  user,
+  ...
+}: {
   imports = [
     inputs.nix-secrets.nixosModules.default
   ];
@@ -48,6 +52,20 @@
         owner = user;
         group = "users";
         mode = "0600";
+      };
+
+      copyparty-zx = {
+        recipients = ["master"];
+        owner = "copyparty";
+        group = "copyparty";
+        mode = "0400";
+      };
+
+      copyparty-smarties = {
+        recipients = ["master"];
+        owner = "copyparty";
+        group = "copyparty";
+        mode = "0400";
       };
     };
   };

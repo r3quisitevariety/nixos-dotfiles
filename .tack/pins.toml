@@ -71,3 +71,9 @@ url = "github:unnamed-systems/nix-secrets"
 [inputs.vellum]
 url = "github:greyxp1/vellum"
 
+[inputs.copyparty]
+url = "github:9001/copyparty"
+
+[inputs.copyparty.follows]
+nixpkgs = "nixpkgs"
+
