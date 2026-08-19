@@ -140,6 +140,13 @@
     enable = true;
     openFirewall = true;
   };
+  services.slskd = {
+    enable = true;
+    openFirewall = true;
+    environmentFile = "/run/nix-secrets/secrets/slskd";
+    user = "slskd";
+    group = "slskd";
+  };
 
   networking.firewall.allowedTCPPorts = [8384];
 

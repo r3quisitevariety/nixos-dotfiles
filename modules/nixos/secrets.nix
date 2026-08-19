@@ -67,6 +67,13 @@
         group = "copyparty";
         mode = "0400";
       };
+
+      slskd = {
+        recipients = ["master"];
+        owner = "slskd";
+        group = "slskd";
+        mode = "0400";
+      };
     };
   };
 }
