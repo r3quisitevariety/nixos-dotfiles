@@ -1,4 +1,29 @@
 {pkgs, ...}: {
+  programs.eza = {
+    enable = true;
+    enableFishIntegration = true;
+    git = true;
+    icons = "auto";
+    extraOptions = [
+      "--header"
+      "--group-directories-first"
+      "--sort=type"
+      "--no-permissions"
+      "--hyperlink=auto"
+      "--level=3"
+      "--git-ignore"
+      "--time=created"
+      "--time-style=long-iso"
+      "--short-nix"
+      "--loc"
+    ];
+  };
+  home.shellAliases = {
+    ls = "eza --color=auto";
+    lt = "eza --tree";
+    lc = "eza --code";
+  };
+
   home.shellAliases = {
     tack = "sh -c 'GH_TOKEN=\"$(cat /run/nix-secrets/secrets/gh-token)\" exec tack \"$@\"' sh";
     cd = "z";
@@ -7,7 +32,6 @@
     v = "nvim";
     g = "git";
     cp = "cp -r";
-    ls = "eza --color=auto";
     grep = "grep --color=auto";
     yay = "paru";
     notes = "cd ~/Documents/masterplan && nvim";
@@ -77,7 +101,6 @@
     ripgrep
     fd
     bat
-    eza
     tree
     tldr
     curl
