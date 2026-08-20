@@ -3,6 +3,9 @@
   user,
   ...
 }: {
+  # shared secrets across hosts
+  # host specific secrets have their own secrets.nix
+  # this module is needed to pass the age key to host-specific configurations
   imports = [
     inputs.nix-secrets.nixosModules.default
   ];
@@ -52,27 +55,6 @@
         owner = user;
         group = "users";
         mode = "0600";
-      };
-
-      copyparty-zx = {
-        recipients = ["master"];
-        owner = "copyparty";
-        group = "copyparty";
-        mode = "0400";
-      };
-
-      copyparty-smarties = {
-        recipients = ["master"];
-        owner = "copyparty";
-        group = "copyparty";
-        mode = "0400";
-      };
-
-      slskd = {
-        recipients = ["master"];
-        owner = "slskd";
-        group = "slskd";
-        mode = "0400";
       };
     };
   };

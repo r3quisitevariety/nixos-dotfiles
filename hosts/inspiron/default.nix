@@ -9,6 +9,7 @@
     ../../modules/nixos/nix.nix
     #../../modules/nixos/cachy.nix
     ../../modules/nixos/secrets.nix
+    ./secrets.nix
     ../../modules/nixos/fish/fish-startup.nix
   ];
 }
