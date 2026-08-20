@@ -21,7 +21,6 @@
     };
     secrets = {
       # recipients receive the age key to unlock their respective secrets
-      # ssh key
       ssh-key = {
         recipients = ["master"];
         owner = user;

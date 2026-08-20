@@ -20,9 +20,16 @@
       HostName = "inspiron";
       User = "onoruu";
       # tells ssh WHICH private key to use
-      # server MUST have matching public key in its authorized_keys for passwordless to work
+      # server MUST have matching public key in its authorized_keys for passwordless INTO the server to work
       IdentityFile = "/run/nix-secrets/secrets/ssh-key";
       # allows ONLY explicitly configured keys instead of mutable state like ~/.ssh/id_ed25519
+      IdentitiesOnly = true;
+    };
+
+    settings."pixel-8-pro" = {
+      HostName = "pixel-8-pro";
+      User = "u0_a239";
+      IdentityFile = "/run/nix-secrets/secrets/ssh-key";
       IdentitiesOnly = true;
     };
   };
