@@ -13,7 +13,7 @@ margin_ends = 0
 radius = 0
 radius_bottom_left = 80
 radius_bottom_right = 80
-start = [ "wallpaper", "nix-monitor", "recorder_2", "clock", "group:g2", "sysmon", "weather", "group:g6" ]
+start = [ "clock", "weather", "wallpaper", "nix-monitor", "recorder_2", "group:g2", "sysmon", "group:g6" ]
 
     [[bar.default.capsule_group]]
     border = ""
@@ -332,8 +332,7 @@ capsule = true
 capsule = true
 capsule_fill = "surface_variant"
 capsule_foreground = "secondary"
-enabled = false
-format = "{:%A, %B %e, %Y, %I:%M %p}"
+format = "{dt:%-I:%M %p}"
 
 [widget.cpu]
 show_label = false
@@ -382,7 +381,7 @@ type = "spacer"
 
 [widget.sysmon]
 capsule = true
-enabled = false
+show_value = false
 stat = "gpu_vram"
 
 [widget.taskbar]
@@ -409,7 +408,8 @@ capsule = true
 
 [widget.weather]
 capsule = true
-enabled = false
+show_condition = false
+show_temperature = false
 
 [widget.workspaces]
 anchor = true
