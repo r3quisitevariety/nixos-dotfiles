@@ -337,6 +337,7 @@ format = "{:%A, %B %e, %Y, %I:%M %p}"
 
 [widget.cpu]
 show_label = false
+show_value = false
 
 [widget.launcher]
 capsule = true
@@ -364,6 +365,7 @@ capsule = true
 
 [widget.ram]
 show_label = false
+show_value = false
 
 [widget.recorder]
 type = "noctalia/screen_recorder:recorder"
@@ -389,6 +391,7 @@ group_by_workspace = true
 
 [widget.temp]
 show_label = false
+show_value = false
 
 [widget.todo]
 type = "nightwatch75/todo:todo"
