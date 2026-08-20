@@ -41,6 +41,8 @@
     firewall.enable = true;
   };
 
+  networking.firewall.allowedTCPPorts = [8384];
+
   hardware.bluetooth = {
     enable = true;
     powerOnBoot = true;
