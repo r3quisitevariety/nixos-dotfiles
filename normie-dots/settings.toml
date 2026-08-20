@@ -13,7 +13,7 @@ margin_ends = 0
 radius = 0
 radius_bottom_left = 80
 radius_bottom_right = 80
-start = [ "clock", "weather", "wallpaper", "nix-monitor", "recorder_2", "group:g2", "sysmon", "group:g6" ]
+start = [ "clock", "wallpaper", "nix-monitor", "recorder_2", "group:g2", "sysmon", "weather", "group:g6" ]
 
     [[bar.default.capsule_group]]
     border = ""
