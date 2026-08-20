@@ -1,6 +1,7 @@
 {...}: {
   # this is hm managed
   # nitro5's syncthing.nix
+  networking.firewall.allowedTCPPorts = [8384];
   services.syncthing = {
     enable = true;
     overrideDevices = true;

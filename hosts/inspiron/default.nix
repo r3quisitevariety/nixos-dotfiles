@@ -11,5 +11,6 @@
     ../../modules/nixos/secrets.nix
     ./secrets.nix
     ../../modules/nixos/fish/fish-startup.nix
+    ../../modules/nixos/copyparty.nix
   ];
 }
