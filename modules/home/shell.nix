@@ -1,4 +1,11 @@
 {pkgs, ...}: {
+  programs.yt-dlp = {
+    enable = true;
+    extraConfig = ''
+      --cookies /run/nix-secrets/secrets/yt-dlp-cookies
+    '';
+  };
+
   programs.eza = {
     enable = true;
     enableFishIntegration = true;
@@ -105,7 +112,6 @@
     tldr
     curl
     wget
-    yt-dlp
     home-manager
     zola
     go

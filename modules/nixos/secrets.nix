@@ -55,6 +55,13 @@
         group = "users";
         mode = "0600";
       };
+
+      yt-dlp-cookies = {
+        recipients = ["master"];
+        owner = user;
+        group = "users";
+        mode = "0600";
+      };
     };
   };
 }
