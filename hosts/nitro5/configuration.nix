@@ -121,6 +121,9 @@
     xwayland-satellite
     wl-clipboard
 
+    nicotine-plus
+    picard
+
     obsidian
     #anki - experiencing build problems, use nix run instead
     nautilus
