@@ -1,8 +1,8 @@
 {pkgs, ...}: {
   home.file.".config/yt-dlp/music-config".text = ''
-    #--cookies-from-browser brave
+    --cookies /run/nix-secrets/secrets/yt-dlp-cookies
     -o "%(title)s.%(ext)s"
-    -f bestaudio
+    -f bestaudio/best
     --extract-audio
     --convert-thumbnails png
     --ppa "ThumbnailsConvertor+ffmpeg_o:-c:v png -vf crop=\"'if(gt(ih,iw),iw,ih)':'if(gt(iw,ih),ih,iw)'\""
