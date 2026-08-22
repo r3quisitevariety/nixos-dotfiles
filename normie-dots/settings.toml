@@ -13,9 +13,11 @@ margin_ends = 0
 radius = 0
 radius_bottom_left = 80
 radius_bottom_right = 80
-start = [ "clock", "wallpaper", "nix-monitor", "recorder_2", "group:g2", "sysmon", "weather", "group:g6" ]
+start = [ "clock", "group:g1", "nix-monitor", "recorder_2", "group:g2", "sysmon", "weather", "group:g6" ]
 
     [[bar.default.capsule_group]]
+    accordion = false
+    accordion_direction = "end"
     border = ""
     enabled = true
     fill = "surface_variant"
@@ -26,6 +28,8 @@ start = [ "clock", "wallpaper", "nix-monitor", "recorder_2", "group:g2", "sysmon
     padding = 10.0
 
     [[bar.default.capsule_group]]
+    accordion = false
+    accordion_direction = "end"
     enabled = true
     fill = "surface_variant"
     id = "g3"
@@ -34,6 +38,8 @@ start = [ "clock", "wallpaper", "nix-monitor", "recorder_2", "group:g2", "sysmon
     padding = 6.0
 
     [[bar.default.capsule_group]]
+    accordion = false
+    accordion_direction = "end"
     enabled = true
     fill = "surface_variant"
     id = "g4"
@@ -42,6 +48,8 @@ start = [ "clock", "wallpaper", "nix-monitor", "recorder_2", "group:g2", "sysmon
     padding = 6.0
 
     [[bar.default.capsule_group]]
+    accordion = false
+    accordion_direction = "end"
     enabled = true
     fill = "surface_variant"
     foreground = "tertiary"
@@ -51,6 +59,8 @@ start = [ "clock", "wallpaper", "nix-monitor", "recorder_2", "group:g2", "sysmon
     padding = 10.0
 
     [[bar.default.capsule_group]]
+    accordion = false
+    accordion_direction = "end"
     enabled = true
     fill = "surface_variant"
     foreground = "tertiary"
@@ -58,6 +68,16 @@ start = [ "clock", "wallpaper", "nix-monitor", "recorder_2", "group:g2", "sysmon
     members = [ "notes", "todo", "launcher" ]
     opacity = 1.0
     padding = 8.0
+
+    [[bar.default.capsule_group]]
+    accordion = true
+    accordion_direction = "end"
+    enabled = true
+    fill = "surface_variant"
+    id = "g1"
+    members = [ "wallpaper", "mpvpaper" ]
+    opacity = 1.0
+    padding = 6.0
 
 [calendar]
 enabled = true
@@ -255,6 +275,9 @@ panel_placement = "attached"
 show_update_available_notification = false
 update_command = "cd ~/nixos-dotfiles && nvim"
 
+[plugin_settings."noctalia/mpvpaper"]
+video_directory = "/home/zx/Videos/video-wallpapers"
+
 [plugin_settings."noctalia/notes"]
 notes_dir = "~/Documents/talianotes"
 
@@ -279,7 +302,8 @@ enabled = [
     "avivbintangaringga/nix-monitor",
     "thepunkoff/pomodoro",
     "noctalia/timer",
-    "yocraft/web-launcher"
+    "yocraft/web-launcher",
+    "noctalia/mpvpaper"
 ]
 
 [shell]
@@ -304,7 +328,7 @@ time_format = "{:%-I:%M %p}"
 
 [theme]
 builtin = "Gruvbox"
-community_palette = "Catppuccin Mocha Blue"
+community_palette = "Everforest Material"
 custom_palette = "m3-content"
 mode = "dark"
 source = "community"
@@ -338,10 +362,10 @@ transition_on_startup = true
     path = "/home/zx/Pictures/wallpapers/moody/wallhaven-je95gq_1920x1080.png"
 
     [wallpaper.last]
-    path = "/home/zx/Pictures/wallpapers/moody/wallhaven-je95gq_1920x1080.png"
+    path = "/home/zx/.cache/noctalia/mpvpaper/_home_zx_Videos_video_wallpapers_cozy_pokemon_mp4.jpg"
 
     [wallpaper.monitors.HDMI-A-1]
-    path = "/home/zx/Pictures/wallpapers/moody/wallhaven-je95gq_1920x1080.png"
+    path = "/home/zx/.cache/noctalia/mpvpaper/_home_zx_Videos_video_wallpapers_cozy_pokemon_mp4.jpg"
 
     [wallpaper.monitors.eDP-1]
     path = "/home/nix/Pictures/wallpapers/nature/wallhaven-dgdmj3.jpg"
@@ -353,6 +377,7 @@ address = "Toronto, Canada"
 capsule = true
 
 [widget.bar]
+capsule = true
 show_idle_on_horizontal = false
 type = "noctalia/timer:bar"
 
@@ -392,6 +417,9 @@ album_art_only = true
 hide_when_no_media = true
 max_length = 100
 min_length = 100
+
+[widget.mpvpaper]
+type = "noctalia/mpvpaper:mpvpaper"
 
 [widget.network]
 show_label = false

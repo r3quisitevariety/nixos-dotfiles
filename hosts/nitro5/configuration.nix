@@ -130,6 +130,7 @@
     foot
     google-chrome
     mpv
+    mpvpaper
     proton-vpn
     keepassxc
 
