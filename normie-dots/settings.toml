@@ -343,6 +343,7 @@ wallpaper_scheme = "m3-fruit-salad"
         "discord",
         "telegram",
         "neovim",
+        "obsidian",
         "vscode",
         "zed",
         "steam",
