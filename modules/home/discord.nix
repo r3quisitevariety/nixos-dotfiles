@@ -17,8 +17,8 @@
         discordBranch = "stable";
         minimizeToTray = true;
         arRPC = true;
-        splashColor = "rgb(202, 211, 245)";
-        splashBackground = "rgb(24, 25, 38)";
+        #splashColor = "rgb(202, 211, 245)";
+        #splashBackground = "rgb(24, 25, 38)";
       };
     };
 
@@ -31,11 +31,11 @@
 
       themeLinks = [
         #"https://catppuccin.github.io/discord/dist/catppuccin-frappe-sapphire.theme.css"
-        "https://raw.githubusercontent.com/mducbg/discord-everforest/refs/heads/main/theme/everforest-dark-hard.theme.css"
+        #"https://raw.githubusercontent.com/mducbg/discord-everforest/refs/heads/main/theme/everforest-dark-hard.theme.css"
       ];
       enabledThemeLinks = [
         #"https://catppuccin.github.io/discord/dist/catppuccin-frappe-sapphire.theme.css"
-        "https://raw.githubusercontent.com/mducbg/discord-everforest/refs/heads/main/theme/everforest-dark-hard.theme.css"
+        #"https://raw.githubusercontent.com/mducbg/discord-everforest/refs/heads/main/theme/everforest-dark-hard.theme.css"
       ];
 
       # Plugins with typed nixcord options (checked against shared.json/vencord.json/equicord.json).
