@@ -38,6 +38,7 @@
       mcp-nixos
       imagemagick
       pandoc
+      python313Packages.ddgs
     ];
 
     # THANKS WOLFIEEE
