@@ -20,5 +20,12 @@
       group = "slskd";
       mode = "0400";
     };
+
+    hermes-env = {
+      recipients = ["master"];
+      owner = "onoruu";
+      group = "onoruu";
+      mode = "0400";
+    };
   };
 }

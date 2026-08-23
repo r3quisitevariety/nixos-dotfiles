@@ -7,6 +7,14 @@
     "narHash": "sha256-/YbaX3cVP54l6Ol8qgS/K8H+Hu8zgyOgUVDLTv70txE=",
     "lastModified": 1787004344
   },
+  "hermes-agent": {
+    "type": "github",
+    "owner": "NousResearch",
+    "repo": "hermes-agent",
+    "rev": "7156d0d658e5311c3f8c88b7fb600cc441b7c30e",
+    "narHash": "sha256-/mU5k2vgwIuSIemaz4Pom871BFQJ+j13zo291tE52ns=",
+    "lastModified": 1787202029
+  },
   "home-manager": {
     "type": "github",
     "owner": "nix-community",

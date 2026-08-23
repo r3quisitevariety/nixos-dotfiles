@@ -10,6 +10,7 @@
     #../../modules/nixos/cachy.nix
     ../../modules/nixos/secrets.nix
     ./secrets.nix
+    ./hermes.nix
     ../../modules/nixos/fish/fish-startup.nix
     ../../modules/nixos/copyparty.nix
   ];
