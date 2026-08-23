@@ -11,6 +11,20 @@
   # used as label for last major system edit; useful when picking generations at boot
   # system.nixos.label = "niri-cursor-smaller";
 
+  users.users.${user} = {
+    isNormalUser = true;
+    description = user;
+    shell = pkgs.fish;
+    extraGroups = ["networkmanager" "wheel"];
+    hashedPasswordFile = "/run/nix-secrets/secrets/password";
+    packages = with pkgs; [
+    ];
+    openssh.authorizedKeys.keys = [
+      "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIN/UtQRnq46ol6gk+KU30jVoi0AIzPNryV4upRwO8k7P x3roo@proton.me"
+      "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIPoXp3mhxoLIoe6zV367lTeZGDLkHZIPJqNUwPITKJqm zx"
+    ];
+  };
+
   services.openssh = {
     enable = true;
     openFirewall = true;
@@ -95,16 +109,23 @@
     alsa.enable = true;
     alsa.support32Bit = true;
     pulse.enable = true;
-  };
-
-  users.users.${user} = {
-    isNormalUser = true;
-    description = user;
-    shell = pkgs.fish;
-    extraGroups = ["networkmanager" "wheel"];
-    hashedPasswordFile = "/run/nix-secrets/secrets/password";
-    packages = with pkgs; [
-    ];
+    #stops mic input from adjusting itself based on input sensitivity
+    wireplumber = {
+      extraConfig = {
+        "10-ignore-vols" = {
+          "monitor.alsa.rules" = [
+            {
+              matches = [{"media.class" = "Audio/Source";}];
+              actions = {
+                update-props = {
+                  "node.ignore-session-volume" = true;
+                };
+              };
+            }
+          ];
+        };
+      };
+    };
   };
 
   programs.firefox.enable = true;

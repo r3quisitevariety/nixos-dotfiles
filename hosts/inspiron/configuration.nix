@@ -7,6 +7,19 @@
 }: {
   # my homelab config
 
+  users.users.${user} = {
+    isNormalUser = true;
+    description = user;
+    shell = pkgs.fish;
+    extraGroups = ["networkmanager" "wheel"];
+    hashedPasswordFile = "/run/nix-secrets/secrets/password";
+    packages = with pkgs; [
+    ];
+    openssh.authorizedKeys.keys = [
+      "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIN/UtQRnq46ol6gk+KU30jVoi0AIzPNryV4upRwO8k7P x3roo@proton.me"
+      "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIPoXp3mhxoLIoe6zV367lTeZGDLkHZIPJqNUwPITKJqm zx"
+    ];
+  };
   security.sudo-rs.enable = true;
 
   # allows nh --target-host to work
@@ -64,18 +77,6 @@
 
   # Enable CUPS to print documents.
   services.printing.enable = true;
-
-  # Define a user account.
-  users.users.${user} = {
-    isNormalUser = true;
-    description = user;
-    shell = pkgs.fish;
-    hashedPasswordFile = "/run/nix-secrets/secrets/password";
-    extraGroups = ["networkmanager" "wheel" "docker"];
-    packages = with pkgs; [
-      #  thunderbird
-    ];
-  };
 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
