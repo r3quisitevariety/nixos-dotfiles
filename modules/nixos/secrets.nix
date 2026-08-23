@@ -62,6 +62,13 @@
         group = "users";
         mode = "0600";
       };
+
+      hermes-env = {
+        recipients = ["master"];
+        owner = "onoruu";
+        group = "onoruu";
+        mode = "0400";
+      };
     };
   };
 }
