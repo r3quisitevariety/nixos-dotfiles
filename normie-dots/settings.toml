@@ -327,7 +327,7 @@ time_format = "{:%-I:%M %p}"
     alpha = 0.99999997764825821
 
 [theme]
-builtin = "Gruvbox"
+builtin = "Noctalia"
 community_palette = "Everforest Material"
 custom_palette = "m3-content"
 mode = "dark"
@@ -360,7 +360,7 @@ transition = [ "disc" ]
 transition_on_startup = true
 
     [wallpaper.default]
-    path = "/home/zx/Pictures/wallpapers/moody/wallhaven-je95gq_1920x1080.png"
+    path = "/home/zx/Pictures/wallpapers/nature/wallhaven-4xyzkz.jpg"
 
     [wallpaper.last]
     path = "/home/zx/.cache/noctalia/mpvpaper/_home_zx_Videos_video_wallpapers_cozy_pokemon_mp4.jpg"
@@ -369,7 +369,7 @@ transition_on_startup = true
     path = "/home/zx/.cache/noctalia/mpvpaper/_home_zx_Videos_video_wallpapers_cozy_pokemon_mp4.jpg"
 
     [wallpaper.monitors.eDP-1]
-    path = "/home/nix/Pictures/wallpapers/nature/wallhaven-dgdmj3.jpg"
+    path = "/home/zx/.cache/noctalia/mpvpaper/_home_zx_Videos_video_wallpapers_cozy_pokemon_mp4.jpg"
 
 [weather]
 address = "Toronto, Canada"
