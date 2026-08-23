@@ -85,6 +85,14 @@
     "narHash": "sha256-j+oHHZapBYoMasApgo+jsyTuepyd1U8zdmTe2SZqGxc=",
     "lastModified": 1787193268
   },
+  "rsname": {
+    "type": "git",
+    "url": "https://codeberg.org/poacher/rsname",
+    "ref": "HEAD",
+    "rev": "af323493350ac9fb0af9278d08c83e02bfc92d75",
+    "narHash": "sha256-C7zvAMTYgh6ez7W93VBhUfpdoeQykb6JDmYbov6on5o=",
+    "lastModified": 1787513533
+  },
   "vellum": {
     "type": "github",
     "owner": "greyxp1",

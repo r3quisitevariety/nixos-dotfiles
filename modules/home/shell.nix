@@ -1,4 +1,8 @@
-{pkgs, ...}: {
+{
+  pkgs,
+  rsname,
+  ...
+}: {
   programs.yt-dlp = {
     enable = true;
     extraConfig = ''
@@ -81,6 +85,7 @@
   };
 
   home.packages = with pkgs; [
+    rsname.packages.${pkgs.stdenv.hostPlatform.system}.default
     duf # disk usage utility
     tack
     neocities

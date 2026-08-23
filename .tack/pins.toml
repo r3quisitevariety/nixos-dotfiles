@@ -83,3 +83,9 @@ url = "github:NousResearch/hermes-agent"
 [inputs.hermes-agent.follows]
 nixpkgs = "nixpkgs"
 
+[inputs.rsname]
+url = "git+https://codeberg.org/poacher/rsname"
+
+[inputs.rsname.follows]
+nixpkgs = "nixpkgs"
+
