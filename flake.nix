@@ -16,6 +16,7 @@
       nix-cachyos-kernel
       nur
       copyparty
+      rsname
       ;
   in {
     #cachyos/arch config
@@ -62,7 +63,7 @@
         {
           home-manager.useGlobalPkgs = true;
           home-manager.useUserPackages = true;
-          home-manager.extraSpecialArgs = {inherit inputs user;};
+          home-manager.extraSpecialArgs = {inherit inputs user rsname;};
           home-manager.users.${user} = import ./hosts/nitro5/home.nix;
           #for standalone, run home-manager switch -b backup
           home-manager.backupFileExtension = "backup";
@@ -85,7 +86,7 @@
           {
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
-            home-manager.extraSpecialArgs = {inherit inputs user;};
+            home-manager.extraSpecialArgs = {inherit inputs user rsname;};
             home-manager.users.${user} = import ./hosts/inspiron/home.nix;
             #for standalone, run home-manager switch -b backup
             home-manager.backupFileExtension = "backup";
