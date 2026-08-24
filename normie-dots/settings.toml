@@ -328,7 +328,7 @@ time_format = "{:%-I:%M %p}"
 
 [theme]
 builtin = "Noctalia"
-community_palette = "Everforest Material"
+community_palette = "Catppuccin Macchiato Blue"
 custom_palette = "m3-content"
 mode = "dark"
 source = "community"
@@ -360,13 +360,13 @@ transition = [ "disc" ]
 transition_on_startup = true
 
     [wallpaper.default]
-    path = "/home/zx/Pictures/wallpapers/nature/wallhaven-4xyzkz.jpg"
+    path = "/home/zx/Pictures/wallpapers/moody/wallhaven-je95gq_1920x1080.png"
 
     [wallpaper.last]
-    path = "/home/zx/.cache/noctalia/mpvpaper/_home_zx_Videos_video_wallpapers_cozy_pokemon_mp4.jpg"
+    path = "/home/zx/Pictures/wallpapers/moody/wallhaven-je95gq_1920x1080.png"
 
     [wallpaper.monitors.HDMI-A-1]
-    path = "/home/zx/.cache/noctalia/mpvpaper/_home_zx_Videos_video_wallpapers_cozy_pokemon_mp4.jpg"
+    path = "/home/zx/Pictures/wallpapers/moody/wallhaven-je95gq_1920x1080.png"
 
     [wallpaper.monitors.eDP-1]
     path = "/home/zx/.cache/noctalia/mpvpaper/_home_zx_Videos_video_wallpapers_cozy_pokemon_mp4.jpg"
