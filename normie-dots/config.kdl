@@ -70,6 +70,11 @@ input {
     focus-follows-mouse
 }
 
+    clipboard {
+    disable-primary
+}
+
+
 // ============================================================
 // ENVIRONMENT VARIABLES
 // https://niri-wm.github.io/niri/Configuration:-Miscellaneous#environment
@@ -346,6 +351,7 @@ binds {
     Alt+Print         { screenshot-window; }
     // Region screenshot (closest to `hyprshot -m region`)
     Mod+Shift+S       { screenshot; }
+
     // NOTE: niri's built-in screenshot picker IS a region selector.
     // For clipboard-only, pipe with: screenshot-path null + wl-copy workaround.
 
