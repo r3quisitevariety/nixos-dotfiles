@@ -10,6 +10,10 @@
     '';
   };
 
+  programs.aria2 = {
+    enable = true;
+  };
+
   programs.eza = {
     enable = true;
     enableFishIntegration = true;
