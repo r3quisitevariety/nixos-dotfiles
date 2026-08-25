@@ -36,7 +36,7 @@ in {
       };
 
       ui = {
-        sidebar_width = 32;
+        #sidebar_width = 32;
         sidebar_start_collapsed = true;
         #agent_panel_sort = "priority";
         tab_bar_position = "bottom";
