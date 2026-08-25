@@ -93,7 +93,7 @@ in {
         goto = "prefix+w";
 
         # zoom / layout / session
-        zoom = "prefix+z";
+        zoom = "prefix+f";
         copy_mode = "prefix+[";
         toggle_sidebar = "prefix+e";
         reload_config = "prefix+shift+r";
