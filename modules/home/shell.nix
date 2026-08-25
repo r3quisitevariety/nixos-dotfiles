@@ -91,6 +91,7 @@
   home.packages = with pkgs; [
     rsname.packages.${pkgs.stdenv.hostPlatform.system}.default
     duf # disk usage utility
+    ani-cli #lol
     tack
     neocities
     imv
