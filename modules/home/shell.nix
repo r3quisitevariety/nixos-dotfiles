@@ -54,6 +54,7 @@
     less = "moor";
     ns = "nix-search-tv print | fzf --preview 'nix-search-tv preview {}' --scheme history";
     t = "tmux";
+    h = "herdr";
     bunnyfetch = "fastfetch";
     oc = "opencode";
   };
