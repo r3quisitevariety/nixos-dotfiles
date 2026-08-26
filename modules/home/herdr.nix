@@ -92,7 +92,8 @@ in {
 
         # tabs
         new_tab = "prefix+c";
-        close_tab = "prefix+x";
+        close_pane = "prefix+x";
+        close_tab = "prefix+ampersand";
         next_tab = "prefix+n";
         previous_tab = "prefix+p";
         rename_tab = "prefix+,";
