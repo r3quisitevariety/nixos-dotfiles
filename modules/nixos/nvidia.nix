@@ -13,7 +13,7 @@
   hardware.graphics.enable32Bit = true;
   # NVIDIA PRIME offload (Acer Nitro 5, RTX 4060)
   hardware.nvidia = {
-    open = false;
+    open = true;
     modesetting.enable = true;
     powerManagement.enable = true;
     nvidiaSettings = true;
