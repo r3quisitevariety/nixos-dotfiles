@@ -141,6 +141,7 @@
     papirus-icon-theme
     xwayland-satellite
     wl-clipboard
+    vellum
 
     nicotine-plus
     picard

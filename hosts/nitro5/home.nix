@@ -146,8 +146,5 @@
     #../../modules/obs.nix
     #../../modules/substituters.nix
     #../../modules/noctalia-greeter.nix
-    inputs.vellum.homeModules.default
   ];
-
-  services.vellum.enable = true;
 }

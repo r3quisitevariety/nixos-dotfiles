@@ -68,9 +68,6 @@ nixpkgs = "nixpkgs"
 [inputs.nix-secrets]
 url = "github:unnamed-systems/nix-secrets"
 
-[inputs.vellum]
-url = "github:greyxp1/vellum"
-
 [inputs.copyparty]
 url = "github:9001/copyparty"
 
@@ -81,12 +78,6 @@ nixpkgs = "nixpkgs"
 url = "github:NousResearch/hermes-agent"
 
 [inputs.hermes-agent.follows]
-nixpkgs = "nixpkgs"
-
-[inputs.rsname]
-url = "git+https://codeberg.org/poacher/rsname"
-
-[inputs.rsname.follows]
 nixpkgs = "nixpkgs"
 
 [inputs.umbriel]

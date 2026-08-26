@@ -18,7 +18,7 @@
 
 // spawns kitty as a daemon so it can instantaneously open
 spawn-at-startup "kitty" "--single-instance" "--start-as=hidden" "tail" "-f" "/dev/null";
-
+spawn-at-startup "vellum";
 // main laptop screen
 output "eDP-1" {
     // comment out "off" when using screen

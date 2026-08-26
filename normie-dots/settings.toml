@@ -1,4 +1,4 @@
-config_version = 12
+config_version = 13
 
 [backdrop]
 blur_intensity = 0.019999999552965164
@@ -181,6 +181,8 @@ widget_order = [
     cx = 960.0
     cy = 957.0
     output = "HDMI-A-1"
+    placement_height = 1080.0
+    placement_width = 1920.0
     rotation = 0.0
     type = "login_box"
 
@@ -206,6 +208,8 @@ widget_order = [
     cx = 473.0
     cy = 844.0
     output = "WL-1"
+    placement_height = 0.0
+    placement_width = 0.0
     rotation = 0.0
     type = "login_box"
 
@@ -231,6 +235,8 @@ widget_order = [
     cx = 960.0
     cy = 879.984375
     output = "eDP-1"
+    placement_height = 0.0
+    placement_width = 0.0
     rotation = 0.0
     type = "login_box"
 
@@ -251,6 +257,8 @@ widget_order = [
     cx = 960.0
     cy = 211.75
     output = "eDP-1"
+    placement_height = 0.0
+    placement_width = 0.0
     rotation = 0.0
     type = "clock"
 
