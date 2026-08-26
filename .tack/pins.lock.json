@@ -93,6 +93,14 @@
     "narHash": "sha256-C7zvAMTYgh6ez7W93VBhUfpdoeQykb6JDmYbov6on5o=",
     "lastModified": 1787513533
   },
+  "umbriel": {
+    "type": "git",
+    "url": "https://github.com/noctalia-dev/umbriel",
+    "ref": "HEAD",
+    "rev": "ab626d95a64ca2a617a928184f92d43f74af2c36",
+    "narHash": "sha256-0XXvRgF6Nr2JeXK0kpKnvA+3rHHjc7kStECPylLZJx0=",
+    "lastModified": 1787773001
+  },
   "vellum": {
     "type": "github",
     "owner": "greyxp1",

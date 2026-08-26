@@ -10,5 +10,6 @@
     ../../modules/nixos/cachy.nix
     ../../modules/nixos/secrets.nix
     ../../modules/nixos/fish/fish-startup.nix
+    ../../modules/nixos/umbriel/umbriel-startup.nix
   ];
 }

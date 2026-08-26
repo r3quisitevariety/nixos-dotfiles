@@ -89,3 +89,6 @@ url = "git+https://codeberg.org/poacher/rsname"
 [inputs.rsname.follows]
 nixpkgs = "nixpkgs"
 
+[inputs.umbriel]
+url = "git+https://github.com/noctalia-dev/umbriel"
+submodules = true
