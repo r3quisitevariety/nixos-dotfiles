@@ -1,21 +1,35 @@
 {pkgs, ...}:
 # credits to https://madflex.de/trying-herdr-instead-of-tmux/ for the script
 let
-  herdr-move-tab = pkgs.writeShellScriptBin "herdr-move-tab" ''
+  # break the focused pane out into a new tab in the SAME workspace (no picker)
+  herdr-break-pane = pkgs.writeShellScriptBin "herdr-break-pane" ''
     [ -n "$HERDR_ACTIVE_PANE_ID" ] || { echo "no active pane" >&2; sleep 2; exit 1; }
+    [ -n "$HERDR_ACTIVE_WORKSPACE_ID" ] || { echo "no active workspace" >&2; exit 1; }
+    ${pkgs.herdr}/bin/herdr pane zoom "$HERDR_ACTIVE_PANE_ID" --off >/dev/null 2>&1
+    ${pkgs.herdr}/bin/herdr pane move "$HERDR_ACTIVE_PANE_ID" --new-tab --workspace "$HERDR_ACTIVE_WORKSPACE_ID" --focus
+  '';
 
-    ws=$(${pkgs.herdr}/bin/herdr workspace list \
-      | ${pkgs.jq}/bin/jq -r '.result.workspaces[] | "\(.workspace_id)\t\(.label // .workspace_id)"' \
-      | ${pkgs.fzf}/bin/fzf --prompt="move tab to workspace > " --with-nth=2 --delimiter='\t' \
+  # pick another pane from this workspace and move it into the current tab
+  herdr-pull-pane = pkgs.writeShellScriptBin "herdr-pull-pane" ''
+    cur_pane="$HERDR_ACTIVE_PANE_ID"
+    cur_workspace="$HERDR_ACTIVE_WORKSPACE_ID"
+    cur_tab="$HERDR_ACTIVE_TAB_ID"
+    [ -n "$cur_pane" ] || { echo "no active pane" >&2; sleep 2; exit 1; }
+    [ -n "$cur_workspace" ] || { echo "no active workspace" >&2; sleep 2; exit 1; }
+    [ -n "$cur_tab" ] || { echo "no active tab" >&2; sleep 2; exit 1; }
+
+    pane=$(${pkgs.herdr}/bin/herdr pane list --workspace "$cur_workspace" \
+      | ${pkgs.jq}/bin/jq -r --arg cur "$cur_pane" '.result.panes[]? | select(.pane_id != $cur) | "\(.pane_id)\t\(.label // .agent // .pane_id)"' \
+      | ${pkgs.fzf}/bin/fzf --prompt="pull pane into current tab > " --with-nth=2 --delimiter='\t' \
       | cut -f1)
-    [ -n "$ws" ] || exit 0
+    [ -n "$pane" ] || exit 0
 
     # herdr refuses to move a pane out of a zoomed tab, so un-zoom it first.
-    ${pkgs.herdr}/bin/herdr pane zoom "$HERDR_ACTIVE_PANE_ID" --off >/dev/null 2>&1
-    ${pkgs.herdr}/bin/herdr pane move "$HERDR_ACTIVE_PANE_ID" --new-tab --workspace "$ws" --focus
+    ${pkgs.herdr}/bin/herdr pane zoom "$pane" --off >/dev/null 2>&1
+    ${pkgs.herdr}/bin/herdr pane move "$pane" --tab "$cur_tab" --split right --focus
   '';
 in {
-  home.packages = [herdr-move-tab];
+  home.packages = [herdr-break-pane herdr-pull-pane];
 
   programs.herdr = {
     enable = true;
@@ -37,6 +51,7 @@ in {
 
       ui = {
         #sidebar_width = 32;
+        prompt_new_tab_name = false;
         sidebar_start_collapsed = true;
         #agent_panel_sort = "priority";
         tab_bar_position = "bottom";
@@ -99,14 +114,21 @@ in {
         reload_config = "prefix+shift+r";
         detach = "prefix+d";
 
-        # move the focused tab to another workspace via an fzf picker
-        # in tmux its normally prefix + ! but it's less idiomatic here
+        # move panes between tabs
         command = [
           {
             key = "prefix+m";
-            type = "pane";
-            command = "${herdr-move-tab}/bin/herdr-move-tab";
-            description = "move tab to workspace";
+            type = "shell";
+            command = "${herdr-break-pane}/bin/herdr-break-pane";
+            description = "break pane to new tab";
+          }
+          {
+            key = "prefix+shift+m";
+            type = "popup";
+            command = "${herdr-pull-pane}/bin/herdr-pull-pane";
+            description = "pull pane into current tab";
+            width = "80%";
+            height = "80%";
           }
         ];
       };
