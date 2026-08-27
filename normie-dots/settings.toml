@@ -121,6 +121,8 @@ widget_order = [ "desktop-widget-0000000000000006", "desktop-widget-000000000000
     cy = 480.58203125
     enabled = false
     output = "eDP-1"
+    placement_height = 1080.0
+    placement_width = 1920.0
     rotation = 0.0
     type = "sticker"
 
@@ -139,6 +141,8 @@ widget_order = [ "desktop-widget-0000000000000006", "desktop-widget-000000000000
     cy = 786.37109375
     enabled = false
     output = "eDP-1"
+    placement_height = 1080.0
+    placement_width = 1920.0
     rotation = 0.0
     type = "label"
 
@@ -154,6 +158,8 @@ widget_order = [ "desktop-widget-0000000000000006", "desktop-widget-000000000000
     cx = 234.28515625
     cy = 415.30859375
     output = "eDP-1"
+    placement_height = 1080.0
+    placement_width = 1920.0
     rotation = 0.0
     type = "noctalia/timer:timer"
 
@@ -235,8 +241,8 @@ widget_order = [
     cx = 960.0
     cy = 879.984375
     output = "eDP-1"
-    placement_height = 0.0
-    placement_width = 0.0
+    placement_height = 1080.0
+    placement_width = 1920.0
     rotation = 0.0
     type = "login_box"
 
@@ -257,8 +263,8 @@ widget_order = [
     cx = 960.0
     cy = 211.75
     output = "eDP-1"
-    placement_height = 0.0
-    placement_width = 0.0
+    placement_height = 1080.0
+    placement_width = 1920.0
     rotation = 0.0
     type = "clock"
 
@@ -335,12 +341,12 @@ time_format = "{:%-I:%M %p}"
     alpha = 0.99999997764825821
 
 [theme]
-builtin = "Noctalia"
-community_palette = "Catppuccin Macchiato Blue"
+builtin = "Rosé Pine"
+community_palette = "Rose Pine Moon Alt"
 custom_palette = "m3-content"
 mode = "dark"
 source = "community"
-wallpaper_scheme = "m3-fruit-salad"
+wallpaper_scheme = "m3-tonal-spot"
 
     [theme.templates]
     builtin_ids = [ "btop", "foot", "gtk3", "gtk4", "ghostty", "hyprland", "kcolorscheme", "kitty", "mango", "niri", "qt" ]
