@@ -23,26 +23,28 @@
       system = "x86_64-linux";
       specialArgs = {inherit inputs user;};
       modules = [
-        ({pkgs, ...}: {
-          nixpkgs.overlays = [
-            # Use the exact nixpkgs revision as defined in this repo to ensure binary cache hits.
-            #nix-cachyos-kernel.overlays.pinned
-            #NUR overlay for browser extensions (firefox-addons)
-            #nur.overlays.default
-          ];
-          # ... your other configs
-        })
         ./hosts/nitro5
         home-manager.nixosModules.home-manager
         {
-          home-manager.useGlobalPkgs = true;
-          home-manager.useUserPackages = true;
-          home-manager.extraSpecialArgs = {inherit inputs user;};
-          home-manager.users.${user} = import ./hosts/nitro5/home.nix;
-          #for standalone, run home-manager switch -b backup
-          home-manager.backupFileExtension = "backup";
+          home-manager = {
+            useGlobalPkgs = true;
+            useUserPackages = true;
+            extraSpecialArgs = {inherit inputs user;};
+            users.${user} = import ./hosts/nitro5/home.nix;
+            #for standalone, run home-manager switch -b backup
+            backupFileExtension = "backup";
+          };
         }
       ];
+      #({pkgs, ...}: {
+      #  nixpkgs.overlays = [
+      #    # Use the exact nixpkgs revision as defined in this repo to ensure binary cache hits.
+      #    #nix-cachyos-kernel.overlays.pinned
+      #    #NUR overlay for browser extensions (firefox-addons)
+      #    #nur.overlays.default
+      #  ];
+      #  # ... your other configs
+      #})
     };
 
     #homelab config
@@ -58,12 +60,14 @@
           home-manager.nixosModules.home-manager
           copyparty.nixosModules.default
           {
-            home-manager.useGlobalPkgs = true;
-            home-manager.useUserPackages = true;
-            home-manager.extraSpecialArgs = {inherit inputs user;};
-            home-manager.users.${user} = import ./hosts/inspiron/home.nix;
-            #for standalone, run home-manager switch -b backup
-            home-manager.backupFileExtension = "backup";
+            home-manager = {
+              useGlobalPkgs = true;
+              useUserPackages = true;
+              extraSpecialArgs = {inherit inputs user;};
+              users.${user} = import ./hosts/inspiron/home.nix;
+              #for standalone, run home-manager switch -b backup
+              backupFileExtension = "backup";
+            };
           }
         ];
       };
