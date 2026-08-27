@@ -13,35 +13,11 @@
       (inputs)
       nixpkgs
       home-manager
-      nix-cachyos-kernel
-      nur
+      #nix-cachyos-kernel
+      #nur
       copyparty
       ;
   in {
-    #cachyos/arch config
-    homeConfigurations.bean = home-manager.lib.homeManagerConfiguration {
-      pkgs = import nixpkgs {
-        system = "x86_64-linux";
-        overlays = [nur.overlays.default];
-      };
-      extraSpecialArgs = {inherit inputs user;};
-      modules = [
-        ./hosts/arch-nitro5/home.nix
-      ];
-    };
-
-    #ubuntu server config
-    homeConfigurations.black = home-manager.lib.homeManagerConfiguration {
-      pkgs = import nixpkgs {
-        system = "x86_64-linux";
-        overlays = [nur.overlays.default];
-      };
-      extraSpecialArgs = {inherit inputs user;};
-      modules = [
-        ./hosts/ubuntu-inspiron/home.nix
-      ];
-    };
-
     #nixos + nvidia config
     nixosConfigurations.nitro5 = nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
@@ -50,11 +26,10 @@
         ({pkgs, ...}: {
           nixpkgs.overlays = [
             # Use the exact nixpkgs revision as defined in this repo to ensure binary cache hits.
-            nix-cachyos-kernel.overlays.pinned
+            #nix-cachyos-kernel.overlays.pinned
             #NUR overlay for browser extensions (firefox-addons)
-            nur.overlays.default
+            #nur.overlays.default
           ];
-
           # ... your other configs
         })
         ./hosts/nitro5
@@ -71,7 +46,7 @@
     };
 
     #homelab config
-    # onoruu is a legacy (user)name, ill change it if i reinstall
+    # onoruu is a legacy username, ill change it if i reinstall
     nixosConfigurations.inspiron = let
       user = "onoruu";
     in
@@ -92,5 +67,17 @@
           }
         ];
       };
+
+    #ubuntu server config
+    #homeConfigurations.black = home-manager.lib.homeManagerConfiguration {
+    #  pkgs = import nixpkgs {
+    #    system = "x86_64-linux";
+    #    overlays = [nur.overlays.default];
+    #  };
+    #  extraSpecialArgs = {inherit inputs user;};
+    #  modules = [
+    #    ./hosts/ubuntu-inspiron/home.nix
+    #  ];
+    #};
   };
 }

@@ -81,17 +81,17 @@
         };
       };
 
-      extensions.packages = with pkgs.nur.repos.rycee.firefox-addons; [
-        ublock-origin
-        bitwarden
-        darkreader
-        i-dont-care-about-cookies
-        vimium
-        web-clipper-obsidian
-        #unhook
-        #libredirect
-        #obsidian-web-clippper
-      ];
+      #extensions.packages = with pkgs.nur.repos.rycee.firefox-addons; [
+      #  ublock-origin
+      #  bitwarden
+      #  darkreader
+      #  i-dont-care-about-cookies
+      #  vimium
+      #  web-clipper-obsidian
+      #  #unhook
+      #  #libredirect
+      #  #obsidian-web-clippper
+      #];
 
       pinsForce = false;
       #pinsForceAction = "remove";
