@@ -150,7 +150,7 @@
     #anki - experiencing build problems, use nix run instead
     nautilus
     foot
-    google-chrome
+    #google-chrome
     mpv
     mpvpaper
     proton-vpn
