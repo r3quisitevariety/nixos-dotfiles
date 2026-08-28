@@ -341,7 +341,7 @@ time_format = "{:%-I:%M %p}"
 
 [theme]
 builtin = "Rosé Pine"
-community_palette = "Rose Pine Moon Alt"
+community_palette = "Catppuccin Macchiato Blue"
 custom_palette = "m3-content"
 mode = "dark"
 source = "community"
