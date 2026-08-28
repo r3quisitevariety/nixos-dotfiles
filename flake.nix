@@ -13,7 +13,7 @@
       (inputs)
       nixpkgs
       home-manager
-      #nix-cachyos-kernel
+      nix-cachyos-kernel
       #nur
       copyparty
       ;
@@ -35,16 +35,16 @@
             backupFileExtension = "backup";
           };
         }
+        ({pkgs, ...}: {
+          nixpkgs.overlays = [
+            # Use the exact nixpkgs revision as defined in this repo to ensure binary cache hits.
+            nix-cachyos-kernel.overlays.pinned
+            #NUR overlay for browser extensions (firefox-addons)
+            #nur.overlays.default
+          ];
+          # ... your other configs
+        })
       ];
-      #({pkgs, ...}: {
-      #  nixpkgs.overlays = [
-      #    # Use the exact nixpkgs revision as defined in this repo to ensure binary cache hits.
-      #    #nix-cachyos-kernel.overlays.pinned
-      #    #NUR overlay for browser extensions (firefox-addons)
-      #    #nur.overlays.default
-      #  ];
-      #  # ... your other configs
-      #})
     };
 
     #homelab config
