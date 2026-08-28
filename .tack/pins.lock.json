@@ -11,9 +11,9 @@
     "type": "github",
     "owner": "NousResearch",
     "repo": "hermes-agent",
-    "rev": "420e156bf36e61d047fa526b9e0fcf30b7f26f90",
-    "narHash": "sha256-eB/uCiv7tgooCxYG+JyyFjKReN7PVJiwGcII/DQv3N8=",
-    "lastModified": 1787882181
+    "rev": "99c3cad8570732202907cf71f971fea9ec57df26",
+    "narHash": "sha256-Y3u35P1eODJ5HiIBdX6XPqkwRTVwtFWgljbHPUccDdk=",
+    "lastModified": 1787889182
   },
   "home-manager": {
     "type": "github",
