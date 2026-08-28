@@ -118,13 +118,8 @@
         prefer_no_csd = true;
         blur = {
           enabled = true;
-          optimized = true;
-          passes = 8; # 0-8
-          radius = 90; # 0-100
-          noise = 0.5; # 0.0-1.0
-          brightness = 0.9; # 0.0-2.0
-          contrast = 0.9; # 0.0-2.0
-          saturation = 1.1; # 0.0-2.0
+          optimized = false;
+          passes = 3; # 0-8
         };
       };
     };
