@@ -4,10 +4,6 @@
   user,
   ...
 }: {
-  imports = [
-    inputs.noctalia-greeter.nixosModules.default
-  ];
-
   services.greetd = {
     enable = true;
     settings.default_session = {
@@ -17,12 +13,9 @@
     };
   };
 
-  programs.noctalia-greeter = {
+  services.displayManager.noctalia-greeter = {
     enable = true;
-    package = inputs.noctalia-greeter.packages.${pkgs.stdenv.hostPlatform.system}.default;
-
-    # Optional configuration
-    greeter-args = "";
+    extraArgs = "";
     settings = {
       cursor = {
         theme = "Bibata-Modern-Ice";
@@ -33,14 +26,5 @@
         layout = "us";
       };
     };
-  };
-
-  nix.settings = {
-    extra-substituters = [
-      "https://noctalia.cachix.org"
-    ];
-    extra-trusted-public-keys = [
-      "noctalia.cachix.org-1:pCOR47nnMEo5thcxNDtzWpOxNFQsBRglJzxWPp3dkU4="
-    ];
   };
 }

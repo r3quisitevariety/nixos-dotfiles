@@ -28,9 +28,6 @@
 [inputs.nixpkgs]
 url = "https://channels.nixos.org/nixos-unstable/nixexprs.tar.xz"
 
-[inputs.noctalia-greeter]
-url = "github:noctalia-dev/noctalia-greeter"
-
 [inputs.home-manager]
 url = "github:nix-community/home-manager"
 
