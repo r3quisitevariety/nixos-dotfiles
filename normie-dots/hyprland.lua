@@ -29,7 +29,7 @@ end
 ---- MY PROGRAMS ----
 ---------------------
 
-local terminal = "foot"
+local terminal = "kitty"
 local fileManager = "nautilus"
 local menu = "noctalia msg panel-open launcher"
 
