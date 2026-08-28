@@ -44,12 +44,6 @@ home-manager = "home-manager"
 [inputs.nix-cachyos-kernel]
 url = "github:xddxdd/nix-cachyos-kernel/release"
 
-[inputs.nur]
-url = "github:nix-community/NUR"
-
-[inputs.nur.follows]
-nixpkgs = "nixpkgs"
-
 [inputs.ncr]
 url = "github:greyxp1/ncr"
 
@@ -76,7 +70,3 @@ url = "github:NousResearch/hermes-agent"
 
 [inputs.hermes-agent.follows]
 nixpkgs = "nixpkgs"
-
-[inputs.umbriel]
-url = "git+https://github.com/noctalia-dev/umbriel"
-submodules = true
