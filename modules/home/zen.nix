@@ -31,7 +31,7 @@
 
       search = {
         force = true; # Enforce declared search engines on each rebuild
-        default = "ddg";
+        default = "brave";
 
         engines = {
           youtube = {
