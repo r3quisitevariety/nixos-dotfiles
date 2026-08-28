@@ -54,6 +54,7 @@
     #../../modules/home/discord.nix
     ../../modules/home/yt-music-dlp.nix
     ../../modules/nixos/fish/fish.nix
+    ../../modules/home/herdr.nix
     #../../modules/vr.nix
     #../../modules/obs.nix
     #../../modules/substituters.nix
