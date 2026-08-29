@@ -27,7 +27,7 @@
           scale = 1.0;
           vrr = "always";
           # enforces static workspaces
-          workspaces = 10;
+          #workspaces = 10;
           tearing = true;
         };
       };
@@ -37,6 +37,7 @@
         autostart = [
           "noctalia"
           "kitty --single-instance --start-as=hidden tail -f /dev/null"
+          "udiskie -a -s --file-manager nautilus"
         ];
       };
       layout.gap = 5;
@@ -47,7 +48,7 @@
 
       # idk what this actually does lol
       workspaces = {
-        back_and_forth = false;
+        back_and_forth = true;
       };
 
       keybinds = {
@@ -115,12 +116,82 @@
       };
 
       appearance = {
-        prefer_no_csd = true;
+        corner_radius = 12;
+        border_focused = "#8aadf4cc";
+        border_unfocused = "#c0c6dc33";
         blur = {
-          enabled = true;
           optimized = false;
-          passes = 3; # 0-8
+          radius = 12;
+          noise = 0.0;
+          contrast = 1.25;
+          saturation = 1.0;
         };
+        shadow = {
+          offset_x = 0;
+          offset_y = 0;
+          color = "#363a4fff";
+        };
+      };
+
+      layout = {
+        scrolling = {
+          default_width_fraction = 0.5;
+          center_underfull_strip = false;
+          expand_single_column = true;
+        };
+      };
+
+      animation = {
+        windows_in = {
+          enabled = true;
+          duration_ms = 250;
+          curve = "easeout";
+          style = "popin";
+          scale = 0.6;
+        };
+
+        windows_out = {
+          enabled = true;
+          duration_ms = 250;
+          curve = "easeout";
+          style = "fade";
+        };
+
+        windows_move = {
+          curve = "snappy";
+        };
+
+        workspaces = {
+          enabled = true;
+          duration_ms = 250;
+          curve = "snappy";
+        };
+
+        scratchpad = {
+          enabled = true;
+          duration_ms = 250;
+          curve = "easeout";
+          dim = 0.2;
+        };
+
+        border = {
+          enabled = true;
+          duration_ms = 250;
+          curve = "easeout";
+        };
+      };
+      environment = {
+        XCURSOR_THEME = "Bibata-Modern-Ice";
+        XCURSOR_SIZE = "16";
+        GTK_THEME = "catppuccin-macchiato-sapphire-standard";
+        QT_QPA_PLATFORM = "wayland;xcb";
+        QT_QPA_PLATFORMTHEME = "gtk3";
+        QT_STYLE_OVERRIDE = "kvantum";
+        QT_WAYLAND_DISABLE_WINDOWDECORATION = "1";
+        GTK_CSD = "0";
+        MOZ_ENABLE_WAYLAND = "1";
+        OBS_USE_EGL = "1";
+        PROTON_ENABLE_WAYLAND = "1";
       };
     };
   };
