@@ -1,34 +1,12 @@
-// niri config.kdl
-// Translated from hyprland.conf
-// Config format: https://kdl.dev
-// Wiki: https://niri-wm.github.io/niri/Configuration:-Introduction
-
-// ============================================================
-// OUTPUTS
-// https://niri-wm.github.io/niri/Configuration:-Outputs
-// Run `niri msg outputs` to verify connector names + available modes.
-//
-// Your Hyprland setup:
-//   HDMI-A-1 @ 1920x1080@144 (primary, offset 1920,0 so it sits right of eDP-1)
-//   eDP-1    @ 1920x1080@144 (at 0,0)
-//
-// NOTE: niri positions outputs in logical pixels. Both displays are scale 1,
-// so their logical sizes match their physical resolutions.
-// ============================================================
-
-// spawns kitty as a daemon so it can instantaneously open
-spawn-at-startup "kitty" "--single-instance" "--start-as=hidden" "tail" "-f" "/dev/null";
-spawn-at-startup "vellum";
-// main laptop screen
+// MAIN LAPTOP SCREEN
 output "eDP-1" {
-    // comment out "off" when using screen
     off
     mode "1920x1080@144.000"
     scale 1
     position x=0 y=0
     variable-refresh-rate on-demand=true
 }
-// external monitor
+// EXTERNAL MONITOR
 output "HDMI-A-1" {
     //off
     mode "1920x1080@144.000"
@@ -36,118 +14,79 @@ output "HDMI-A-1" {
     position x=0 y=0
     variable-refresh-rate on-demand=true
 }
-
-// gpu stuff
+// GPU
 debug {
-    //wait-for-frame-completion-before-queueing 
-    // explicitly renders the dGPU 
     render-drm-device "/dev/dri/renderD128"
-    //emulate-zero-presentation-time
+    emulate-zero-presentation-time
 }
-// ============================================================
+// STARTUP
+spawn-at-startup "kitty" "--single-instance" "--start-as=hidden" "tail" "-f" "/dev/null"
+spawn-at-startup "vellum"
+spawn-at-startup "noctalia"
+// DISABLE MIDDLE CLICK PASTE
+clipboard {
+    disable-primary
+}
 // INPUT
-// https://niri-wm.github.io/niri/Configuration:-Input
-// ============================================================
-
 input {
     keyboard {
         xkb {
             layout "us"
-            // options "..."
         }
     }
-
     touchpad {
-        // tap                  // uncomment to enable tap-to-click
         natural-scroll
-        // accel-speed 0.0      // 0.0 = no modification, matches your sensitivity=0
     }
-
     mouse {
-        // accel-speed -0.5     // your hyprland epic-mouse-v1 had sensitivity -0.5
-    }
 
-    // Focus follows mouse (matches hyprland follow_mouse=1)
+    }
     focus-follows-mouse
 }
-
-    clipboard {
-    disable-primary
-}
-
-
-// ============================================================
-// ENVIRONMENT VARIABLES
-// https://niri-wm.github.io/niri/Configuration:-Miscellaneous#environment
-//
-// NOTE: niri is a Wayland-native compositor. XDG_SESSION_TYPE=wayland
-// and XDG_CURRENT_DESKTOP=niri are set automatically by niri-session.
-// You only need to set app-facing vars here.
-// ============================================================
-
+// ENVIRONMENT
 environment {
-    // Qt theming
     QT_QPA_PLATFORMTHEME "qt6ct"
-
-    // NVIDIA Wayland vars (matches your hyprland NVIDIA env block)
-    //GBM_BACKEND              "nvidia-drm"
-    //__GLX_VENDOR_LIBRARY_NAME "nvidia"
-    //LIBVA_DRIVER_NAME        "nvidia"
-    //NVD_BACKEND              "direct"
-
-    // Inform apps they're on Wayland / niri
-    // niri-session exports these to systemd automatically,
-    // but setting them here ensures spawn-at-startup processes see them too.
     XDG_CURRENT_DESKTOP "niri"
-    XDG_SESSION_TYPE    "wayland"
+    XDG_SESSION_TYPE "wayland"
     XDG_SESSION_DESKTOP "niri"
 }
+// WORKSPACES (PERSISTENT)
+workspace "1" {
 
-// ============================================================
-// STARTUP
-// https://niri-wm.github.io/niri/Configuration:-Miscellaneous#spawn-at-startup
-//
-// niri supports xdg-desktop-autostart via niri-session, but explicit
-// spawn-at-startup is the direct equivalent of Hyprland's exec-once.
-// ============================================================
+}
+workspace "2" {
 
-spawn-at-startup "noctalia"
+}
+workspace "3" {
 
-// persistent workspaces > pruning
-workspace "1" {}
-workspace "2" {}
-workspace "3" {}
-workspace "4" {}
-workspace "5" {}
-workspace "6" {}
-workspace "7" {}
-workspace "8" {}
-workspace "9" {}
+}
+workspace "4" {
 
-// ============================================================
+}
+workspace "5" {
+
+}
+workspace "6" {
+
+}
+workspace "7" {
+
+}
+workspace "8" {
+
+}
+workspace "9" {
+
+}
 // LAYOUT
-// https://niri-wm.github.io/niri/Configuration:-Layout
-//
-// niri is a scrollable-tiling compositor — no dwindle/master layouts.
-// Windows live in columns that scroll horizontally per workspace.
-// gaps replaces gaps_in/gaps_out (niri uses a single uniform gap value).
-// ============================================================
-
 layout {
-    // gaps 5 ≈ your gaps_in=5. niri has one gap value for all sides.
     gaps 10
-
-    // Transparent borders (matches col.active_border/inactive_border = 0x00000000)
     focus-ring {
         on
         width 1
     }
-
     border {
         off
     }
-
-    // Drop shadow (matches your decoration.shadow block)
     shadow {
         on
         softness 4
@@ -155,7 +94,6 @@ layout {
         offset x=0 y=0
         color "#1a1a1aee"
     }
-
     // Column width presets (Mod+R cycles through these)
     preset-column-widths {
         proportion 0.33333
@@ -163,226 +101,250 @@ layout {
         proportion 0.66667
         proportion 1.0
     }
-
-    default-column-width { proportion 0.5; }
-
-    struts {
-        // Outer gaps equivalent — add if you want margin around the workspace edge
-        // left 8
-        // right 8
-        // top 8
-        // bottom 8
+    default-column-width {
+        proportion 0.5
     }
 }
-
-// ============================================================
 // WINDOW RULES
-// https://niri-wm.github.io/niri/Configuration:-Window-Rules
-//
-// rounding=5 from hyprland decoration block → geometry-corner-radius
-// ============================================================
-
-/* Apps: blur them all without xray so it looks more realistic. */
 prefer-no-csd
-
 blur {
     passes 4
     offset 3.0
     noise 0.02
     saturation 1.5
 }
-
 window-rule {
     match app-id="^kitty$"
     draw-border-with-background false
 }
-
 window-rule {
     match app-id="zed"
     draw-border-with-background false
 }
-
-
 window-rule {
     geometry-corner-radius 5
     clip-to-geometry true
 }
-
-// window rules for specific applications
 window-rule {
     match app-id="zen"
-    default-column-width { proportion 1.0; }
+    draw-border-with-background false
+    default-column-width {
+        proportion 1.0
+    }
 }
-
-window-rule {
-    match app-id="equibop"
-    default-column-width { proportion 1.0; }
-}
-
-window-rule {
-    match app-id="discord"
-    default-column-width { proportion 1.0; }
-}
-
 window-rule {
     match app-id="vesktop"
-    default-column-width { proportion 1.0; }
+    draw-border-with-background false
+    default-column-width {
+        proportion 1.0
+    }
 }
-
 window-rule {
     match app-id="electron"
     match title="Obsidian"
-    default-column-width { proportion 1.0; }
+    default-column-width {
+        proportion 1.0
+    }
 }
-
-// ============================================================
-// ANIMATIONS
-// https://niri-wm.github.io/niri/Configuration:-Animations
-//
-// niri animations use spring or easing curves — not bezier like Hyprland.
-// The default animations are already well-tuned. You can slow/speed globally.
-// ============================================================
-
 animations {
-    // slowdown 1.0  // <1 speeds up, >1 slows down. Your hyprland config was ~normal speed.
+
 }
-
-// ============================================================
-// SCREENSHOT PATH
-// ============================================================
-
 screenshot-path "~/Pictures/Screenshots/Screenshot from %Y-%m-%d %H-%M-%S.png"
-
-// ============================================================
-// HOTKEY OVERLAY
-// ============================================================
-
 hotkey-overlay {
     skip-at-startup
 }
-
-// ============================================================
-// KEY BINDINGS
-// https://niri-wm.github.io/niri/Configuration:-Key-Bindings
-//
-// "Mod" = Super when running standalone (matches your $mainMod = SUPER).
-// Binds that have no niri equivalent are noted with comments.
-// ============================================================
-
+// BINDS
 binds {
-    Mod+A { spawn "vellum" "toggle"; }
-
+    Mod+A {
+        spawn "vellum" "toggle"
+    }
     // Show hotkey overlay (niri built-in help)
-    Mod+Shift+Slash { show-hotkey-overlay; }
-    Mod+Tab { toggle-overview; }
-
+    Mod+Shift+Slash {
+        show-hotkey-overlay
+    }
+    Mod+Tab {
+        toggle-overview
+    }
     // Terminal (kitty)
-    Mod+Q { spawn "kitty" "--single-instance"; }
-
-    Mod+D { spawn-sh "noctalia msg panel-open launcher"; }
-
+    Mod+Q {
+        spawn "kitty" "--single-instance"
+    }
+    Mod+D {
+        spawn-sh "noctalia msg panel-open launcher"
+    }
     // File manager (nautilus)
-    Mod+E { spawn "nautilus"; }
-
+    Mod+E {
+        spawn "nautilus"
+    }
     // Close window (replaces killactive)
-    Mod+C { close-window; }
-
+    Mod+C {
+        close-window
+    }
     // Fullscreen (maximize column + actual fullscreen)
-    Mod+F { maximize-column; }
-    Mod+Shift+F { fullscreen-window; }
-
+    Mod+F {
+        maximize-column
+    }
+    Mod+Shift+F {
+        fullscreen-window
+    }
     // Toggle floating
-    Mod+V { toggle-window-floating; }
-
-    // Quit niri (replaces Mod+M exit)
-    Mod+M { quit; }
-
+    Mod+V {
+        toggle-window-floating
+    }
+    // Quit niri
+    Mod+M {
+        quit
+    }
     // ── Focus and column movement (vim keys) ───────────────────────────────────
-    Mod+H { focus-column-left; }
-    Mod+Shift+WheelScrollUp { focus-column-left; }
-    Mod+Shift+WheelScrollDown { focus-column-right; }
-    Mod+WheelScrollUp { focus-workspace-up; }
-    Mod+WheelScrollDown { focus-workspace-down; }
-    Mod+K { focus-workspace-up; }
-    Mod+J { focus-workspace-down; }
-    Mod+L { focus-column-right; }
-    Mod+Ctrl+H { move-column-left; }
-    Mod+CTRL+J { move-column-to-workspace-down; }
-    Mod+CTRL+K { move-column-to-workspace-up; }
-    Mod+Ctrl+L { move-column-right; }
-
-    // ── Window resizing ────────────────────────────────────────────────────────
-    // NOTE: Mod+Shift+H/J/K/L is taken by monitor focus below (same conflict
-    // you had in Hyprland). Using Mod+Minus/Equal for column width instead,
-    // and Mod+Shift+Minus/Equal for window height.
-    Mod+Shift+H      { set-column-width "-10%"; }
-    Mod+Shift+L       { set-column-width "+10%"; }
-    Mod+Shift+K { set-window-height "-10%"; }
-    Mod+Shift+J { set-window-height "+10%"; }
-
+    Mod+H {
+        focus-column-left
+    }
+    Mod+Shift+WheelScrollUp {
+        focus-column-left
+    }
+    Mod+Shift+WheelScrollDown {
+        focus-column-right
+    }
+    Mod+WheelScrollUp {
+        focus-workspace-up
+    }
+    Mod+WheelScrollDown {
+        focus-workspace-down
+    }
+    Mod+K {
+        focus-workspace-up
+    }
+    Mod+J {
+        focus-workspace-down
+    }
+    Mod+L {
+        focus-column-right
+    }
+    Mod+Ctrl+H {
+        move-column-left
+    }
+    Mod+CTRL+J {
+        move-column-to-workspace-down
+    }
+    Mod+CTRL+K {
+        move-column-to-workspace-up
+    }
+    Mod+Ctrl+L {
+        move-column-right
+    }
+    Mod+Shift+H {
+        set-column-width "-10%"
+    }
+    Mod+Shift+L {
+        set-column-width "+10%"
+    }
+    Mod+Shift+K {
+        set-window-height "-10%"
+    }
+    Mod+Shift+J {
+        set-window-height "+10%"
+    }
     // ── Workspace switching (Mod+1-9) ──────────────────────────────────────────
-    Mod+1 { focus-workspace 1; }
-    Mod+2 { focus-workspace 2; }
-    Mod+3 { focus-workspace 3; }
-    Mod+4 { focus-workspace 4; }
-    Mod+5 { focus-workspace 5; }
-    Mod+6 { focus-workspace 6; }
-    Mod+7 { focus-workspace 7; }
-    Mod+8 { focus-workspace 8; }
-    Mod+9 { focus-workspace 9; }
-
+    Mod+1 {
+        focus-workspace 1
+    }
+    Mod+2 {
+        focus-workspace 2
+    }
+    Mod+3 {
+        focus-workspace 3
+    }
+    Mod+4 {
+        focus-workspace 4
+    }
+    Mod+5 {
+        focus-workspace 5
+    }
+    Mod+6 {
+        focus-workspace 6
+    }
+    Mod+7 {
+        focus-workspace 7
+    }
+    Mod+8 {
+        focus-workspace 8
+    }
+    Mod+9 {
+        focus-workspace 9
+    }
     // ── Move window to workspace (Mod+Shift+1-9) ──────────────────────────────
-    Mod+Shift+1 { move-column-to-workspace 1; }
-    Mod+Shift+2 { move-column-to-workspace 2; }
-    Mod+Shift+3 { move-column-to-workspace 3; }
-    Mod+Shift+4 { move-column-to-workspace 4; }
-    Mod+Shift+5 { move-column-to-workspace 5; }
-    Mod+Shift+6 { move-column-to-workspace 6; }
-    Mod+Shift+7 { move-column-to-workspace 7; }
-    Mod+Shift+8 { move-column-to-workspace 8; }
-    Mod+Shift+9 { move-column-to-workspace 9; }
-
+    Mod+Shift+1 {
+        move-column-to-workspace 1
+    }
+    Mod+Shift+2 {
+        move-column-to-workspace 2
+    }
+    Mod+Shift+3 {
+        move-column-to-workspace 3
+    }
+    Mod+Shift+4 {
+        move-column-to-workspace 4
+    }
+    Mod+Shift+5 {
+        move-column-to-workspace 5
+    }
+    Mod+Shift+6 {
+        move-column-to-workspace 6
+    }
+    Mod+Shift+7 {
+        move-column-to-workspace 7
+    }
+    Mod+Shift+8 {
+        move-column-to-workspace 8
+    }
+    Mod+Shift+9 {
+        move-column-to-workspace 9
+    }
     // ── Column width cycling (replaces pseudo/dwindle feel) ───────────────────
-    Mod+R { switch-preset-column-width; }
-
+    Mod+R {
+        switch-preset-column-width
+    }
     // ── Screenshots ───────────────────────────────────────────────────────────
-    // niri has a built-in screenshot UI (replaces hyprshot)
-    Print             { screenshot; }
-    Ctrl+Print        { screenshot-screen; }
-    Alt+Print         { screenshot-window; }
-    // Region screenshot (closest to `hyprshot -m region`)
-    Mod+Shift+S       { screenshot; }
-
-    // NOTE: niri's built-in screenshot picker IS a region selector.
-    // For clipboard-only, pipe with: screenshot-path null + wl-copy workaround.
-
-    // ── Mouse drag (niri handles this natively via Mod+LMB/RMB) ──────────────
-    // Moving:   hold Mod and drag LMB on a window
-    // Resizing: hold Mod and drag RMB on a window
-    // No explicit config needed — this is built-in behavior.
-
-    // ── Volume / Media keys ────────────────────────────────────────────────────
-    XF86AudioRaiseVolume allow-when-locked=true { spawn-sh "wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%+ -l 1.0"; }
-    XF86AudioLowerVolume allow-when-locked=true { spawn-sh "wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-"; }
-    XF86AudioMute        allow-when-locked=true { spawn-sh "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"; }
-    XF86AudioMicMute     allow-when-locked=true { spawn-sh "wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle"; }
-
+    Print {
+        screenshot
+    }
+    Mod+S {
+        screenshot-screen
+    }
+    Mod+Shift+S {
+        screenshot
+    }
+    XF86AudioRaiseVolume allow-when-locked=true {
+        spawn-sh "wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%+ -l 1.0"
+    }
+    XF86AudioLowerVolume allow-when-locked=true {
+        spawn-sh "wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-"
+    }
+    XF86AudioMute allow-when-locked=true {
+        spawn-sh "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"
+    }
+    XF86AudioMicMute allow-when-locked=true {
+        spawn-sh "wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle"
+    }
     // Brightness
-    XF86MonBrightnessUp   allow-when-locked=true { spawn "brightnessctl" "s" "10%+"; }
-    XF86MonBrightnessDown allow-when-locked=true { spawn "brightnessctl" "s" "10%-"; }
-
+    XF86MonBrightnessUp allow-when-locked=true {
+        spawn "brightnessctl" "s" "10%+"
+    }
+    XF86MonBrightnessDown allow-when-locked=true {
+        spawn "brightnessctl" "s" "10%-"
+    }
     // Media control (playerctl)
-    XF86AudioPlay  allow-when-locked=true { spawn "playerctl" "play-pause"; }
-    XF86AudioPause allow-when-locked=true { spawn "playerctl" "play-pause"; }
-    XF86AudioNext  allow-when-locked=true { spawn "playerctl" "next"; }
-    XF86AudioPrev  allow-when-locked=true { spawn "playerctl" "previous"; }
-
-    // ── Misc ───────────────────────────────────────────────────────────────────
-    // Keyboard shortcut inhibit escape hatch
-    Mod+Escape allow-inhibiting=false { toggle-keyboard-shortcuts-inhibit; }
-
-    // Power off monitors
-    Mod+Shift+P { power-off-monitors; }
+    XF86AudioPlay allow-when-locked=true {
+        spawn "playerctl" "play-pause"
+    }
+    XF86AudioPause allow-when-locked=true {
+        spawn "playerctl" "play-pause"
+    }
+    XF86AudioNext allow-when-locked=true {
+        spawn "playerctl" "next"
+    }
+    XF86AudioPrev allow-when-locked=true {
+        spawn "playerctl" "previous"
+    }
 }
-
 include "./noctalia.kdl"

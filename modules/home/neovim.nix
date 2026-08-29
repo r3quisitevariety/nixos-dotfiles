@@ -31,5 +31,6 @@
     alejandra
     harper
     gopls
+    kdlfmt
   ];
 }
