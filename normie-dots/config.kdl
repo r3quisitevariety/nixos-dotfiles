@@ -16,7 +16,7 @@ output "HDMI-A-1" {
 }
 // GPU
 debug {
-    render-drm-device "/dev/dri/renderD128"
+    render-drm-device "/dev/dri/renderD129"
     emulate-zero-presentation-time
 }
 // STARTUP
