@@ -1,7 +1,4 @@
-{
-  pkgs,
-  ...
-}: {
+{pkgs, ...}: {
   programs.yt-dlp = {
     enable = true;
     extraConfig = ''
@@ -89,6 +86,7 @@
   };
 
   home.packages = with pkgs; [
+    ffmpeg
     duf # disk usage utility
     ani-cli #lol
     tack
