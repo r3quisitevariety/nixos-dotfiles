@@ -278,6 +278,7 @@ widget_order = [
 [nightlight]
 enabled = true
 temperature_day = 10000
+temperature_night = 3000
 
 [notification]
 blacklist = [ "tauon", "hyprshot" ]
@@ -321,7 +322,7 @@ enabled = [
 
 [shell]
 app_icon_color = "on_surface"
-avatar_path = "/home/nix/Pictures/misc/b2e253dd2eb170b841469e4053bd15f1.jpg"
+avatar_path = "/home/zx/Pictures/misc/chiitoo.jpg"
 clipboard_confirm_clear_history = false
 font_family = "Noto Sans"
 niri_overview_type_to_launch_enabled = true
