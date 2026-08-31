@@ -70,10 +70,3 @@ url = "github:NousResearch/hermes-agent"
 
 [inputs.hermes-agent.follows]
 nixpkgs = "nixpkgs"
-
-[inputs.umbriel]
-url = "git+https://github.com/noctalia-dev/umbriel"
-submodules = true
-
-[inputs.umbriel.follows]
-nixpkgs = "nixpkgs"

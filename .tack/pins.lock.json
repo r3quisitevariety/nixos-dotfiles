@@ -69,15 +69,6 @@
     "rev": "9fbb54b33e91ee4ca368e35a78e0613c720600b3",
     "narHash": "sha256-IkjmqLoWzeqBAi1VIkdhDLMGjQDJ4suEDp59Zwxpswg="
   },
-  "umbriel": {
-    "type": "git",
-    "url": "https://github.com/noctalia-dev/umbriel",
-    "ref": "HEAD",
-    "rev": "4bd1f3bc76d257391cfc14391a7200a63f88baf3",
-    "narHash": "sha256-MLTU2snxs9g4ajMcXGTw9MOj8UpodxhLWaXWTkXvKmE=",
-    "lastModified": 1788017967,
-    "submodules": true
-  },
   "zen-browser": {
     "type": "github",
     "owner": "0xc000022070",
