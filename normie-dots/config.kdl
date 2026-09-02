@@ -1,6 +1,6 @@
 // MAIN LAPTOP SCREEN
 output "eDP-1" {
-    off
+    //off
     mode "1920x1080@144.000"
     scale 1
     position x=0 y=0
@@ -36,6 +36,7 @@ input {
     }
     touchpad {
         natural-scroll
+        tap
     }
     mouse {
 
