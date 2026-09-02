@@ -70,20 +70,21 @@
   # redundant,already declared in configuration.nix
   #nixpkgs.config.allowUnfree = true;
 
-  home.packages = [pkgs.hyprcursor];
   home.pointerCursor = {
     enable = true;
     package = pkgs.bibata-cursors;
     #name = "Bibata-Modern-Classic";
-
     name = "Bibata-Modern-Ice";
-    #package = pkgs.catppuccin-cursors;
-    #name = "catppuccin-frappe-blue-cursors";
     size = 16;
-    gtk.enable = true;
-    x11.enable = true;
-    hyprcursor.enable = true;
-    hyprcursor.size = 16;
+    gtk = {
+      enable = true;
+      size = 16;
+    };
+    # sets hyprlands cursor for some reason
+    x11 = {
+      enable = true;
+      size = 24;
+    };
   };
 
   # thanks elias

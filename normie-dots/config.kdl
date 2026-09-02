@@ -48,6 +48,8 @@ environment {
     XDG_CURRENT_DESKTOP "niri"
     XDG_SESSION_TYPE "wayland"
     XDG_SESSION_DESKTOP "niri"
+    XCURSOR_THEME "Bibata-Modern-Ice"
+    XCURSOR_SIZE "16"
 }
 // WORKSPACES (PERSISTENT)
 workspace "1" {
