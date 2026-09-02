@@ -144,6 +144,7 @@
     vellum
 
     nicotine-plus
+    qbittorent
     picard
 
     obsidian
