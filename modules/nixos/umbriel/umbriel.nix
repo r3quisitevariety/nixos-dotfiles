@@ -82,6 +82,7 @@
       input = {
         keyboard.layout = "us";
         touchpad.natural_scroll = true;
+        focus.follows_mouse = true;
       };
 
       workspaces = {
