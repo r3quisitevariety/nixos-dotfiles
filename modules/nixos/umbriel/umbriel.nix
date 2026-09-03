@@ -52,7 +52,7 @@
           ];
           scale = 1.0;
           vrr = "always";
-          #workspaces = 10;
+          workspaces = 10;
           tearing = true;
         };
         "HDMI-A-1" = {
@@ -63,8 +63,7 @@
           ];
           scale = 1.0;
           vrr = "always";
-          # enforces static workspaces
-          #workspaces = 10;
+          workspaces = 10;
           tearing = true;
         };
       };
