@@ -170,7 +170,7 @@
           enabled = true;
           duration_ms = 250;
           curve = "easeout";
-          style = "popin";
+          style = "slide";
           scale = 0.6;
         };
 
