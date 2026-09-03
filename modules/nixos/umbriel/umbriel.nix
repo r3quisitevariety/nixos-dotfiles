@@ -120,8 +120,8 @@
 
         "Mod+Shift+H" = "window-modify-width:-0.1";
         "Mod+Shift+L" = "window-modify-width:0.1";
-        "Mod+Shift+K" = "window-modify-height:0.1";
-        "Mod+Shift+J" = "window-modify-height:-0.1";
+        "Mod+Shift+K" = "window-modify-height:-0.1";
+        "Mod+Shift+J" = "window-modify-height:0.1";
 
         "Mod+Ctrl+H" = "column-move-left";
         "Mod+Ctrl+K" = "window-move-or-workspace-up";
