@@ -5,6 +5,28 @@
   programs.umbriel = {
     enable = true;
     settings = {
+      appearance = {
+        corner_radius = 6;
+        blur = {
+          enabled = true;
+          optimized = true;
+          radius = 12;
+          noise = 0.0;
+          contrast = 1.25;
+          saturation = 1.0;
+        };
+        shadow = {
+          offset_x = 0;
+          offset_y = 0;
+        };
+      };
+
+      colors = {
+        shadow = "#363a4fff";
+        border.focused = "#8aadf4cc";
+        border.unfocused = "#c0c6dc33";
+      };
+
       window_rule = [
         {
           match.app_id = "^(kitty|dev\\.noctalia\\.Noctalia)$";
@@ -63,9 +85,8 @@
         touchpad.natural_scroll = true;
       };
 
-      # idk what this actually does lol
       workspaces = {
-        back_and_forth = true;
+        back_and_forth = false;
       };
 
       keybinds = {
@@ -135,25 +156,6 @@
         "Mod+Shift+WheelDown" = "window-focus-right";
         "Mod+WheelUp" = "window-focus-up";
         "Mod+WheelDown" = "window-focus-down";
-      };
-
-      appearance = {
-        corner_radius = 12;
-        border_focused = "#8aadf4cc";
-        border_unfocused = "#c0c6dc33";
-        blur = {
-          enabled = true;
-          optimized = true;
-          radius = 12;
-          noise = 0.0;
-          contrast = 1.25;
-          saturation = 1.0;
-        };
-        shadow = {
-          offset_x = 0;
-          offset_y = 0;
-          color = "#363a4fff";
-        };
       };
 
       layout = {
