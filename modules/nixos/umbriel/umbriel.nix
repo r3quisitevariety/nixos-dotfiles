@@ -11,6 +11,14 @@
           blur = true;
         }
       ];
+      layer_rule = [
+        {
+          match.namespace = "^noctalia-(bar-[^\"]+|notification|dock|panel|attached-panel|osd|desktop-widget-[^\"]*)$";
+          blur = true;
+          blur_ignore_alpha = 0.5;
+          blur_popups = true;
+        }
+      ];
 
       output = {
         "eDP-1" = {
@@ -135,7 +143,7 @@
         border_unfocused = "#c0c6dc33";
         blur = {
           enabled = true;
-          optimized = false;
+          optimized = true;
           radius = 12;
           noise = 0.0;
           contrast = 1.25;
