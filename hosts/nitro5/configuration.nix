@@ -145,7 +145,7 @@
 
     nicotine-plus
     qbittorrent
-    picard
+    #picard
 
     obsidian
     #anki - experiencing build problems, use nix run instead
