@@ -29,7 +29,7 @@ end
 ---- MY PROGRAMS ----
 ---------------------
 
-local terminal = "kitty"
+local terminal = "kitty --single-instance"
 local fileManager = "nautilus"
 local menu = "noctalia msg panel-open launcher"
 
@@ -39,6 +39,7 @@ local menu = "noctalia msg panel-open launcher"
 
 hl.on("hyprland.start", function()
 	hl.exec_cmd("noctalia") -- v5
+	hl.exec_cmd("kitty --single-instance --start-as=hidden tail -f /dev/null")
 end)
 
 -------------------------------
