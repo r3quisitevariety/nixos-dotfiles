@@ -85,6 +85,7 @@
     inputs.nixcu.packages.${pkgs.stdenv.hostPlatform.system}.default
     neovim
     vim
+    proton-vpn-cli
   ];
 
   services.immich = {
@@ -103,6 +104,32 @@
     user = "slskd";
     group = "slskd";
   };
+
+  services.qbittorrent = {
+    enable = false;
+    webuiPort = 8090;
+    torrentingPort = 8091;
+    openFirewall = false;
+    user = "media";
+    profileDir = "/srv/copyparty/zx/downloads";
+
+    serverConfig = {
+      Preferences = {
+        Downloads = {
+          SavePath = "/srv/copyparty/zx/downloads";
+        };
+        WebUI = {
+          Username = "media";
+        };
+      };
+    };
+  };
+  users.users.media = {
+    group = "media";
+    isSystemUser = true;
+    uid = 1001;
+  };
+  users.groups.media = {gid = 1001;};
 
   networking.firewall.allowedTCPPorts = [8384];
 
