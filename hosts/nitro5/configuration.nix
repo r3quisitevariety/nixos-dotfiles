@@ -145,6 +145,7 @@
 
     nicotine-plus
     qbittorrent
+    jellyfin-desktop
     #picard
 
     obsidian
