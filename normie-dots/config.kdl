@@ -120,6 +120,10 @@ window-rule {
     draw-border-with-background false
 }
 window-rule {
+    match app-id="steam"
+    draw-border-with-background false
+}
+window-rule {
     match app-id="zed"
     draw-border-with-background false
 }
