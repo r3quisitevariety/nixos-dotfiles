@@ -277,8 +277,6 @@ widget_order = [
 
 [nightlight]
 enabled = true
-temperature_day = 10000
-temperature_night = 3000
 
 [notification]
 blacklist = [ "tauon", "hyprshot" ]
