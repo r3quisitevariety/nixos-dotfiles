@@ -74,3 +74,11 @@ nixpkgs = "nixpkgs"
 [inputs.umbriel]
 url = "git+https://github.com/noctalia-dev/umbriel"
 submodules = true
+
+# pinned to specific commit
+# run `nix run github:shibco/ableton-linux#setup-prefix` before using ableton-linux
+[inputs.ableton-linux]
+url = "github:shibco/ableton-linux/bf64478c06e607bd49c5a4841c61c2c8ba2c6985"
+
+[inputs.ableton-linux.follows]
+nixpkgs = "nixpkgs"

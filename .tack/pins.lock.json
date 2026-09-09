@@ -1,4 +1,12 @@
 {
+  "ableton-linux": {
+    "type": "github",
+    "owner": "shibco",
+    "repo": "ableton-linux",
+    "rev": "c2092f702531712950649c4f957caff8203b2199",
+    "narHash": "sha256-3yBvcMnNEnlzZQkgENd4HP8dm+Bzy54gKgkeqJVU2Dw=",
+    "lastModified": 1788050560
+  },
   "copyparty": {
     "type": "github",
     "owner": "9001",
