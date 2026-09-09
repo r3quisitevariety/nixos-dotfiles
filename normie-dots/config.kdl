@@ -157,6 +157,9 @@ window-rule {
     default-floating-position x=10 y=10 relative-to="bottom-right"
     open-focused false
 }
+overview {
+    zoom 0.25
+}
 animations {
     // credit to https://github.com/Xansidev/nirimation for the swipe-window animation
     window-open {
