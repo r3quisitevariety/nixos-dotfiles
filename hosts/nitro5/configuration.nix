@@ -165,6 +165,8 @@
     kdePackages.kdenlive
     reaper
     krita
+    alcom
+    unityhub
   ];
 
   programs.gpu-screen-recorder = {
