@@ -3,6 +3,7 @@
   inputs,
   user,
   copyparty,
+  lib,
   ...
 }: {
   # my homelab config
@@ -131,7 +132,18 @@
   };
   users.groups.media = {gid = 1001;};
 
-  networking.firewall.allowedTCPPorts = [8384];
+  networking.firewall.allowedTCPPorts = [8384 4533];
+
+  services.navidrome = {
+    enable = true;
+    openFirewall = true;
+    settings = {
+      Address = "0.0.0.0";
+      MusicFolder = "/home/onoruu/Music/keepers";
+    };
+  };
+  systemd.services.navidrome.serviceConfig.ProtectHome =
+    lib.mkForce "read-only";
 
   #freshrss (not fun on nix), soulseek
   virtualisation.docker = {
