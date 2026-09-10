@@ -94,10 +94,19 @@
     host = "0.0.0.0";
     openFirewall = true;
   };
+
   services.jellyfin = {
     enable = true;
     openFirewall = true;
   };
+  systemd.services.jellyfin.serviceConfig.ProtectHome =
+    lib.mkForce "read-only";
+  # allows jellyfin to read home directory
+  systemd.tmpfiles.rules = [
+    "a+ /home/onoruu - - - - u:jellyfin:--x"
+    "a+ /home/onoruu/Music - - - - u:jellyfin:rx"
+  ];
+
   services.slskd = {
     enable = true;
     openFirewall = true;
@@ -113,7 +122,6 @@
     openFirewall = false;
     user = "media";
     profileDir = "/srv/copyparty/zx/downloads";
-
     serverConfig = {
       Preferences = {
         Downloads = {
