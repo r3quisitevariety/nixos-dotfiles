@@ -48,7 +48,6 @@
     };
 
     #homelab config
-    # onoruu is a legacy username, ill change it if i reinstall
     nixosConfigurations.inspiron = let
       user = "onoruu";
     in
@@ -71,17 +70,5 @@
           }
         ];
       };
-
-    #ubuntu server config
-    #homeConfigurations.black = home-manager.lib.homeManagerConfiguration {
-    #  pkgs = import nixpkgs {
-    #    system = "x86_64-linux";
-    #    overlays = [nur.overlays.default];
-    #  };
-    #  extraSpecialArgs = {inherit inputs user;};
-    #  modules = [
-    #    ./hosts/ubuntu-inspiron/home.nix
-    #  ];
-    #};
   };
 }
