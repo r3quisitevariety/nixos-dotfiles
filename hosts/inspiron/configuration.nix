@@ -153,6 +153,10 @@
   systemd.services.navidrome.serviceConfig.ProtectHome =
     lib.mkForce "read-only";
 
+  services.karakeep = {
+    enable = true;
+  };
+
   #freshrss (not fun on nix), soulseek
   virtualisation.docker = {
     enable = true;
