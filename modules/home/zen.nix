@@ -91,6 +91,7 @@
       #  #unhook
       #  #libredirect
       #  #obsidian-web-clippper
+      #  karakeep
       #];
 
       pinsForce = false;
@@ -119,9 +120,9 @@
         url = "https://github.com/r3quisitevariety/nixos-dotfiles";
         isEssential = true;
       };
-      pins.nix-search = {
-        id = "nix-search";
-        url = "https://nixsearch.thekoppe.com/";
+      pins.noogle = {
+        id = "noogle";
+        url = "https://noogle.dev/";
         isEssential = true;
       };
       pins.gmail = {
