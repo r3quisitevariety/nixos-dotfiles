@@ -109,9 +109,9 @@
         url = "https://calendar.google.com";
         isEssential = true;
       };
-      pins.claude = {
-        id = "claude";
-        url = "https://claude.ai/new";
+      pins.karakeep = {
+        id = "karakeep";
+        url = "http://inspiron:3000";
         isEssential = true;
       };
       pins.nixos-dotfiles = {
