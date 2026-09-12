@@ -150,6 +150,7 @@
     #picard
 
     obsidian
+    telegram-desktop
     #anki - experiencing build problems, use nix run instead
     nautilus
     foot

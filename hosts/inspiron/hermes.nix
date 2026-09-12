@@ -2,28 +2,27 @@
   inputs,
   user,
   pkgs,
+  lib,
   ...
 }: {
   imports = [
     inputs.hermes-agent.nixosModules.default
   ];
 
-  # allows user to cd into ~/.hermes
-  # hermes automatically creates a containerized user called "hermes" when you enable the module
-  users.users.${user} = {
-    extraGroups = ["hermes"];
+  systemd.services.hermes-agent.serviceConfig = {
+    ProtectHome = lib.mkForce "read-only";
+    ReadWritePaths = [
+      "/home/onoruu/hermes"
+    ];
   };
 
   services.hermes-agent = {
     enable = true;
-    # just keeping things explicit here; module does this by default
-    user = "hermes";
-    group = "hermes";
-    createUser = true;
-    # statedir is symlinked to ~/.hermes for some reason (even though im using the nixos module)
-    stateDir = "/var/lib/hermes";
-    # hermes somehow has access to all of /home/onoruu lol idk
-    workingDirectory = "/var/lib/hermes/workspace";
+    user = "onoruu";
+    group = "users";
+    createUser = false;
+    stateDir = "/home/onoruu/hermes";
+    workingDirectory = "/home/onoruu/hermes/workspace";
     addToSystemPackages = true;
 
     # discord, telegram, slack, etc
@@ -53,21 +52,17 @@
       };
     };
 
-    #TODO
-    #mcpServers.
-
-    # containers if you want them
+    #containers if you want them
     #container = {
     #  enable = true;
     #  backend = "docker";
     #  hostUsers = [user];
     #  # Add explicit host:container mounts here when Hermes needs access to
     #  # project directories outside /var/lib/hermes.
-    #  # extraVolumes = [ "/home/onoruu/code:/projects:rw" ];
+    #  extraVolumes = ["/home/onoruu/Documents/masterplan:/obsidian:rw"];
     #};
 
     # api keys, bot tokens, passwords
-    # unlike home.file, this doesn't overwrite.
     environmentFiles = [
       "/run/nix-secrets/secrets/hermes-env"
     ];
@@ -111,7 +106,7 @@
         disabled_toolsets = [];
       };
       approvals = {
-        mode = "smart";
+        mode = "manual";
         timeout = 300;
         cron_mode = "deny";
         single_query_mode = "deny";
@@ -138,6 +133,12 @@
       - Prefer small, reversible changes.
       - Run appropriate validation after editing.
       - Keep credentials and other secrets out of repositories and logs.
+
+      ## Working Agreement
+      - I drive. Default to research, insight, and options — NOT edits.
+      - Don't modify files or run state-changing commands unless I ask.
+      - When I ask for research: gather freely, dig deep, present findings.
+      - When I ask for a change: smallest change that does it; show me, don't sprawl.
     '';
   };
 }
