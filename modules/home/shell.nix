@@ -1,4 +1,10 @@
 {pkgs, ...}: {
+  programs.direnv = {
+    enable = true;
+    enableFishIntegration = true;
+    enableBashIntegration = false;
+    nix-direnv.enable = true;
+  };
   programs.yt-dlp = {
     enable = true;
     extraConfig = ''
@@ -90,7 +96,6 @@
     duf # disk usage utility
     ani-cli #lol
     tack
-    neocities
     imv
     github-cli
     nix-search-tv
@@ -120,10 +125,6 @@
     curl
     wget
     home-manager
-    zola
-    go
-    bun
-    rustup
   ];
   programs.tmux = {
     enable = true;
