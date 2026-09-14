@@ -125,6 +125,7 @@
     curl
     wget
     home-manager
+    gallery-dl
   ];
   programs.tmux = {
     enable = true;
