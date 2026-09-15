@@ -5,6 +5,8 @@
   user,
   ...
 }: {
+  nixpkgs.overlays = [inputs.bunnypkgs.overlays.default];
+
   # BLAZINGLY FAST ITS MEMORY SAFE GUYS
   security.sudo-rs.enable = true;
 
@@ -135,6 +137,8 @@
     #inputs.noctalia.packages.${pkgs.stdenv.hostPlatform.system}.default
     inputs.nixcu.packages.${pkgs.stdenv.hostPlatform.system}.default
     inputs.ncr.packages.${pkgs.stdenv.hostPlatform.system}.default
+    bunnyfetch
+    flaccheck
 
     noctalia
     noctalia-greeter

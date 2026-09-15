@@ -1,4 +1,12 @@
 {
+  "bunnypkgs": {
+    "type": "github",
+    "owner": "bunny-systems",
+    "repo": "pkgs",
+    "rev": "d90adeb8efb3cb533158646ea01c5e73b189c445",
+    "narHash": "sha256-34xUutCCNlXLjpafPmr0tW+P1pn/XGoKIwntHvkjqKI=",
+    "lastModified": 1789403996
+  },
   "copyparty": {
     "type": "github",
     "owner": "9001",
