@@ -340,7 +340,7 @@ time_format = "{:%-I:%M %p}"
 
 [theme]
 builtin = "Rosé Pine"
-community_palette = "Catppuccin Macchiato Blue"
+community_palette = "Paradise"
 custom_palette = "m3-content"
 mode = "dark"
 source = "community"
@@ -372,13 +372,13 @@ transition = [ "disc" ]
 transition_on_startup = true
 
     [wallpaper.default]
-    path = "/home/zx/Pictures/wallpapers/gay/ultrasharp-4x.png"
+    path = "/home/zx/Pictures/wallpapers/aesthetic/wallhaven-8groo1.jpg"
 
     [wallpaper.last]
-    path = "/home/zx/Pictures/wallpapers/gay/ultrasharp-4x.png"
+    path = "/home/zx/Pictures/wallpapers/aesthetic/wallhaven-8groo1.jpg"
 
     [wallpaper.monitors.HDMI-A-1]
-    path = "/home/zx/Pictures/wallpapers/gay/ultrasharp-4x.png"
+    path = "/home/zx/Pictures/wallpapers/aesthetic/wallhaven-8groo1.jpg"
 
     [wallpaper.monitors.eDP-1]
     path = "/home/zx/Pictures/wallpapers/moody/wallhaven-je95gq_1920x1080.png"
