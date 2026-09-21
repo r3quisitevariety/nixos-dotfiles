@@ -203,6 +203,10 @@ binds {
     Mod+Q {
         spawn "kitty" "--single-instance"
     }
+    // Browser (zen-browser)
+    Mod+W {
+        spawn "zen-beta"
+    }
     Mod+D {
         spawn-sh "noctalia msg panel-open launcher"
     }
