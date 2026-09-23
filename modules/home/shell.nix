@@ -58,6 +58,7 @@
     t = "tmux";
     h = "herdr";
     oc = "opencode";
+    rm = "trash";
   };
 
   programs.opencode = {
@@ -91,6 +92,7 @@
   };
 
   home.packages = with pkgs; [
+    trash-cli
     ffmpeg
     duf # disk usage utility
     ani-cli #lol
