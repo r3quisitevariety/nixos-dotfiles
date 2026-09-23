@@ -170,6 +170,7 @@
 
     kdePackages.kdenlive
     reaper
+    vital
     krita
     alcom
     unityhub
