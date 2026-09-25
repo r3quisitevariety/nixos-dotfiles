@@ -32,5 +32,11 @@
     harper
     gopls
     kdlfmt
+
+    typstyle
+    websocat
+    curl
+    xdg-utils
+    typst
   ];
 }
