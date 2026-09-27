@@ -6,14 +6,14 @@ enabled = true
 
 [bar.default]
 background_opacity = 0.74999998323619366
-center = [ "workspaces", "bar" ]
+center = [ "workspaces" ]
 end = [ "group:g3", "clipboard", "group:g4", "notifications", "volume", "brightness", "group:g5" ]
 margin_edge = 0
 margin_ends = 0
 radius = 0
 radius_bottom_left = 80
 radius_bottom_right = 80
-start = [ "clock", "group:g1", "nix-monitor", "recorder_2", "group:g2", "sysmon", "weather", "group:g6" ]
+start = [ "clock", "group:g1", "nix-monitor", "recorder_2", "group:g2", "sysmon", "weather", "group:g6", "bar" ]
 
     [[bar.default.capsule_group]]
     accordion = false
@@ -61,11 +61,11 @@ start = [ "clock", "group:g1", "nix-monitor", "recorder_2", "group:g2", "sysmon"
     [[bar.default.capsule_group]]
     accordion = false
     accordion_direction = "end"
-    enabled = true
+    enabled = false
     fill = "surface_variant"
     foreground = "tertiary"
     id = "g6"
-    members = [ "notes", "todo", "launcher" ]
+    members = [ "notes", "launcher" ]
     opacity = 1.0
     padding = 8.0
 
@@ -330,7 +330,7 @@ show_location = false
 time_format = "{:%-I:%M %p}"
 
     [shell.panel]
-    transparency_mode = "soft"
+    transparency_mode = "glass"
 
     [shell.screenshot]
     save_to_file = false
@@ -340,10 +340,10 @@ time_format = "{:%-I:%M %p}"
 
 [theme]
 builtin = "Rosé Pine"
-community_palette = "Paradise"
+community_palette = "Catppuccin Mocha Blue"
 custom_palette = "m3-content"
-mode = "dark"
-source = "community"
+mode = "light"
+source = "builtin"
 wallpaper_scheme = "m3-tonal-spot"
 
     [theme.templates]
@@ -372,16 +372,16 @@ transition = [ "disc" ]
 transition_on_startup = true
 
     [wallpaper.default]
-    path = "/home/zx/Pictures/wallpapers/aesthetic/wallhaven-8groo1.jpg"
+    path = "/home/zx/Pictures/wallpapers/gay/qxx4x73.png"
 
     [wallpaper.last]
-    path = "/home/zx/Pictures/wallpapers/aesthetic/wallhaven-8groo1.jpg"
+    path = "/home/zx/Pictures/wallpapers/gay/qxx4x73.png"
 
     [wallpaper.monitors.HDMI-A-1]
-    path = "/home/zx/Pictures/wallpapers/aesthetic/wallhaven-8groo1.jpg"
+    path = "/home/zx/Pictures/wallpapers/gay/qxx4x73.png"
 
     [wallpaper.monitors.eDP-1]
-    path = "/home/zx/Pictures/wallpapers/moody/wallhaven-je95gq_1920x1080.png"
+    path = "/home/zx/Pictures/wallpapers/gay/qxx4x73.png"
 
 [weather]
 address = "Toronto, Canada"
@@ -391,6 +391,7 @@ capsule = true
 
 [widget.bar]
 capsule = true
+enabled = false
 show_idle_on_horizontal = false
 type = "noctalia/timer:bar"
 
@@ -427,6 +428,8 @@ capsule = true
 
 [widget.media]
 album_art_only = true
+artist_first = true
+hide_artist = true
 hide_when_no_media = true
 max_length = 100
 min_length = 100
@@ -458,6 +461,7 @@ type = "noctalia/screen_recorder:recorder"
 
 [widget.recorder_2]
 capsule = true
+enabled = false
 type = "noctalia/screen_recorder:recorder"
 
 [widget.spacer_2]
@@ -468,6 +472,7 @@ type = "spacer"
 
 [widget.sysmon]
 capsule = true
+enabled = false
 show_value = false
 stat = "gpu_vram"
 
@@ -478,9 +483,6 @@ group_by_workspace = true
 [widget.temp]
 show_label = false
 show_value = false
-
-[widget.todo]
-type = "nightwatch75/todo:todo"
 
 [widget.tray]
 capsule = true
@@ -495,10 +497,13 @@ capsule = true
 
 [widget.weather]
 capsule = true
+enabled = false
 show_condition = false
 show_temperature = false
 
 [widget.workspaces]
 anchor = true
 capsule_fill = "on_primary"
+empty_color = "on_tertiary"
 hide_when_empty = true
+occupied_color = "on_primary"
