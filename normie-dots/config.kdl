@@ -204,7 +204,7 @@ binds {
         spawn "kitty" "--single-instance"
     }
     // Browser (zen-browser)
-    Mod+W {
+    Mod+Z {
         spawn "zen-beta"
     }
     Mod+D {
