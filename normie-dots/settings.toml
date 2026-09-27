@@ -320,7 +320,7 @@ enabled = [
 
 [shell]
 app_icon_color = "on_surface"
-avatar_path = "/home/zx/Pictures/misc/chiitoo.jpg"
+avatar_path = "/home/zx/Pictures/misc/rin.jpg"
 clipboard_confirm_clear_history = false
 font_family = "Noto Sans"
 niri_overview_type_to_launch_enabled = true
