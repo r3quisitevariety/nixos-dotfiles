@@ -37,7 +37,10 @@
 
   imports = [
     ./hardware-configuration.nix
+    inputs.musnix.nixosModules.musnix
   ];
+
+  musnix.enable = true;
 
   services.locate.enable = false;
 
@@ -174,6 +177,10 @@
     krita
     alcom
     unityhub
+    bitwig-studio
+    yabridge
+    yabridgectl
+    wine-staging
   ];
 
   programs.gpu-screen-recorder = {

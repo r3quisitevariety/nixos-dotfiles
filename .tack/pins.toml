@@ -77,3 +77,9 @@ submodules = true
 
 [inputs.bunnypkgs]
 url = "github:bunny-systems/pkgs"
+
+[inputs.musnix]
+url = "github:musnix/musnix"
+
+[inputs.musnix.follows]
+nixpkgs = "nixpkgs"
