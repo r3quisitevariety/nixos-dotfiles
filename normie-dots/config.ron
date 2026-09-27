@@ -63,7 +63,7 @@
             "4":          SwitchToTab("Album Artists"),
             "5":          SwitchToTab("Albums"),
             "6":          SwitchToTab("Playlists"),
-            "7":          SwitchToTab("Search"),
+            "`":          SwitchToTab("Search"),
             "<C-u>":      Update,
             "<C-U>":      Rescan,
             "R":          AddRandom,
