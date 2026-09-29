@@ -41,4 +41,18 @@
     source = ../../normie-dots/config.ron;
     force = true;
   };
+
+  systemd.user.services.mprisence = {
+    Unit = {
+      Description = "Discord Rich Presence for MPRIS media players";
+      After = ["graphical-session.target"];
+      PartOf = ["graphical-session.target"];
+    };
+    Service = {
+      ExecStart = "${pkgs.mprisence}/bin/mprisence";
+      Restart = "on-failure";
+      RestartSec = "5s";
+    };
+    Install.WantedBy = ["graphical-session.target"];
+  };
 }
