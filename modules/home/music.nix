@@ -42,6 +42,10 @@
     force = true;
   };
 
+  home.file.".config/mprisence/config.toml".source =
+    config.lib.file.mkOutOfStoreSymlink
+    "${config.home.homeDirectory}/nixos-dotfiles/normie-dots/config.toml";
+
   systemd.user.services.mprisence = {
     Unit = {
       Description = "Discord Rich Presence for MPRIS media players";

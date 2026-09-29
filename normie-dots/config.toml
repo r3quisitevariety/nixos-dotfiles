@@ -1,0 +1,14 @@
+# config.toml for mprisence
+# symlinked to ~/.config/mprisence/
+[player.mpd]
+match_patterns = ["mpd"]
+name = "music"
+ignore = false
+app_id = "1126153268486213672"
+icon = "https://raw.githubusercontent.com/google/material-design-icons/master/png/image/music_note/materialicons/48dp/2x/baseline_music_note_black_48dp.png"
+allow_streaming = true
+
+[template]
+# album metadata doesnt properly update in rpc so i just omit it
+large_text = " "
+
