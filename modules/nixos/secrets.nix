@@ -63,6 +63,13 @@
         mode = "0600";
       };
 
+      lastfm = {
+        recipients = ["master"];
+        owner = user;
+        group = "users";
+        mode = "0600";
+      };
+
       hermes-env = {
         recipients = ["master"];
         owner = "onoruu";

@@ -59,4 +59,14 @@
     };
     Install.WantedBy = ["graphical-session.target"];
   };
+
+  services.mpdscribble = {
+    enable = true;
+    endpoints = {
+      "last.fm" = {
+        passwordFile = "/run/nix-secrets/secrets/lastfm";
+        username = "onoruu";
+      };
+    };
+  };
 }
