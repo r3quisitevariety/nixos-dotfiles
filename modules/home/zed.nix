@@ -7,11 +7,25 @@
     extensions = [
       "nix"
       "typst"
+      "discord-presence"
     ];
     extraPackages = with pkgs; [
       nixd
       alejandra
+      zed-discord-presence
     ];
+
+    # this doesnt actually work; nix rebuild fails; keeping here for sake of memory
+    #userKeymaps = {
+    #  bindings = {
+    #    "space-f-g" = "text_finder::Toggle";
+    #    "space-f-f" = "file_finder::Toggle";
+    #    "ctrl-space" = "terminal_panel::Toggle";
+    #    "space-e" = "project_panel::ToggleFocus";
+    #    "space-l-g" = "git_panel::ToggleFocus";
+    #  };
+    #};
+
     userSettings = {
       "cursor_animation" = {enabled = true;};
       "format_on_save" = "on";
@@ -29,14 +43,12 @@
         "metrics" = false;
       };
 
-      userKeymaps = {
-        bindings = {
-          # this doesnt actually work it's just here for show and so i can remember lol
-          "space-f-g" = "text_finder::Toggle";
-          "space-f-f" = "file_finder::Toggle";
-          "ctrl-space" = "terminal_panel::Toggle";
-          "space-e" = "project_panel::ToggleFocus";
-          "space-l-g" = "git_panel::ToggleFocus";
+      "lsp" = {
+        "discord_presence" = {
+          "initialization_options" = {
+            "application_id" = "1263505205522337886";
+            "base_icons_url" = "https://raw.githubusercontent.com/xhyrom/zed-discord-presence/main/assets/icons";
+          };
         };
       };
 
