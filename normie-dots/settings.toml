@@ -339,8 +339,8 @@ time_format = "{:%-I:%M %p}"
     alpha = 0.99999997764825821
 
 [theme]
-builtin = "Gruvbox"
-community_palette = "Catppuccin Mocha Lavender"
+builtin = "Rosé Pine"
+community_palette = "Catppuccin Macchiato Lavender"
 custom_palette = "m3-content"
 mode = "dark"
 source = "community"

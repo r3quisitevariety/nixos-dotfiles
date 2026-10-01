@@ -153,7 +153,6 @@
     nicotine-plus
     qbittorrent
     jellyfin-desktop
-    feishin
     #picard
 
     obsidian
