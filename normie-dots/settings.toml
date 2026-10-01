@@ -339,11 +339,11 @@ time_format = "{:%-I:%M %p}"
     alpha = 0.99999997764825821
 
 [theme]
-builtin = "Rosé Pine"
-community_palette = "Catppuccin Mocha Blue"
+builtin = "Gruvbox"
+community_palette = "Catppuccin Mocha Lavender"
 custom_palette = "m3-content"
-mode = "light"
-source = "builtin"
+mode = "dark"
+source = "community"
 wallpaper_scheme = "m3-tonal-spot"
 
     [theme.templates]
@@ -372,13 +372,13 @@ transition = [ "disc" ]
 transition_on_startup = true
 
     [wallpaper.default]
-    path = "/home/zx/Pictures/wallpapers/gay/qxx4x73.png"
+    path = "/home/zx/Pictures/wallpapers/moody/wallhaven-je95gq_1920x1080.png"
 
     [wallpaper.last]
-    path = "/home/zx/Pictures/wallpapers/gay/qxx4x73.png"
+    path = "/home/zx/Pictures/wallpapers/moody/wallhaven-je95gq_1920x1080.png"
 
     [wallpaper.monitors.HDMI-A-1]
-    path = "/home/zx/Pictures/wallpapers/gay/qxx4x73.png"
+    path = "/home/zx/Pictures/wallpapers/moody/wallhaven-je95gq_1920x1080.png"
 
     [wallpaper.monitors.eDP-1]
     path = "/home/zx/Pictures/wallpapers/gay/qxx4x73.png"
@@ -506,4 +506,3 @@ anchor = true
 capsule_fill = "on_primary"
 empty_color = "on_tertiary"
 hide_when_empty = true
-occupied_color = "on_primary"

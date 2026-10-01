@@ -30,7 +30,7 @@
       useQuickCss = true;
 
       enabledThemes = [
-        "noctalia.theme.css"
+        #"noctalia.theme.css"
       ];
 
       #themeLinks = [

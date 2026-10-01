@@ -126,6 +126,9 @@ window-rule {
 window-rule {
     match app-id="zed"
     draw-border-with-background false
+    background-effect {
+        blur true
+    }
 }
 window-rule {
     geometry-corner-radius 5
