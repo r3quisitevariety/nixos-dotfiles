@@ -20,6 +20,10 @@
         "toggle_relative_line_numbers" = true;
       };
 
+      "project_panel" = {"dock" = "left";};
+      "git_panel" = {"dock" = "right";};
+      "agent" = {"dock" = "right";};
+
       "telemetry" = {
         "diagnostics" = false;
         "metrics" = false;
@@ -30,6 +34,9 @@
           # this doesnt actually work it's just here for show and so i can remember lol
           "space-f-g" = "text_finder::Toggle";
           "space-f-f" = "file_finder::Toggle";
+          "ctrl-space" = "terminal_panel::Toggle";
+          "space-e" = "project_panel::ToggleFocus";
+          "space-l-g" = "git_panel::ToggleFocus";
         };
       };
 
