@@ -143,6 +143,7 @@
     ../../modules/home/kitty.nix
     ../../modules/nixos/fish/fish.nix
     ../../modules/home/herdr.nix
+    ../../modules/home/zed.nix
     #../../modules/nixos/umbriel/umbriel.nix
     #../../modules/vr.nix
     #../../modules/obs.nix
