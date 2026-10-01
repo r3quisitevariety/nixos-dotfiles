@@ -34,6 +34,7 @@
     kdlfmt
 
     typstyle
+    tinymist
     websocat
     curl
     xdg-utils
