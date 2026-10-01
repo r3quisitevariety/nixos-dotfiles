@@ -13,6 +13,7 @@
       nixd
       alejandra
       zed-discord-presence
+      package-version-server
     ];
 
     # this doesnt actually work; nix rebuild fails; keeping here for sake of memory
