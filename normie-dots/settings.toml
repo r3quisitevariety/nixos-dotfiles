@@ -1,5 +1,8 @@
 config_version = 14
 
+[audio]
+enable_sounds = false
+
 [backdrop]
 blur_intensity = 0.019999999552965164
 enabled = true
