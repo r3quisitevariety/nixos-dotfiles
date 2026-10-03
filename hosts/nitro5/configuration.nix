@@ -144,6 +144,7 @@
     flaccheck
 
     noctalia
+    r2modman
     noctalia-greeter
     papirus-icon-theme
     xwayland-satellite

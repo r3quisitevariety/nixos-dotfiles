@@ -35,11 +35,6 @@
       "--loc"
     ];
   };
-  home.shellAliases = {
-    ls = "eza --color=auto";
-    lt = "eza --tree";
-    lc = "eza --code";
-  };
 
   home.shellAliases = {
     tack = "sh -c 'GH_TOKEN=\"$(cat /run/nix-secrets/secrets/gh-token)\" exec tack \"$@\"' sh";
