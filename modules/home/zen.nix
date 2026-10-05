@@ -16,7 +16,7 @@
 
     profiles.default = {
       settings = {
-        "ui.systemUsesDarkTheme" = 1;
+        #"ui.systemUsesDarkTheme" = 1;
         # Auto-enable extensions installed via HM
         "extensions.autoDisableScopes" = 0;
         "extensions.showRecommendations" = false;

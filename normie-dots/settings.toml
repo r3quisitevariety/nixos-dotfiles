@@ -343,10 +343,10 @@ time_format = "{:%-I:%M %p}"
 
 [theme]
 builtin = "Rosé Pine"
-community_palette = "Catppuccin Macchiato Lavender"
+community_palette = "Catppuccin Mocha Lavender"
 custom_palette = "m3-content"
-mode = "dark"
-source = "community"
+mode = "light"
+source = "builtin"
 wallpaper_scheme = "m3-tonal-spot"
 
     [theme.templates]
@@ -375,16 +375,28 @@ transition = [ "disc" ]
 transition_on_startup = true
 
     [wallpaper.default]
-    path = "/home/zx/Pictures/wallpapers/moody/wallhaven-je95gq_1920x1080.png"
+    path = "/home/zx/Pictures/wallpapers/gay/qxx4x73.png"
 
     [wallpaper.last]
-    path = "/home/zx/Pictures/wallpapers/moody/wallhaven-je95gq_1920x1080.png"
+    path = "/home/zx/Pictures/wallpapers/gay/qxx4x73.png"
 
     [wallpaper.monitors.HDMI-A-1]
-    path = "/home/zx/Pictures/wallpapers/moody/wallhaven-je95gq_1920x1080.png"
+    path = "/home/zx/Pictures/wallpapers/gay/qxx4x73.png"
 
     [wallpaper.monitors.eDP-1]
     path = "/home/zx/Pictures/wallpapers/gay/qxx4x73.png"
+
+    [[wallpaper.favorite]]
+    community_palette = "Catppuccin Mocha Lavender"
+    palette_source = "community"
+    path = "/home/zx/Pictures/wallpapers/moody/wallhaven-je95gq_1920x1080.png"
+    theme_mode = "dark"
+
+    [[wallpaper.favorite]]
+    builtin_palette = "Rosé Pine"
+    palette_source = "builtin"
+    path = "/home/zx/Pictures/wallpapers/gay/qxx4x73.png"
+    theme_mode = "light"
 
 [weather]
 address = "Toronto, Canada"
@@ -464,7 +476,6 @@ type = "noctalia/screen_recorder:recorder"
 
 [widget.recorder_2]
 capsule = true
-enabled = false
 type = "noctalia/screen_recorder:recorder"
 
 [widget.spacer_2]

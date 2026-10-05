@@ -3,7 +3,7 @@
     enable = true;
 
     font = {
-      name = "Mape Mono NF";
+      name = "Maple Mono NF";
       size = 11;
     };
 

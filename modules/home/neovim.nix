@@ -15,6 +15,8 @@
 
   # lsp binaries and toolchains go here, actual configuration lives in neovims native config structure
   home.packages = with pkgs; [
+    lua
+    luarocks
     neovim
     fzf
     ripgrep
