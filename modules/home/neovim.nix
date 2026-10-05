@@ -28,6 +28,7 @@
     typescript
     typescript-language-server
     prettier
+    nixd
     nil
     nixfmt
     alejandra
