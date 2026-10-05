@@ -1,6 +1,7 @@
 {
   pkgs,
   config,
+  inputs,
   ...
 }: {
   programs.rmpc = {
@@ -67,6 +68,15 @@
         passwordFile = "/run/nix-secrets/secrets/lastfm";
         username = "onoruu";
       };
+    };
+  };
+
+  imports = [inputs.sonora.homeManagerModules.default];
+  programs.sonora = {
+    enable = true;
+    settings = {
+      provider = "youtube";
+      appearance.theme = "dark";
     };
   };
 }
