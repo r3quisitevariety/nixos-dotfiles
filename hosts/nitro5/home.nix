@@ -45,6 +45,8 @@
     };
   };
 
+  programs.nix-index-database.comma.enable = true;
+
   home.username = user;
   home.homeDirectory = "/home/${user}";
   home.stateVersion = "25.11";
@@ -132,6 +134,7 @@
   };
 
   imports = [
+    inputs.nix-index-database.homeModules.nix-index
     # TODO i commented these out because i have yet to resolve hostname hardcoding for modules
     ./syncthing.nix
     ../../modules/home/neovim.nix
