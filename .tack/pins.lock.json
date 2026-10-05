@@ -85,6 +85,14 @@
     "rev": "c59305bab2065cfecc4944690d9eedbb56f3a9fa",
     "narHash": "sha256-VBA0QerzzmL+4wxgtwiCdiLwLpJg2/9xOxhgO3BRJQA="
   },
+  "sonora": {
+    "type": "github",
+    "owner": "sonorahq",
+    "repo": "sonora",
+    "rev": "9f6567874582749b675a59ee705a8447191da6b6",
+    "narHash": "sha256-RDh/GgVwYk1C10ZlalX0GwYHxlb4Jrab5Wob3sNyNWk=",
+    "lastModified": 1790968365
+  },
   "umbriel": {
     "type": "git",
     "url": "https://github.com/noctalia-dev/umbriel",

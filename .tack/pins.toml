@@ -83,3 +83,9 @@ url = "github:musnix/musnix"
 
 [inputs.musnix.follows]
 nixpkgs = "nixpkgs"
+
+[inputs.sonora]
+url = "github:sonorahq/sonora"
+
+[inputs.sonora.follows]
+nixpkgs = "nixpkgs"
