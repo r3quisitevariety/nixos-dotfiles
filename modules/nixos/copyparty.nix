@@ -1,4 +1,8 @@
-{copyparty, ...}: {
+{inputs, ...}: {
+  imports = [
+    inputs.copyparty.nixosModules.default
+  ];
+
   networking.firewall.allowedTCPPorts = [3923];
 
   # Keep local filesystem access separate from Copyparty's account ACLs.
@@ -9,7 +13,7 @@
     "a+ /srv/copyparty/zx - - - - d:u:onoruu:rwx,d:u:copyparty:rwx"
   ];
 
-  nixpkgs.overlays = [copyparty.overlays.default];
+  nixpkgs.overlays = [inputs.copyparty.overlays.default];
   services.copyparty = {
     enable = true;
     # define a containerized user called "copyparty"

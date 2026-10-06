@@ -11,7 +11,6 @@
       (inputs)
       nixpkgs
       home-manager
-      copyparty
       ;
   in {
     nixosConfigurations.nitro5 = let
@@ -40,11 +39,10 @@
     in
       nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
-        specialArgs = {inherit inputs user copyparty;};
+        specialArgs = {inherit inputs user;};
         modules = [
           ./hosts/inspiron
           home-manager.nixosModules.home-manager
-          copyparty.nixosModules.default
           {
             home-manager = {
               useGlobalPkgs = true;
