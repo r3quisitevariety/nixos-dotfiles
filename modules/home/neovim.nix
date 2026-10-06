@@ -17,6 +17,7 @@
   home.packages = with pkgs; [
     lua
     luarocks
+    tree-sitter
     neovim
     fzf
     ripgrep
