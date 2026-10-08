@@ -1,5 +1,5 @@
 {
-  description = "twinky femboy flake";
+  description = "flake for nixos-dotfiles";
 
   # using tack to manage inputs
   # args form is from tack's README
