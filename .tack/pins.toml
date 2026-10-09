@@ -41,9 +41,6 @@ url = "github:0xc000022070/zen-browser-flake"
 nixpkgs = "nixpkgs"
 home-manager = "home-manager"
 
-[inputs.nix-cachyos-kernel]
-url = "github:xddxdd/nix-cachyos-kernel/release"
-
 [inputs.ncr]
 url = "github:greyxp1/ncr"
 
@@ -95,6 +92,7 @@ nixpkgs = "nixpkgs"
 
 [inputs.tack]
 url = "github:manic-systems/tack"
+frozen = true
 
 [inputs.tack.follows]
 nixpkgs = "nixpkgs"
