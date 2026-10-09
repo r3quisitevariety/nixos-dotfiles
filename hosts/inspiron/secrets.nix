@@ -1,4 +1,5 @@
 {
+  # inspiron specific secrets separate from the general "secrets.nix" file
   security.nix-secrets.secrets = {
     copyparty-zx = {
       recipients = ["master"];

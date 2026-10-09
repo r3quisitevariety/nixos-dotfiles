@@ -25,18 +25,13 @@
       p = [3923];
       no-reload = true;
 
-      # Search/index files and enable upload undo.
       e2dsa = true;
-      # Index music metadata such as artist, album, title, BPM, etc.
       e2ts = true;
-      # Show dotfiles in search results.
       dotsrch = true;
     };
 
     accounts = {
-      # zx = onoruu
-      # just declared like this so i can ssh into copyparty and use coreutils
-      # i have some ai slop above for this lol (sorry not sorry)
+      # zx = onoruu (its a legacy thing, changing username on homelab is a pain)
       onoruu.passwordFile = "/run/nix-secrets/secrets/copyparty-zx";
       smarties.passwordFile = "/run/nix-secrets/secrets/copyparty-smarties";
     };

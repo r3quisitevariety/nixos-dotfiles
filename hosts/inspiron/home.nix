@@ -48,7 +48,7 @@
     ./syncthing.nix
     # TODO i commented these out because i have yet to resolve hostname hardcoding for modules
     ../../modules/home/neovim.nix
-    ../../modules/home/shell.nix
+    ../../modules/home/cli.nix
     #../../modules/home/music.nix
     #../../modules/home/zen.nix
     #../../modules/home/discord.nix

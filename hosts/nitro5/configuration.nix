@@ -10,9 +10,6 @@
   # BLAZINGLY FAST ITS MEMORY SAFE GUYS
   security.sudo-rs.enable = true;
 
-  # used as label for last major system edit; useful when picking generations at boot
-  # system.nixos.label = "niri-cursor-smaller";
-
   users.users.${user} = {
     isNormalUser = true;
     description = user;
@@ -47,7 +44,7 @@
   programs.steam.enable = true;
   programs.niri.enable = true;
 
-  services.power-profiles-daemon.enable = true; # switch between performance, balance, or battery saving
+  services.power-profiles-daemon.enable = true;
   services.upower.enable = true;
 
   boot.loader.systemd-boot.enable = true;
@@ -198,8 +195,6 @@
     };
   };
 
-  # TODO split into separate tailscale module later
-  # run sudo tailscale login after enabling service
   services.tailscale = {
     enable = true;
     openFirewall = true;

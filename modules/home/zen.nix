@@ -6,7 +6,6 @@
   imports = [
     inputs.zen-browser.homeModules.beta
   ];
-  # preservation might solve issues with flake config not applying onto zen.
   programs.zen-browser = {
     enable = true;
     setAsDefaultBrowser = true;

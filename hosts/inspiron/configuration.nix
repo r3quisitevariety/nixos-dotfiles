@@ -49,13 +49,11 @@
     timeout = 0;
   };
 
-  networking.hostName = "inspiron"; # Define your hostname.
+  networking.hostName = "inspiron";
   networking.networkmanager.enable = true;
 
-  # Set your time zone.
   time.timeZone = "America/New_York";
 
-  # Select internationalisation properties.
   i18n.defaultLocale = "en_US.UTF-8";
 
   i18n.extraLocaleSettings = {
@@ -70,7 +68,6 @@
     LC_TIME = "en_US.UTF-8";
   };
 
-  # Configure keymap in X11
   services.xserver.xkb = {
     layout = "us";
     variant = "";
@@ -106,14 +103,14 @@
     "a+ /home/onoruu/Music - - - - u:jellyfin:rx"
   ];
 
+  # disable slskd + qbit until i get vpn working
   services.slskd = {
-    enable = true;
+    enable = false;
     openFirewall = true;
     environmentFile = "/run/nix-secrets/secrets/slskd";
     user = "slskd";
     group = "slskd";
   };
-
   services.qbittorrent = {
     enable = false;
     webuiPort = 8090;

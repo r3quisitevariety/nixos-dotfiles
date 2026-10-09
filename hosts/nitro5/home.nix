@@ -5,6 +5,20 @@
   user,
   ...
 }: {
+  imports = [
+    inputs.nix-index-database.homeModules.nix-index
+    ./syncthing.nix
+    ../../modules/home/neovim.nix
+    ../../modules/home/cli.nix
+    ../../modules/home/music.nix
+    ../../modules/home/zen.nix
+    ../../modules/home/discord.nix
+    ../../modules/home/yt-music-dlp.nix
+    ../../modules/home/kitty.nix
+    ../../modules/nixos/fish/fish.nix
+    ../../modules/home/herdr.nix
+    ../../modules/home/zed.nix
+  ];
   programs.ssh = {
     enableDefaultConfig = false;
     enable = true;
@@ -132,25 +146,4 @@
       "text/x-c++src" = textEditor;
     };
   };
-
-  imports = [
-    inputs.nix-index-database.homeModules.nix-index
-    # TODO i commented these out because i have yet to resolve hostname hardcoding for modules
-    ./syncthing.nix
-    ../../modules/home/neovim.nix
-    ../../modules/home/shell.nix
-    ../../modules/home/music.nix
-    ../../modules/home/zen.nix
-    ../../modules/home/discord.nix
-    ../../modules/home/yt-music-dlp.nix
-    ../../modules/home/kitty.nix
-    ../../modules/nixos/fish/fish.nix
-    ../../modules/home/herdr.nix
-    ../../modules/home/zed.nix
-    #../../modules/nixos/umbriel/umbriel.nix
-    #../../modules/vr.nix
-    #../../modules/obs.nix
-    #../../modules/substituters.nix
-    #../../modules/noctalia-greeter.nix
-  ];
 }
