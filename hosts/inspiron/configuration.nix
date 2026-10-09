@@ -86,7 +86,6 @@
     inputs.nixcu.packages.${pkgs.stdenv.hostPlatform.system}.default
     neovim
     vim
-    proton-vpn-cli
   ];
 
   services.immich = {

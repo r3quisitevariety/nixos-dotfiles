@@ -90,11 +90,12 @@
     EDITOR = "vim";
   };
 
+  # commonly used packages in my shell
+  # rest of stuff is in direnv or i use comma for quick one-offs
   home.packages = with pkgs; [
     trash-cli
     ffmpeg
     duf # disk usage utility
-    ani-cli #lol
     inputs.tack.packages.${pkgs.stdenv.hostPlatform.system}.tack
     imv
     github-cli
@@ -103,14 +104,12 @@
     dix
     w3m
     diskonaut-ng
-    tokei
     git
     fastfetch
     hyfetch
     yazi
     go-grip
     lazygit
-    ranger
     htop
     btop
     nh
@@ -119,7 +118,6 @@
     fzf
     ripgrep
     fd
-    bat
     tree
     tldr
     curl

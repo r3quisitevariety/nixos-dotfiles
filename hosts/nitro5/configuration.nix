@@ -157,13 +157,11 @@
     #picard
 
     obsidian
-    telegram-desktop
     #anki - experiencing build problems, use nix run instead
     nautilus
     foot
     #google-chrome
     mpv
-    mpvpaper
     proton-vpn
     keepassxc
 
@@ -172,7 +170,6 @@
     kdePackages.qt6ct
 
     kdePackages.kdenlive
-    reaper
     vital
     krita
     alcom
