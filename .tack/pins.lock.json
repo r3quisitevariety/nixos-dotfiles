@@ -89,9 +89,9 @@
   },
   "nixpkgs": {
     "type": "tarball",
-    "url": "https://releases.nixos.org/nixos/unstable/nixos-26.11pre1083223.c59305bab206/nixexprs.tar.xz",
-    "rev": "c59305bab2065cfecc4944690d9eedbb56f3a9fa",
-    "narHash": "sha256-VBA0QerzzmL+4wxgtwiCdiLwLpJg2/9xOxhgO3BRJQA="
+    "url": "https://releases.nixos.org/nixos/unstable/nixos-26.11pre1087755.e7439b6b14ad/nixexprs.tar.zst",
+    "rev": "e7439b6b14ad3cc35d05608ebca9bce01a25f5f8",
+    "narHash": "sha256-gRZ/s8WQJ2CsXdhcDVQH34qxuL0MuMCOs3aBiK1Prsw="
   },
   "sonora": {
     "type": "github",
@@ -101,14 +101,13 @@
     "narHash": "sha256-RDh/GgVwYk1C10ZlalX0GwYHxlb4Jrab5Wob3sNyNWk=",
     "lastModified": 1790968365
   },
-  "umbriel": {
-    "type": "git",
-    "url": "https://github.com/noctalia-dev/umbriel",
-    "ref": "HEAD",
-    "rev": "2040758e5a33bed1fe5f56e830951346e13ed02f",
-    "narHash": "sha256-h4Rry4cpMrCGDUe9Mg8cE7dxN9P0sL2jW2YxdDDmOpU=",
-    "lastModified": 1790874051,
-    "submodules": true
+  "tack": {
+    "type": "github",
+    "owner": "manic-systems",
+    "repo": "tack",
+    "rev": "4a8b68df58488b311840eb0244c75b4857871789",
+    "narHash": "sha256-ST/08SMwfjtXeP/+72GJYVFkO2xT6PDU5ofh9Gh9IJ8=",
+    "lastModified": 1791058919
   },
   "zen-browser": {
     "type": "github",

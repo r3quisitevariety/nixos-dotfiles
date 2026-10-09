@@ -26,7 +26,7 @@
 [inputs]
 
 [inputs.nixpkgs]
-url = "https://channels.nixos.org/nixos-unstable/nixexprs.tar.xz"
+url = "https://channels.nixos.org/nixos-unstable/nixexprs.tar.zst"
 
 [inputs.home-manager]
 url = "github:nix-community/home-manager"
@@ -67,13 +67,10 @@ nixpkgs = "nixpkgs"
 
 [inputs.hermes-agent]
 url = "github:NousResearch/hermes-agent"
+frozen = true
 
 [inputs.hermes-agent.follows]
 nixpkgs = "nixpkgs"
-
-[inputs.umbriel]
-url = "git+https://github.com/noctalia-dev/umbriel"
-submodules = true
 
 [inputs.bunnypkgs]
 url = "github:bunny-systems/pkgs"
@@ -94,4 +91,10 @@ nixpkgs = "nixpkgs"
 url = "github:nix-community/nix-index-database"
 
 [inputs.nix-index-database.follows]
+nixpkgs = "nixpkgs"
+
+[inputs.tack]
+url = "github:manic-systems/tack"
+
+[inputs.tack.follows]
 nixpkgs = "nixpkgs"

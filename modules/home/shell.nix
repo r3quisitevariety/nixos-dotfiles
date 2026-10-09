@@ -1,4 +1,8 @@
-{pkgs, ...}: {
+{
+  inputs,
+  pkgs,
+  ...
+}: {
   programs.direnv = {
     enable = true;
     enableFishIntegration = true;
@@ -91,7 +95,7 @@
     ffmpeg
     duf # disk usage utility
     ani-cli #lol
-    tack
+    inputs.tack.packages.${pkgs.stdenv.hostPlatform.system}.tack
     imv
     github-cli
     nix-search-tv
