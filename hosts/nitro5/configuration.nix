@@ -149,6 +149,7 @@
     vellum
 
     nicotine-plus
+    picard
     qbittorrent
     jellyfin-desktop
     #picard
