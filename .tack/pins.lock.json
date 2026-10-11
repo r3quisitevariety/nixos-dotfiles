@@ -43,9 +43,9 @@
     "type": "github",
     "owner": "nix-community",
     "repo": "home-manager",
-    "rev": "6b88c12cc6d234de4888f5d21076fb11199d0844",
-    "narHash": "sha256-5sViLmjhTCtBTvhjSXXvd5LDrAFMydFFKZQisjE8Vds=",
-    "lastModified": 1791569574
+    "rev": "c58f54c733a7894d84fa2fdff26cc12088c4b78c",
+    "narHash": "sha256-0bK0A59rVUn1SRZzo4cNi4VSqAe7vR1gL2/MZl53Frw=",
+    "lastModified": 1791642191
   },
   "musnix": {
     "type": "github",
@@ -83,9 +83,9 @@
     "type": "github",
     "owner": "4evy",
     "repo": "nixcord",
-    "rev": "f6292714b527ea5aae7e50b3d21da22002c3ad7e",
-    "narHash": "sha256-JqNwMGONZ/zQhzB2ks/M40G1IOGWxv5XL5lS2SBE2Vk=",
-    "lastModified": 1791574486
+    "rev": "1ffd9a241a518fab5c2188749a599a8981cd8208",
+    "narHash": "sha256-qvL6V4VxqeF5hhrqCYW/XildRFpDJKsevALZRIyGJ7A=",
+    "lastModified": 1791624273
   },
   "nixcu": {
     "type": "github",
@@ -121,8 +121,8 @@
     "type": "github",
     "owner": "0xc000022070",
     "repo": "zen-browser-flake",
-    "rev": "841dba01deda5e994a9838da9d2216f493fbaea9",
-    "narHash": "sha256-S4ZBR4y3cQ6NbLDJqoQR48718TWCM1ofpjt8Mzo83Hg=",
-    "lastModified": 1791521685
+    "rev": "1fd1ee43a0fd0bff17a8ba07e2a281406a92991f",
+    "narHash": "sha256-djG2tdpl/U+8eUmlozsRTRoU2yIvh8r1z8qj8gB/qWM=",
+    "lastModified": 1791629930
   }
 }

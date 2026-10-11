@@ -22,8 +22,6 @@
     #    "space-f-g" = "text_finder::Toggle";
     #    "space-f-f" = "file_finder::Toggle";
     #    "ctrl-space" = "terminal_panel::Toggle";
-    #    "space-e" = "project_panel::ToggleFocus";
-    #    "space-l-g" = "git_panel::ToggleFocus";
     #  };
     #};
 
