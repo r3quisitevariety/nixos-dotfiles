@@ -151,6 +151,20 @@
 
   services.karakeep = {
     enable = true;
+    # The secret must contain an environment assignment:
+    # OPENAI_API_KEY=...
+    environmentFile = "/run/nix-secrets/secrets/openai-opencode";
+    extraEnvironment = {
+      OPENAI_BASE_URL = "https://opencode.ai/zen/go/v1";
+      INFERENCE_TEXT_MODEL = "deepseek-v4.1-flash";
+      INFERENCE_IMAGE_MODEL = "deepseek-v4-flash-vision-exp";
+      INFERENCE_ENABLE_AUTO_SUMMARIZATION = "true";
+      # Use JSON mode instead of JSON Schema structured output for compatibility
+      # with OpenCode Go's OpenAI-compatible endpoint.
+      INFERENCE_OUTPUT_SCHEMA = "json";
+      # OpenCode Go does not provide an embeddings endpoint
+      EMBEDDING_ENABLE_AUTO_INDEXING = "false";
+    };
   };
 
   #freshrss (not fun on nix), soulseek

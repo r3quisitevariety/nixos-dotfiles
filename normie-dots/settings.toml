@@ -345,7 +345,7 @@ time_format = "{:%-I:%M %p}"
 
 [theme]
 builtin = "Rosé Pine"
-community_palette = "Paradise"
+community_palette = "Catppuccin Mocha Lavender"
 custom_palette = "m3-content"
 mode = "dark"
 source = "community"
@@ -377,10 +377,10 @@ transition = [ "disc" ]
 transition_on_startup = true
 
     [wallpaper.default]
-    path = "/home/zx/Pictures/wallpapers/moody/wallhaven_gjyoq7.jpg"
+    path = "/home/zx/Pictures/wallpapers/moody/wallhaven-je95gq_1920x1080.png"
 
     [wallpaper.last]
-    path = "/home/zx/Pictures/wallpapers/moody/wallhaven_gjyoq7.jpg"
+    path = "/home/zx/Pictures/wallpapers/moody/wallhaven-je95gq_1920x1080.png"
 
     [wallpaper.monitors.HDMI-A-1]
     path = "/home/zx/Pictures/wallpapers/moody/wallhaven-je95gq_1920x1080.png"
@@ -538,5 +538,4 @@ show_temperature = false
 [widget.workspaces]
 anchor = true
 capsule_fill = "on_primary"
-empty_color = "on_tertiary"
 hide_when_empty = true
