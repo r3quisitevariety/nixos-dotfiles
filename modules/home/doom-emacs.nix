@@ -3,6 +3,8 @@
   pkgs,
   ...
 }: {
+  # config for doom emacs; installed the imperative way with git clone; .config/doom will live in a separate repo
+  # i dont want to bother using nix to replace doom's package manager or to configure doom
   home.packages = with pkgs; [
     emacs
     ripgrep
