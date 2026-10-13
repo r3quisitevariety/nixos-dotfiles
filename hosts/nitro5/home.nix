@@ -18,6 +18,7 @@
     ../../modules/nixos/fish/fish.nix
     ../../modules/home/herdr.nix
     ../../modules/home/zed.nix
+    ../../modules/home/doom-emacs.nix
   ];
   programs.ssh = {
     enableDefaultConfig = false;
