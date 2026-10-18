@@ -50,6 +50,9 @@
 
   services.locate.enable = false;
 
+  # for udiskie in home-manager
+  services.udisks2.enable = true;
+
   programs.steam.enable = true;
   programs.niri.enable = true;
 
