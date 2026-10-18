@@ -35,7 +35,16 @@
   imports = [
     ./hardware-configuration.nix
     inputs.musnix.nixosModules.musnix
+    inputs.septabee.nixosModules.default
   ];
+
+  programs.septabee = {
+    enable = true;
+    wayland-deps = true; # Install wayland only dependencies
+    version = "latest"; # like [ "latest" "B_T1" "B_T2" ... ]
+    offline = true; # Doesn't require downloading LLVM stuff
+    #package = pkgs.septabee; # Septabee of version + wayland-deps
+  };
 
   musnix.enable = true;
 

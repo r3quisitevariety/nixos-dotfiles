@@ -11,6 +11,7 @@
     "nixcord": "github:4evy/nixcord",
     "nixcu": "github:TotalyEnglizLitrate/nixcu",
     "nixpkgs": "https://channels.nixos.org/nixos-unstable/nixexprs.tar.zst",
+    "septabee": "github:Ap6661/septabee-flake",
     "sonora": "github:sonorahq/sonora",
     "tack": "github:manic-systems/tack",
     "zen-browser": "github:0xc000022070/zen-browser-flake"
@@ -100,6 +101,14 @@
     "url": "https://releases.nixos.org/nixos/unstable/nixos-26.11pre1087755.e7439b6b14ad/nixexprs.tar.zst?rev=e7439b6b14ad3cc35d05608ebca9bce01a25f5f8&lastModified=1791456040",
     "rev": "e7439b6b14ad3cc35d05608ebca9bce01a25f5f8",
     "narHash": "sha256-gRZ/s8WQJ2CsXdhcDVQH34qxuL0MuMCOs3aBiK1Prsw="
+  },
+  "septabee": {
+    "type": "github",
+    "owner": "Ap6661",
+    "repo": "septabee-flake",
+    "rev": "bf52b2e9587c2b211fdbf6ec78870e8559a2a1c3",
+    "narHash": "sha256-xBoaPUalFhKmQPU25tzW0rRzrvLpEfgpofP4rjz842I=",
+    "lastModified": 1792203302
   },
   "sonora": {
     "type": "github",

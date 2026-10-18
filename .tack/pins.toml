@@ -96,3 +96,9 @@ frozen = true
 
 [inputs.tack.follows]
 nixpkgs = "nixpkgs"
+
+[inputs.septabee]
+url = "github:Ap6661/septabee-flake"
+
+[inputs.septabee.follows]
+nixpkgs = "nixpkgs"
