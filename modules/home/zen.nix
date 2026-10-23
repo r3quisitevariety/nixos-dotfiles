@@ -98,66 +98,66 @@
         }
       ];
 
-      pins.google-calendar = {
-        id = "google-calendar";
-        url = "https://calendar.google.com";
-        isEssential = true;
-      };
-      pins.karakeep = {
-        id = "karakeep";
-        url = "http://inspiron:3000";
-        isEssential = true;
-      };
-      pins.nixos-dotfiles = {
-        id = "nixos-dotfiles";
-        url = "https://github.com/r3quisitevariety/nixos-dotfiles";
-        isEssential = true;
-      };
-      pins.noogle = {
-        id = "noogle";
-        url = "https://noogle.dev/";
-        isEssential = true;
-      };
-      pins.gmail = {
-        id = "gmail";
-        url = "https://gmail.com";
-        isEssential = true;
-      };
-      pins.immich = {
-        id = "immich";
-        url = "http://inspiron:2283";
-        isEssential = true;
-      };
-      pins.protonmail = {
-        id = "protonmail";
-        url = "https://mail.proton.me";
-        isEssential = true;
-      };
-      pins.notion = {
-        id = "notion";
-        url = "https://app.notion.com";
-        isEssential = true;
-      };
-      pins.opencode-go = {
-        id = "opencode-go";
-        url = "https://opencode.ai/go";
-        isEssential = true;
-      };
-      pins.freshrss = {
-        id = "freshrss";
-        url = "http://inspiron:8085";
-        isEssential = true;
-      };
-      pins.copyparty = {
-        id = "copyparty";
-        url = "http://inspiron:3923";
-        isEssential = true;
-      };
-      pins.cinny = {
-        id = "cinny";
-        url = "https://app.cinny.in";
-        isEssential = true;
-      };
+      #pins.google-calendar = {
+      #  id = "google-calendar";
+      #  url = "https://calendar.google.com";
+      #  isEssential = true;
+      #};
+      #pins.karakeep = {
+      #  id = "karakeep";
+      #  url = "http://inspiron:3000";
+      #  isEssential = true;
+      #};
+      #pins.nixos-dotfiles = {
+      #  id = "nixos-dotfiles";
+      #  url = "https://github.com/r3quisitevariety/nixos-dotfiles";
+      #  isEssential = true;
+      #};
+      #pins.noogle = {
+      #  id = "noogle";
+      #  url = "https://noogle.dev/";
+      #  isEssential = true;
+      #};
+      #pins.gmail = {
+      #  id = "gmail";
+      #  url = "https://gmail.com";
+      #  isEssential = true;
+      #};
+      #pins.immich = {
+      #  id = "immich";
+      #  url = "http://inspiron:2283";
+      #  isEssential = true;
+      #};
+      #pins.protonmail = {
+      #  id = "protonmail";
+      #  url = "https://mail.proton.me";
+      #  isEssential = true;
+      #};
+      #pins.notion = {
+      #  id = "notion";
+      #  url = "https://app.notion.com";
+      #  isEssential = true;
+      #};
+      #pins.opencode-go = {
+      #  id = "opencode-go";
+      #  url = "https://opencode.ai/go";
+      #  isEssential = true;
+      #};
+      #pins.freshrss = {
+      #  id = "freshrss";
+      #  url = "http://inspiron:8085";
+      #  isEssential = true;
+      #};
+      #pins.copyparty = {
+      #  id = "copyparty";
+      #  url = "http://inspiron:3923";
+      #  isEssential = true;
+      #};
+      #pins.cinny = {
+      #  id = "cinny";
+      #  url = "https://app.cinny.in";
+      #  isEssential = true;
+      #};
     };
   };
 }
