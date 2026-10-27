@@ -28,9 +28,9 @@
     };
 
     keybindings = {
-      "shift+cmd+backspace" = "change_font_size all 10";
-      "shift+cmd+minus" = "change_font_size all -1.0";
-      "shift+cmd+plus" = "change_font_size all +1.0";
+      "ctrl+shift+backspace" = "change_font_size all 11";
+      "ctrl+shift+minus" = "change_font_size all -0.5";
+      "ctrl+shift+plus" = "change_font_size all +0.5";
     };
 
     extraConfig = ''
