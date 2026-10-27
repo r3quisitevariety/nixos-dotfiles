@@ -14,7 +14,7 @@
     ../../modules/home/zen.nix
     ../../modules/home/discord.nix
     ../../modules/home/yt-music-dlp.nix
-    ../../modules/home/kitty.nix
+    #../../modules/home/kitty.nix
     ../../modules/nixos/fish/fish.nix
     ../../modules/home/herdr.nix
     ../../modules/home/zed.nix

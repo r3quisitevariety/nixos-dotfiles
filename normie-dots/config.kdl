@@ -20,7 +20,7 @@ debug {
     emulate-zero-presentation-time
 }
 // STARTUP
-spawn-at-startup "kitty" "--single-instance" "--start-as=hidden" "tail" "-f" "/dev/null"
+//spawn-at-startup "kitty" "--single-instance" "--start-as=hidden" "tail" "-f" "/dev/null"
 spawn-at-startup "vellum"
 spawn-at-startup "noctalia"
 // DISABLE MIDDLE CLICK PASTE
@@ -120,6 +120,13 @@ window-rule {
     draw-border-with-background false
 }
 window-rule {
+    match app-id="^foot$"
+    match app-id="^footclient$"
+    background-effect {
+        blur true
+    }
+}
+window-rule {
     match app-id="steam"
     draw-border-with-background false
 }
@@ -202,9 +209,9 @@ binds {
     Mod+Tab {
         toggle-overview
     }
-    // Terminal (kitty)
+    // Terminal
     Mod+Q {
-        spawn "kitty" "--single-instance"
+        spawn "foot"
     }
     // Browser (zen-browser)
     Mod+Z {
