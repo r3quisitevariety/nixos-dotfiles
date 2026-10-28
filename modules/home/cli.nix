@@ -22,6 +22,8 @@
 
   programs.eza = {
     enable = true;
+    # integration gives the following aliases for eza;
+    # ls, ll, la, lt, lla
     enableFishIntegration = true;
     git = true;
     icons = "auto";

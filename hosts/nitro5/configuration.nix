@@ -153,6 +153,7 @@
     flaccheck
 
     noctalia
+    mpvpaper
     r2modman
     noctalia-greeter
     papirus-icon-theme

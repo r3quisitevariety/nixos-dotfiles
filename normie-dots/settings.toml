@@ -1,4 +1,4 @@
-config_version = 14
+config_version = 15
 
 [audio]
 enable_sounds = false
@@ -22,48 +22,53 @@ start = [ "clock", "group:g1", "nix-monitor", "recorder_2", "group:g2", "sysmon"
     accordion = false
     accordion_direction = "end"
     border = ""
+    border_width = 1.0
     enabled = true
     fill = "surface_variant"
     foreground = "primary"
     id = "g2"
     members = [ "cpu", "ram", "temp" ]
-    opacity = 1.0
+    opacity = 0.5
     padding = 10.0
 
     [[bar.default.capsule_group]]
     accordion = false
     accordion_direction = "end"
+    border_width = 1.0
     enabled = true
     fill = "surface_variant"
     id = "g3"
     members = [ "audio_visualizer", "media" ]
-    opacity = 1.0
+    opacity = 0.5
     padding = 6.0
 
     [[bar.default.capsule_group]]
     accordion = false
     accordion_direction = "end"
+    border_width = 1.0
     enabled = true
     fill = "surface_variant"
     id = "g4"
     members = [ "tray" ]
-    opacity = 1.0
+    opacity = 0.44999998807907104
     padding = 6.0
 
     [[bar.default.capsule_group]]
     accordion = false
     accordion_direction = "end"
+    border_width = 1.0
     enabled = true
     fill = "surface_variant"
-    foreground = "tertiary"
+    foreground = "primary"
     id = "g5"
     members = [ "network", "bluetooth", "battery", "session" ]
-    opacity = 1.0
+    opacity = 0.5
     padding = 10.0
 
     [[bar.default.capsule_group]]
     accordion = false
     accordion_direction = "end"
+    border_width = 1.0
     enabled = false
     fill = "surface_variant"
     foreground = "tertiary"
@@ -75,11 +80,12 @@ start = [ "clock", "group:g1", "nix-monitor", "recorder_2", "group:g2", "sysmon"
     [[bar.default.capsule_group]]
     accordion = true
     accordion_direction = "end"
+    border_width = 1.0
     enabled = true
     fill = "surface_variant"
     id = "g1"
     members = [ "wallpaper", "mpvpaper" ]
-    opacity = 1.0
+    opacity = 0.5
     padding = 6.0
 
 [calendar]
@@ -320,7 +326,8 @@ enabled = [
     "nightwatch75/todo",
     "avivbintangaringga/nix-monitor",
     "thepunkoff/pomodoro",
-    "noctalia/timer"
+    "noctalia/timer",
+    "noctalia/mpvpaper"
 ]
 
 [shell]
@@ -334,6 +341,9 @@ settings_show_advanced = true
 show_location = false
 time_format = "{:%-I:%M %p}"
 
+    [shell.launcher]
+    layout = "simple"
+
     [shell.panel]
     transparency_mode = "glass"
 
@@ -345,9 +355,9 @@ time_format = "{:%-I:%M %p}"
 
 [theme]
 builtin = "Rosé Pine"
-community_palette = "Paradise"
+community_palette = "Catppuccin Macchiato Lavender"
 custom_palette = "m3-content"
-mode = "dark"
+mode = "light"
 source = "community"
 wallpaper_scheme = "faithful"
 
@@ -377,28 +387,16 @@ transition = [ "disc" ]
 transition_on_startup = true
 
     [wallpaper.default]
-    path = "/home/zx/Pictures/wallpapers/moody/wallhaven_gjyoq7.jpg"
+    path = "/home/zx/Pictures/wallpapers/gay/qxx4x73.png"
 
     [wallpaper.last]
-    path = "/home/zx/Pictures/wallpapers/moody/wallhaven_gjyoq7.jpg"
+    path = "/home/zx/Pictures/wallpapers/gay/qxx4x73.png"
 
     [wallpaper.monitors.HDMI-A-1]
-    path = "/home/zx/Pictures/wallpapers/moody/wallhaven-je95gq_1920x1080.png"
+    path = "/home/zx/Pictures/wallpapers/gay/qxx4x73.png"
 
     [wallpaper.monitors.eDP-1]
-    path = "/home/zx/Pictures/wallpapers/moody/wallhaven_gjyoq7.jpg"
-
-    [[wallpaper.favorite]]
-    community_palette = "Catppuccin Mocha Lavender"
-    palette_source = "community"
-    path = "/home/zx/Pictures/wallpapers/moody/wallhaven-je95gq_1920x1080.png"
-    theme_mode = "dark"
-
-    [[wallpaper.favorite]]
-    builtin_palette = "Rosé Pine"
-    palette_source = "builtin"
-    path = "/home/zx/Pictures/wallpapers/gay/qxx4x73.png"
-    theme_mode = "light"
+    path = "/home/zx/Pictures/wallpapers/misc/wp12825026.jpg"
 
     [[wallpaper.favorite]]
     palette_source = "wallpaper"
@@ -413,10 +411,82 @@ transition_on_startup = true
     theme_mode = "dark"
 
     [[wallpaper.favorite]]
-    builtin_palette = "Rosé Pine"
-    palette_source = "builtin"
+    community_palette = "Catppuccin Macchiato Lavender"
+    palette_source = "community"
+    path = "/home/zx/Pictures/wallpapers/gay/qxx4x73.png"
+    theme_mode = "light"
+
+    [[wallpaper.favorite]]
+    community_palette = "Catppuccin Frappe Sapphire"
+    palette_source = "community"
     path = "/home/zx/Pictures/wallpapers/aesthetic/tv-room.jpg"
     theme_mode = "light"
+
+    [[wallpaper.favorite]]
+    builtin_palette = "Rosé Pine"
+    palette_source = "builtin"
+    path = "/home/zx/Pictures/wallpapers/gay/__nanally_chiz_sakiri_mint_lacrimosa_and_2_more_neverness_to_everness_drawn_by_maeru__6c73660133f89aabb09173bff58404b1.png"
+    theme_mode = "light"
+
+    [[wallpaper.favorite]]
+    community_palette = "Catppuccin Macchiato Lavender"
+    palette_source = "community"
+    path = "/home/zx/Pictures/wallpapers/gay/wallhaven_d69oll.jpg"
+    theme_mode = "dark"
+
+    [[wallpaper.favorite]]
+    community_palette = "Catppuccin Macchiato Lavender"
+    palette_source = "community"
+    path = "/home/zx/Pictures/wallpapers/moody/wallhaven-je95gq_1920x1080.png"
+    theme_mode = "dark"
+
+    [[wallpaper.favorite]]
+    builtin_palette = "Rosé Pine"
+    palette_source = "builtin"
+    path = "/home/zx/Pictures/wallpapers/gay/148678106_p0.jpg"
+    theme_mode = "light"
+
+    [[wallpaper.favorite]]
+    community_palette = "Everforest Material"
+    palette_source = "community"
+    path = "/home/zx/Pictures/wallpapers/nature/wallhaven-dgdmj3.jpg"
+    theme_mode = "dark"
+
+    [[wallpaper.favorite]]
+    palette_source = "wallpaper"
+    path = "/home/zx/Pictures/wallpapers/misc/wallhaven-lyg25p.png"
+    theme_mode = "dark"
+    wallpaper_scheme = "faithful"
+
+    [[wallpaper.favorite]]
+    community_palette = "Alpenglow"
+    palette_source = "community"
+    path = "/home/zx/Pictures/wallpapers/moody/wallhaven-r29w2m.jpg"
+    theme_mode = "dark"
+
+    [[wallpaper.favorite]]
+    community_palette = "Alpenglow"
+    palette_source = "community"
+    path = "/home/zx/Pictures/wallpapers/misc/wallhaven-rrvlym_1920x1080.png"
+    theme_mode = "dark"
+
+    [[wallpaper.favorite]]
+    palette_source = "wallpaper"
+    path = "/home/zx/Pictures/wallpapers/misc/wallhaven-ly8l7p.jpg"
+    theme_mode = "light"
+    wallpaper_scheme = "faithful"
+
+    [[wallpaper.favorite]]
+    community_palette = "Tomorrow"
+    palette_source = "community"
+    path = "/home/zx/Pictures/wallpapers/misc/wallhaven-oggp1m.jpg"
+    theme_mode = "dark"
+
+    [[wallpaper.favorite]]
+    palette_source = "wallpaper"
+    path = "/home/zx/Pictures/wallpapers/gay/wallhaven-qrpex7.jpg"
+    theme_mode = "dark"
+    wallpaper_scheme = "faithful"
 
 [weather]
 address = "Toronto, Canada"
@@ -426,7 +496,7 @@ capsule = true
 
 [widget.bar]
 capsule = true
-enabled = false
+capsule_opacity = 0.5
 show_idle_on_horizontal = false
 type = "noctalia/timer:bar"
 
@@ -443,15 +513,18 @@ type = "scripted"
 
 [widget.brightness]
 capsule = true
+capsule_opacity = 0.5
 show_label = false
 
 [widget.clipboard]
 capsule = true
+capsule_opacity = 0.5
 
 [widget.clock]
 capsule = true
 capsule_fill = "surface_variant"
-capsule_foreground = "secondary"
+capsule_foreground = "primary"
+capsule_opacity = 0.5
 format = "{dt:%-I:%M %p}"
 
 [widget.cpu]
@@ -477,6 +550,7 @@ show_label = false
 
 [widget.nix-monitor]
 capsule = true
+capsule_opacity = 0.5
 colorize_glyph = false
 show_text = false
 type = "avivbintangaringga/nix-monitor:nix-monitor"
@@ -486,6 +560,7 @@ type = "noctalia/notes:notes"
 
 [widget.notifications]
 capsule = true
+capsule_opacity = 0.5
 
 [widget.ram]
 show_label = false
@@ -496,6 +571,7 @@ type = "noctalia/screen_recorder:recorder"
 
 [widget.recorder_2]
 capsule = true
+capsule_opacity = 0.5
 type = "noctalia/screen_recorder:recorder"
 
 [widget.spacer_2]
@@ -506,6 +582,7 @@ type = "spacer"
 
 [widget.sysmon]
 capsule = true
+capsule_opacity = 0.5
 enabled = false
 show_value = false
 stat = "gpu_vram"
@@ -524,6 +601,7 @@ drawer = true
 
 [widget.volume]
 capsule = true
+capsule_opacity = 0.48999999999999999
 show_label = false
 
 [widget.wallpaper]
