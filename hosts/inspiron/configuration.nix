@@ -144,6 +144,7 @@
     settings = {
       Address = "0.0.0.0";
       MusicFolder = "/home/onoruu/Music/keepers";
+      Plugins.Enabled = false;
     };
   };
   systemd.services.navidrome.serviceConfig.ProtectHome =
