@@ -92,13 +92,13 @@ nixpkgs = "nixpkgs"
 
 [inputs.tack]
 url = "github:manic-systems/tack"
-frozen = true
 
 [inputs.tack.follows]
 nixpkgs = "nixpkgs"
 
 [inputs.septabee]
 url = "github:Ap6661/septabee-flake"
+frozen = true
 
 [inputs.septabee.follows]
 nixpkgs = "nixpkgs"
