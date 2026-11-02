@@ -20,7 +20,8 @@ debug {
     emulate-zero-presentation-time
 }
 // STARTUP
-//spawn-at-startup "kitty" "--single-instance" "--start-as=hidden" "tail" "-f" "/dev/null"
+spawn-at-startup "kitty" "--single-instance" "--start-as=hidden"
+//"tail" "-f" "/dev/null"
 spawn-at-startup "vellum"
 spawn-at-startup "noctalia"
 // DISABLE MIDDLE CLICK PASTE
@@ -211,7 +212,7 @@ binds {
     }
     // Terminal
     Mod+Q {
-        spawn "foot"
+        spawn "kitty" "--single-instance"
     }
     // Browser (zen-browser)
     Mod+Z {
