@@ -139,7 +139,7 @@
   networking.firewall.allowedTCPPorts = [8384 4533];
 
   services.navidrome = {
-    enable = false;
+    enable = true;
     openFirewall = true;
     settings = {
       Address = "0.0.0.0";
