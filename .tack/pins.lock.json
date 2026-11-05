@@ -106,9 +106,9 @@
     "type": "github",
     "owner": "Ap6661",
     "repo": "septabee-flake",
-    "rev": "bf52b2e9587c2b211fdbf6ec78870e8559a2a1c3",
-    "narHash": "sha256-xBoaPUalFhKmQPU25tzW0rRzrvLpEfgpofP4rjz842I=",
-    "lastModified": 1792203302
+    "rev": "2f7033f0096f5876f779fd836f2c648e64a2d207",
+    "narHash": "sha256-gpa/T65EaG4Eqz7+DXZm6CU9ZAKoO996mCPhux+ZoxU=",
+    "lastModified": 1793668661
   },
   "sonora": {
     "type": "github",

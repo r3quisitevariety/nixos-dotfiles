@@ -98,7 +98,6 @@ nixpkgs = "nixpkgs"
 
 [inputs.septabee]
 url = "github:Ap6661/septabee-flake"
-frozen = true
 
 [inputs.septabee.follows]
 nixpkgs = "nixpkgs"
