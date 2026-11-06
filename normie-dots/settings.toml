@@ -387,136 +387,70 @@ transition = [ "disc" ]
 transition_on_startup = true
 
     [wallpaper.default]
-    path = "/home/zx/Pictures/wallpapers/moody/wallhaven-je95gq_1920x1080.png"
+    path = "/home/zx/Pictures/wallpapers/wallhaven-6lwz1w.jpg"
 
     [wallpaper.last]
-    path = "/home/zx/Pictures/wallpapers/moody/wallhaven-je95gq_1920x1080.png"
+    path = "/home/zx/Pictures/wallpapers/wallhaven-6lwz1w.jpg"
 
     [wallpaper.monitors.HDMI-A-1]
-    path = "/home/zx/Pictures/wallpapers/moody/wallhaven-je95gq_1920x1080.png"
+    path = "/home/zx/Pictures/wallpapers/wallhaven-6lwz1w.jpg"
 
     [wallpaper.monitors.eDP-1]
     path = "/home/zx/Pictures/wallpapers/misc/wp12825026.jpg"
 
     [[wallpaper.favorite]]
-    palette_source = "wallpaper"
-    path = "/home/zx/Pictures/wallpapers/moody/wallhaven-mlgomm.png"
-    theme_mode = "dark"
-    wallpaper_scheme = "faithful"
-
-    [[wallpaper.favorite]]
     community_palette = "Catppuccin Macchiato Lavender"
     palette_source = "community"
-    path = "/home/zx/Pictures/wallpapers/gay/qxx4x73.png"
-    theme_mode = "light"
-
-    [[wallpaper.favorite]]
-    community_palette = "Catppuccin Frappe Sapphire"
-    palette_source = "community"
-    path = "/home/zx/Pictures/wallpapers/aesthetic/tv-room.jpg"
-    theme_mode = "light"
-
-    [[wallpaper.favorite]]
-    builtin_palette = "Rosé Pine"
-    palette_source = "builtin"
-    path = "/home/zx/Pictures/wallpapers/gay/__nanally_chiz_sakiri_mint_lacrimosa_and_2_more_neverness_to_everness_drawn_by_maeru__6c73660133f89aabb09173bff58404b1.png"
-    theme_mode = "light"
-
-    [[wallpaper.favorite]]
-    community_palette = "Catppuccin Macchiato Lavender"
-    palette_source = "community"
-    path = "/home/zx/Pictures/wallpapers/gay/wallhaven_d69oll.jpg"
+    path = "/home/zx/Pictures/wallpapers/wallhaven-je95gq_1920x1080.png"
     theme_mode = "dark"
 
     [[wallpaper.favorite]]
     community_palette = "Catppuccin Macchiato Lavender"
     palette_source = "community"
-    path = "/home/zx/Pictures/wallpapers/moody/wallhaven-je95gq_1920x1080.png"
+    path = "/home/zx/Pictures/wallpapers/wallhaven-6lwz1w.jpg"
+    theme_mode = "dark"
+
+    [[wallpaper.favorite]]
+    community_palette = "Catppuccin Macchiato Lavender"
+    palette_source = "community"
+    path = "/home/zx/Pictures/wallpapers/wallhaven_d69oll.jpg"
     theme_mode = "dark"
 
     [[wallpaper.favorite]]
     builtin_palette = "Rosé Pine"
     palette_source = "builtin"
-    path = "/home/zx/Pictures/wallpapers/gay/148678106_p0.jpg"
+    path = "/home/zx/Pictures/wallpapers/148678106_p0.jpg"
     theme_mode = "light"
-
-    [[wallpaper.favorite]]
-    palette_source = "wallpaper"
-    path = "/home/zx/Pictures/wallpapers/misc/wallhaven-lyg25p.png"
-    theme_mode = "dark"
-    wallpaper_scheme = "faithful"
-
-    [[wallpaper.favorite]]
-    community_palette = "Alpenglow"
-    palette_source = "community"
-    path = "/home/zx/Pictures/wallpapers/misc/wallhaven-rrvlym_1920x1080.png"
-    theme_mode = "dark"
-
-    [[wallpaper.favorite]]
-    palette_source = "wallpaper"
-    path = "/home/zx/Pictures/wallpapers/misc/wallhaven-ly8l7p.jpg"
-    theme_mode = "light"
-    wallpaper_scheme = "faithful"
-
-    [[wallpaper.favorite]]
-    community_palette = "Tomorrow"
-    palette_source = "community"
-    path = "/home/zx/Pictures/wallpapers/misc/wallhaven-oggp1m.jpg"
-    theme_mode = "dark"
-
-    [[wallpaper.favorite]]
-    palette_source = "wallpaper"
-    path = "/home/zx/Pictures/wallpapers/gay/wallhaven-qrpex7.jpg"
-    theme_mode = "dark"
-    wallpaper_scheme = "faithful"
 
     [[wallpaper.favorite]]
     community_palette = "Catppuccin Macchiato Lavender"
     palette_source = "community"
-    path = "/home/zx/Pictures/wallpapers/aesthetic/FyZjDAMaEAAADRj_rose-pine.jpeg"
-    theme_mode = "dark"
+    path = "/home/zx/Pictures/wallpapers/qxx4x73.png"
+    theme_mode = "light"
+
+    [[wallpaper.favorite]]
+    community_palette = "ADW-green"
+    palette_source = "community"
+    path = "/home/zx/Pictures/wallpapers/tv-room.jpg"
+    theme_mode = "light"
 
     [[wallpaper.favorite]]
     palette_source = "wallpaper"
-    path = "/home/zx/Pictures/wallpapers/moody/wallhaven-odevvm.png"
+    path = "/home/zx/Pictures/wallpapers/wallhaven-lyg25p.png"
     theme_mode = "dark"
     wallpaper_scheme = "faithful"
 
     [[wallpaper.favorite]]
-    community_palette = "Alpenglow"
-    palette_source = "community"
-    path = "/home/zx/Pictures/wallpapers/moody/fullres67.jpg"
-    theme_mode = "dark"
-
-    [[wallpaper.favorite]]
-    community_palette = "Paradise"
-    palette_source = "community"
-    path = "/home/zx/Pictures/wallpapers/moody/wallhaven_gjyoq7.jpg"
-    theme_mode = "dark"
-
-    [[wallpaper.favorite]]
-    community_palette = "Everforest Material"
-    palette_source = "community"
-    path = "/home/zx/Pictures/wallpapers/nature/wallhaven-dgdmj3.jpg"
-    theme_mode = "dark"
-
-    [[wallpaper.favorite]]
     community_palette = "Espresso Cream"
     palette_source = "community"
-    path = "/home/zx/Pictures/wallpapers/moody/frierenBRASILBRASILTOP1.jpg"
+    path = "/home/zx/Pictures/wallpapers/wallhaven-r29w2m.jpg"
     theme_mode = "dark"
 
     [[wallpaper.favorite]]
-    community_palette = "Espresso Cream"
+    community_palette = "Catppuccin Macchiato Lavender"
     palette_source = "community"
-    path = "/home/zx/Pictures/wallpapers/moody/wallhaven-r29w2m.jpg"
-    theme_mode = "dark"
-
-    [[wallpaper.favorite]]
-    community_palette = "Jiva Lotus"
-    palette_source = "community"
-    path = "/home/zx/Pictures/wallpapers/gay/wallhaven_8gkw9k.jpg"
-    theme_mode = "dark"
+    path = "/home/zx/Pictures/wallpapers/t6v3djh.png"
+    theme_mode = "light"
 
 [weather]
 address = "Toronto, Canada"
