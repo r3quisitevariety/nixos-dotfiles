@@ -9,6 +9,7 @@
     enableBashIntegration = false;
     nix-direnv.enable = true;
   };
+
   programs.yt-dlp = {
     enable = true;
     extraConfig = ''
