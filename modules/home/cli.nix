@@ -96,6 +96,7 @@
   # commonly used packages in my shell
   # rest of stuff is in direnv or i use comma for quick one-offs
   home.packages = with pkgs; [
+    wakeonlan
     trash-cli
     ffmpeg
     duf # disk usage utility

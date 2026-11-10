@@ -49,6 +49,8 @@
     #package = pkgs.septabee; # Septabee of version + wayland-deps
   };
 
+  programs.kdeconnect.enable = true;
+
   musnix.enable = true;
 
   services.locate.enable = false;
@@ -70,6 +72,7 @@
     hostName = "nitro5";
     networkmanager.enable = true;
     firewall.enable = true;
+    interfaces.enp43s0.wakeOnLan.enable = true;
   };
 
   networking.firewall.allowedTCPPorts = [8384];
@@ -221,8 +224,7 @@
 
   console = {
     packages = with pkgs; [terminus_font];
-    font = "ter-124b";
-    earlySetup = true;
+    font = "ter-v24n";
   };
 
   # ooooo you want to change this value ooooooo
