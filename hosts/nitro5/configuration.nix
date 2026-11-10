@@ -219,6 +219,12 @@
   systemd.network.wait-online.enable = false;
   boot.initrd.systemd.network.wait-online.enable = false;
 
+  console = {
+    packages = with pkgs; [terminus_font];
+    font = "ter-124b";
+    earlySetup = true;
+  };
+
   # ooooo you want to change this value ooooooo
   system.stateVersion = "26.05";
 }
