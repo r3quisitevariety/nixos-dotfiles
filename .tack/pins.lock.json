@@ -1,5 +1,6 @@
 {
   "$declared": {
+    "bootvine": "git+https://codeberg.org/wvhulle/bootvine",
     "bunnypkgs": "github:bunny-systems/pkgs",
     "copyparty": "github:9001/copyparty",
     "hermes-agent": "github:NousResearch/hermes-agent",
@@ -15,6 +16,14 @@
     "sonora": "github:sonorahq/sonora",
     "tack": "github:manic-systems/tack",
     "zen-browser": "github:0xc000022070/zen-browser-flake"
+  },
+  "bootvine": {
+    "type": "git",
+    "url": "https://codeberg.org/wvhulle/bootvine",
+    "ref": "HEAD",
+    "rev": "a7e33b453a82ecfe9e98d060008b3b20b6924f62",
+    "narHash": "sha256-aPJtMiIqt8tb+ZsgKhVH3zmGWjRRzukUzXj64X1mhpI=",
+    "lastModified": 1794257658
   },
   "bunnypkgs": {
     "type": "github",

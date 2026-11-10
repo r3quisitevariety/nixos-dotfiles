@@ -36,7 +36,10 @@
     ./hardware-configuration.nix
     inputs.musnix.nixosModules.musnix
     inputs.septabee.nixosModules.default
+    inputs.bootvine.nixosModules.default
   ];
+
+  services.bootvine.enable = true;
 
   programs.septabee = {
     enable = true;
