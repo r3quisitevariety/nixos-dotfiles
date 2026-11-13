@@ -341,6 +341,9 @@ settings_show_advanced = true
 show_location = false
 time_format = "{:%-I:%M %p}"
 
+    [shell.animation]
+    speed = 2.0000000298023224
+
     [shell.launcher]
     layout = "simple"
 
@@ -355,7 +358,7 @@ time_format = "{:%-I:%M %p}"
 
 [theme]
 builtin = "Rosé Pine"
-community_palette = "Catppuccin Macchiato Lavender"
+community_palette = "Espresso Cream"
 custom_palette = "m3-content"
 mode = "dark"
 source = "community"
@@ -387,16 +390,16 @@ transition = [ "disc" ]
 transition_on_startup = true
 
     [wallpaper.default]
-    path = "/home/zx/Pictures/wallpapers/wallhaven-6lwz1w.jpg"
+    path = "/home/zx/Pictures/wallpapers/wallhaven-r29w2m.jpg"
 
     [wallpaper.last]
-    path = "/home/zx/Pictures/wallpapers/wallhaven-6lwz1w.jpg"
+    path = "/home/zx/Pictures/wallpapers/wallhaven-r29w2m.jpg"
 
     [wallpaper.monitors.HDMI-A-1]
-    path = "/home/zx/Pictures/wallpapers/wallhaven-6lwz1w.jpg"
+    path = "/home/zx/Pictures/wallpapers/wallhaven-r29w2m.jpg"
 
     [wallpaper.monitors.eDP-1]
-    path = "/home/zx/Pictures/wallpapers/misc/wp12825026.jpg"
+    path = "/home/zx/Pictures/wallpapers/wallhaven-je95gq_1920x1080.png"
 
     [[wallpaper.favorite]]
     community_palette = "Catppuccin Macchiato Lavender"
