@@ -26,7 +26,7 @@
     #};
 
     userSettings = {
-      "cursor_animation" = {enabled = true;};
+      # "cursor_animation" = {enabled = true;};
       "format_on_save" = "on";
       vim = {
         "vim_mode" = true;
