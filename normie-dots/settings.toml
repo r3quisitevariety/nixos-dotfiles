@@ -16,7 +16,7 @@ margin_ends = 0
 radius = 0
 radius_bottom_left = 80
 radius_bottom_right = 80
-start = [ "clock", "group:g1", "nix-monitor", "recorder_2", "group:g2", "sysmon", "weather", "group:g6", "bar" ]
+start = [ "clock", "group:g1", "nix-monitor", "recorder_2", "group:g2", "sysmon", "weather", "group:g6", "bar", "toggle" ]
 
     [[bar.default.capsule_group]]
     accordion = false
@@ -300,6 +300,9 @@ panel_placement = "attached"
 show_update_available_notification = false
 update_command = "cd ~/nixos-dotfiles && nvim"
 
+[plugin_settings."lowcache/dropkitty"]
+normal_height = 50
+
 [plugin_settings."noctalia/mpvpaper"]
 video_directory = "/home/zx/Videos/video-wallpapers"
 
@@ -327,7 +330,8 @@ enabled = [
     "avivbintangaringga/nix-monitor",
     "thepunkoff/pomodoro",
     "noctalia/timer",
-    "noctalia/mpvpaper"
+    "noctalia/mpvpaper",
+    "lowcache/dropkitty"
 ]
 
 [shell]
@@ -561,6 +565,11 @@ group_by_workspace = true
 [widget.temp]
 show_label = false
 show_value = false
+
+[widget.toggle]
+capsule = true
+capsule_opacity = 0.5
+type = "lowcache/dropkitty:toggle"
 
 [widget.tray]
 capsule = true
