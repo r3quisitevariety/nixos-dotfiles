@@ -152,6 +152,7 @@
   nixpkgs.config.allowUnfree = true;
 
   environment.systemPackages = with pkgs; [
+    jq
     #inputs.noctalia.packages.${pkgs.stdenv.hostPlatform.system}.default
     inputs.nixcu.packages.${pkgs.stdenv.hostPlatform.system}.default
     inputs.ncr.packages.${pkgs.stdenv.hostPlatform.system}.default
